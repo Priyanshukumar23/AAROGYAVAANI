@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error":"#ffffff","surface-container-lowest":"#ffffff","primary":"#000f22","on-tertiary-container":"#1a9e70","on-primary-fixed":"#001c37","inverse-on-surface":"#eaf1ff","secondary-fixed":"#cce5ff","on-surface-variant":"#43474d","surface-variant":"#d3e4fe","tertiary-fixed-dim":"#68dba9","on-error-container":"#93000a","surface":"#f8f9ff","on-tertiary":"#ffffff","primary-fixed-dim":"#b0c8eb","primary-container":"#0a2540","tertiary-fixed":"#85f8c4","on-secondary-container":"#00476e","on-secondary-fixed":"#001d31","surface-container-low":"#eff4ff","secondary":"#006398","on-background":"#0b1c30","tertiary":"#001209","background":"#f8f9ff","on-surface":"#0b1c30","error":"#ba1a1a","inverse-surface":"#213145","surface-container":"#e5eeff","surface-tint":"#49607e","on-primary-container":"#768dad","tertiary-container":"#002a1b","on-secondary":"#ffffff","secondary-fixed-dim":"#93ccff","outline-variant":"#c4c6ce","primary-fixed":"#d2e4ff","on-primary":"#ffffff","on-tertiary-fixed":"#002114","on-tertiary-fixed-variant":"#005137","surface-container-highest":"#d3e4fe","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","secondary-container":"#5bb8fe","on-primary-fixed-variant":"#314865","outline":"#74777e","surface-bright":"#f8f9ff","error-container":"#ffdad6","on-secondary-fixed-variant":"#004b73","inverse-primary":"#b0c8eb"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"component-gap-lg":"1.5rem","touch-min-patient":"4rem","gutter-kiosk":"2rem","gutter-compact":"1rem","tablet-edge-margin":"2rem","component-gap-sm":"0.75rem","kiosk-edge-margin":"3rem","touch-min-staff":"2.75rem"},fontFamily:{"headline-xl-mobile":["Plus Jakarta Sans"],"display-kiosk-mobile":["Plus Jakarta Sans"],"label-touch":["Inter"],"headline-md":["Plus Jakarta Sans"],"display-kiosk":["Plus Jakarta Sans"],"body-xl":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-xl":["Plus Jakarta Sans"],"label-triage":["Inter"]},fontSize:{"headline-xl-mobile":["26px",{lineHeight:"34px",fontWeight:"600"}],"display-kiosk-mobile":["36px",{lineHeight:"44px",fontWeight:"700"}],"label-touch":["18px",{lineHeight:"24px",fontWeight:"600"}],"headline-md":["20px",{lineHeight:"28px",fontWeight:"600"}],"display-kiosk":["48px",{lineHeight:"56px",fontWeight:"700"}],"body-xl":["20px",{lineHeight:"30px",fontWeight:"400"}],"headline-lg":["24px",{lineHeight:"32px",fontWeight:"600"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-md":["14px",{lineHeight:"20px",fontWeight:"500"}],"headline-xl":["32px",{lineHeight:"40px",fontWeight:"700"}],"label-triage":["13px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)]"><div class="h-28 w-full px-gutter-kiosk flex flex-col justify-between pt-3 pb-2"><div class="flex items-center justify-between gap-component-gap-lg"><div class="flex items-center gap-4 min-w-max"><img alt="MediKiosk logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xufayy7-uglGbTP_EOes8m8HTIpMB-d0ya10o6-D0C4GzSZsxTJHZnv_ZdK0JxYdfz6DMyt4NTRWOlRVnaZmHKcu69P2VKZGotNCuwr86-k4l8wAd3hSE0beLcUiRMgR1jt7VQyDsUlzN9mJAPQvyTKkmYk66fkQUCZZogwCx1_0Dkzt31zdxjYXbfTtS4uLydVvNPxPNEqS5BJjAtUMkgn00rwh3Vt6iDGFKOVJ5wqG1R_r73Netdf2M"/><div class="flex flex-col"><span class="font-headline-lg text-headline-lg text-primary-container tracking-tight">MediKiosk</span><span class="font-label-triage text-label-triage text-on-surface-variant uppercase">PATIENT PORT • AI Clinical Intake &amp; OPD Consultation Portal</span></div></div><div class="flex items-center gap-component-gap-sm"><div class="inline-flex items-center bg-surface-container-low px-4 py-2 rounded-full shadow-[0_1px_4px_rgba(0,0,0,0.04)]"><span class="font-label-touch text-label-touch text-primary-container tracking-wide">English | हिन्दी</span></div><button class="inline-flex items-center gap-2 bg-surface-container-low hover:bg-surface-container-high px-4 py-2 rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-secondary text-[22px]">volume_up</span><span class="font-label-touch text-label-touch text-on-surface">ऑडियो सहायता (Audio Assist)</span></button><button class="inline-flex items-center gap-2 bg-error-container text-on-error-container hover:bg-error hover:text-on-error px-4 py-2 rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">support</span><span class="font-label-touch text-label-touch font-bold">Help / सहायता</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="flex items-center justify-between bg-surface-container-low px-4 py-1.5 rounded-lg"><div class="flex items-center gap-3 overflow-hidden"><span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span><span class="font-label-md text-label-md text-on-surface font-semibold truncate">STEP 7 • CONSULTATION COMPLETION &amp; PATIENT EXIT (परामर्श पूर्ण एवं निकास)</span></div><div class="flex items-center gap-2"><span class="bg-primary-container text-on-primary px-3 py-0.5 rounded font-label-triage text-label-triage uppercase tracking-wider">TOKEN A-142</span><span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-0.5 rounded font-label-triage text-label-triage uppercase tracking-wider">ROOM 104 • OPD WING</span></div></div></div></header><main class="w-full pt-28 pb-16 bg-surface px-gutter-kiosk"><div class="flex flex-col w-full max-w-7xl mx-auto pb-12">
+<!-- Title / Audio Banner Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-component-gap-sm mb-6 mt-4">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-triage text-label-triage uppercase">
+<span class="material-symbols-outlined text-[16px]">checklist</span>
+<span>Action Roadmap • कार्य योजना (4 चरण)</span>
+</div>
+<h1 class="font-display-kiosk text-headline-xl md:text-display-kiosk text-primary tracking-tight">
+        Your Next Steps Before Leaving
+      </h1>
+<p class="font-headline-md text-headline-md text-secondary font-semibold">
+        अस्पताल छोड़ने से पहले आपके अगले महत्वपूर्ण कदम
+      </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl pt-1">
+        Follow these 4 simple steps to collect your medicines, submit lab samples, and schedule your next visit with zero hassle.
+      </p>
+</div>
+<!-- Audio Prompt Quick Player -->
+<div class="flex items-center gap-3 bg-surface-container-low px-5 py-3 rounded-xl shadow-sm">
+<button aria-label="Listen in Hindi" class="w-12 h-12 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md active:scale-95 transition-transform" id="voiceNarratorBtn" type="button">
+<span class="material-symbols-outlined text-[26px]">record_voice_over</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-touch text-label-md text-primary font-bold">निर्देश सुनें (Listen Hindi)</span>
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span> 42s Audio Guide
+        </span>
+</div>
+</div>
+</div>
+<!-- Main Grid: 4 Interactive Step Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-component-gap-lg mb-8">
+<!-- STEP 1: Medicines -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="w-12 h-12 rounded-xl bg-primary-container text-on-primary font-headline-lg text-headline-lg flex items-center justify-center font-bold">1</span>
+<div>
+<span class="font-label-triage text-label-triage uppercase text-secondary">Prescription Fulfillment</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Collect Free Medicines</h2>
+<p class="font-label-touch text-label-touch text-on-surface-variant font-medium">दवाइयाँ प्राप्त करें (जन औषधि केंद्र)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[36px]">medication</span>
+</div>
+<div class="space-y-3 my-4">
+<div class="bg-surface-container-low p-3.5 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Jan Aushadhi Kendra / OPD Counter 4</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Ground Floor (Floor G), East Wing Corridor</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">alt_route</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Wayfinding Guide:</span>
+<span class="font-body-md text-body-md text-on-surface">Turn <strong>left</strong> from Room 104, walk <strong>30 meters</strong> along the bright <span class="text-secondary font-bold">Blue Floor Line</span>.</span>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container flex items-center gap-3">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">assignment_turned_in</span>
+<span class="font-body-md text-body-md text-on-surface">Action: Hand your printed prescription slip (<strong>Token A-142</strong>) to the pharmacist.</span>
+</div>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 font-label-triage text-label-triage text-on-tertiary-container bg-surface-container-low px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">verified</span> 4 Prescribed Drugs in Stock
+        </span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Counter Open Now</span>
+</div>
+</div>
+<!-- STEP 2: Lab Tests -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="w-12 h-12 rounded-xl bg-primary-container text-on-primary font-headline-lg text-headline-lg flex items-center justify-center font-bold">2</span>
+<div>
+<span class="font-label-triage text-label-triage uppercase text-secondary">Pathology &amp; Diagnostics</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Book / Submit Lab Tests</h2>
+<p class="font-label-touch text-label-touch text-on-surface-variant font-medium">जाँच के लिए सैंपल दें (रक्त एवं अन्य)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[36px]">chips</span>
+</div>
+<div class="space-y-3 my-4">
+<div class="bg-surface-container-low p-3.5 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">door_front</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Central Sample Collection Room 18</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Ground Floor (Floor G), Main OPD Corridor</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-[22px] mt-0.5">hourglass_top</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Fasting Blood Sugar &amp; Lipid Profile</span>
+<span class="font-body-md text-body-md text-on-surface"><strong>Requirement:</strong> Requires 10-12 hours fasting. Come tomorrow morning.</span>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container flex items-center gap-3">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">schedule</span>
+<span class="font-body-md text-body-md text-on-surface">Timing: Open Daily <strong>07:30 AM – 02:00 PM</strong> (Token pre-booked)</span>
+</div>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 font-label-triage text-label-triage text-on-secondary-container bg-surface-container-low px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span> Digital SMS Reminder Active
+        </span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Barcode: #L-99824</span>
+</div>
+</div>
+<!-- STEP 3: Billing & Exemptions -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="w-12 h-12 rounded-xl bg-primary-container text-on-primary font-headline-lg text-headline-lg flex items-center justify-center font-bold">3</span>
+<div>
+<span class="font-label-triage text-label-triage uppercase text-secondary">Billing &amp; Waiver Status</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Billing &amp; Exemptions</h2>
+<p class="font-label-touch text-label-touch text-on-surface-variant font-medium">बिलिंग / छूट सत्यापन (शून्य शुल्क)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-tertiary-container text-[36px]">receipt_long</span>
+</div>
+<div class="space-y-3 my-4">
+<div class="bg-surface-container-low p-4 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-[24px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Ayushman Bharat (PM-JAY) Covered</span>
+<span class="font-body-md text-body-md text-on-surface-variant">100% Cashless Government Health Mission Benefit</span>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant">Total Consultation &amp; Drug Fees</span>
+<span class="font-headline-md text-headline-md text-primary">₹0.00 (Zero Billing)</span>
+</div>
+<span class="px-3 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-triage text-label-triage uppercase font-bold">Cleared</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface"><strong>No queue needed:</strong> You can proceed straight to pharmacy and exit.</span>
+</div>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between">
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase">ABHA ID: 91-4402-1892-3301</span>
+<span class="font-label-md text-label-md text-on-tertiary-container font-semibold">Settled Electronically</span>
+</div>
+</div>
+<!-- STEP 4: Follow-up Appointment -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="w-12 h-12 rounded-xl bg-primary-container text-on-primary font-headline-lg text-headline-lg flex items-center justify-center font-bold">4</span>
+<div>
+<span class="font-label-triage text-label-triage uppercase text-secondary">Follow-Up Schedule</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Follow-up Appointment</h2>
+<p class="font-label-touch text-label-touch text-on-surface-variant font-medium">अगला परामर्श (पुनः मुलाक़ात)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[36px]">event_available</span>
+</div>
+<div class="space-y-3 my-4">
+<div class="bg-surface-container-low p-3.5 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">calendar_month</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Monday, 14 September 2025 • 10:00 AM</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Slot Confirmed in Hospital HMS Database</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">person</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Dr. Rajesh Sharma (MD, Medicine)</span>
+<span class="font-body-md text-body-md text-on-surface">Room 104, General Medicine Wing</span>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<span class="font-body-md text-body-md text-on-surface"><strong>Important:</strong> Please bring your fresh morning fasting lab reports.</span>
+</div>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 font-label-triage text-label-triage text-primary bg-surface-container px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">sync</span> Token Auto-Reserved
+        </span>
+<span class="font-label-md text-label-md text-secondary font-semibold">SMS Reminder 24h Prior</span>
+</div>
+</div>
+</div>
+<!-- Wayfinding Corridor Map & Hospital Assistance Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-component-gap-lg mb-8">
+<!-- Visual Wayfinding Diagram Card (2 Columns) -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[26px]">map</span>
+<h3 class="font-headline-md text-headline-md text-primary">Visual Wayfinding • मार्ग निर्देश नक्शा</h3>
+</div>
+<span class="font-label-triage text-label-triage bg-secondary-fixed text-on-secondary-fixed px-2.5 py-1 rounded">FOLLOW BLUE LINE ON FLOOR</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+          Follow the designated ground markings to navigate effortlessly from your current consultation room to the exit gate.
+        </p>
+<!-- Floor Map Route Visualization -->
+<div class="bg-surface-container-low p-5 rounded-xl">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 relative">
+<!-- Current Location Node -->
+<div class="flex flex-col items-center text-center p-3 bg-surface-container-lowest rounded-lg shadow-sm w-full md:w-44">
+<span class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[20px]">stethoscope</span>
+</span>
+<span class="font-label-triage text-label-triage uppercase text-on-tertiary-container font-bold">YOU ARE HERE</span>
+<span class="font-headline-md text-headline-md text-primary">Room 104</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Dr. Sharma OPD</span>
+</div>
+<!-- Path Segment 1 -->
+<div class="flex flex-col items-center justify-center w-full md:flex-1 py-2 md:py-0">
+<span class="font-label-triage text-label-triage text-secondary font-bold mb-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">footprint</span> 30 Meters
+              </span>
+<div class="h-2 w-full bg-secondary-container rounded-full relative overflow-hidden">
+<div class="h-full bg-secondary w-full animate-pulse"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1 text-center">Turn Left along Blue Stripe</span>
+</div>
+<!-- Stop 1: Pharmacy -->
+<div class="flex flex-col items-center text-center p-3 bg-surface-container-lowest rounded-lg shadow-sm w-full md:w-44">
+<span class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[20px]">local_pharmacy</span>
+</span>
+<span class="font-label-triage text-label-triage uppercase text-secondary font-bold">STOP 1 • MEDS</span>
+<span class="font-headline-md text-headline-md text-primary">Counter 4</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Jan Aushadhi East</span>
+</div>
+<!-- Path Segment 2 -->
+<div class="flex flex-col items-center justify-center w-full md:flex-1 py-2 md:py-0">
+<span class="font-label-triage text-label-triage text-secondary font-bold mb-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">directions_walk</span> 20 Meters
+              </span>
+<div class="h-2 w-full bg-surface-variant rounded-full relative overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-full"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1 text-center">Straight Corridor</span>
+</div>
+<!-- Stop 2: Exit -->
+<div class="flex flex-col items-center text-center p-3 bg-surface-container-lowest rounded-lg shadow-sm w-full md:w-44">
+<span class="w-10 h-10 rounded-full bg-surface-container-highest text-primary flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[20px]">door_back</span>
+</span>
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold">FINAL EXIT</span>
+<span class="font-headline-md text-headline-md text-primary">Exit Gate 2</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Main Porch &amp; Auto Stand</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Tips on Navigation -->
+<div class="flex items-center gap-2 pt-4 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">lightbulb</span>
+<span>Braille tactile floor indicators and overhead multilingual signage boards are available throughout this corridor.</span>
+</div>
+</div>
+<!-- Attendant / Porter Request Module (1 Column) -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">accessible</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Mobility Support</h3>
+<span class="font-label-touch text-label-touch text-on-surface-variant">सहायक या व्हीलचेयर अनुरोध</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+          Need assistance walking, a wheelchair, or a hospital porter to help you reach Pharmacy Counter 4 or the Main Exit?
+        </p>
+<!-- Dynamic Request Card -->
+<div class="bg-surface-container-low p-4 rounded-xl mb-4 transition-all" id="porterStatusBox">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[28px]">support_agent</span>
+<div class="flex flex-col">
+<span class="font-label-touch text-label-touch text-primary">Dedicated Attendants On-Duty</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Average arrival time: ~2 minutes</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<button class="w-full min-h-touch-min-staff bg-primary-container hover:bg-secondary text-on-primary rounded-xl font-label-touch text-label-touch flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-[0.99]" id="requestPorterBtn" type="button">
+<span class="material-symbols-outlined text-[22px]">transfer_within_a_station</span>
+<span>Request Porter / सहायक बुलाएँ</span>
+</button>
+<span class="block text-center font-label-triage text-label-triage text-on-surface-variant uppercase">Complimentary Hospital Service</span>
+</div>
+</div>
+</div>
+<!-- Printable Summary & Digital Receipt Preview Bar -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[26px]">print</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary">Printout Dispatched</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-triage text-label-triage px-2 py-0.5 rounded">Tray Slot #1</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Your physical OPD summary token with medication barcodes has been printed below the screen.</span>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-2 transition-colors" id="reprintBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+<span>Reprint Slip / पुनः प्रिंट</span>
+</button>
+<button class="px-5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-2 transition-colors" id="smsBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">sms</span>
+<span>Send to WhatsApp</span>
+</button>
+</div>
+</div>
+<!-- Bottom Interactive Primary & Secondary Navigation Zone -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
+<!-- Back Button -->
+<button class="w-full sm:w-auto min-h-touch-min-patient px-8 rounded-xl bg-surface-container-lowest hover:bg-surface-container text-primary font-label-touch text-label-touch flex items-center justify-center gap-3 shadow-sm transition-all active:scale-[0.98]" onclick="history.back()" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+<span>Back / पीछे लौटें</span>
+</button>
+<!-- Quick Help Prompt -->
+<div class="hidden lg:flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">help_center</span>
+<span class="font-label-md text-label-md">Need clarification? Ask the OPD Volunteer standing at Desk 1</span>
+</div>
+<!-- Primary Action: Final Exit / Next -->
+<button class="w-full sm:w-auto min-h-touch-min-patient px-10 rounded-xl bg-primary-container hover:bg-secondary text-on-primary font-label-touch text-label-touch flex items-center justify-center gap-3 shadow-md hover:shadow-lg transition-all active:scale-[0.98]" id="finalExitBtn" type="button">
+<span class="font-bold tracking-wide">Proceed to Final Exit • निकास की ओर बढ़ें</span>
+<span class="material-symbols-outlined text-[26px]">arrow_forward</span>
+</button>
+</div>
+<!-- Toast Notification Container for Micro-Interactions -->
+<div class="fixed top-32 right-8 z-50 bg-primary-container text-on-primary px-6 py-4 rounded-xl shadow-xl transform translate-y-8 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-3" id="toastMessage">
+<span class="material-symbols-outlined text-secondary-container text-[24px]" id="toastIcon">check_circle</span>
+<span class="font-label-touch text-label-touch" id="toastText">Action completed successfully</span>
+</div>
+</div>
+<script>
+  // Simple interactive handling for Kiosk Touch Display
+  const showToast = (text, icon = 'check_circle') => {
+    const toast = document.getElementById('toastMessage');
+    const toastText = document.getElementById('toastText');
+    const toastIcon = document.getElementById('toastIcon');
+    if (!toast) return;
+
+    toastText.textContent = text;
+    toastIcon.textContent = icon;
+    toast.classList.remove('opacity-0', 'translate-y-8', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
+    }, 3200);
+  };
+
+  // Porter / Assistance Request
+  const porterBtn = document.getElementById('requestPorterBtn');
+  const porterStatusBox = document.getElementById('porterStatusBox');
+  if (porterBtn && porterStatusBox) {
+    porterBtn.addEventListener('click', () => {
+      porterBtn.disabled = true;
+      porterBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[22px]">progress_activity</span> <span>Dispatching Attendant...</span>';
+      
+      setTimeout(() => {
+        porterBtn.className = 'w-full min-h-touch-min-staff bg-surface-container text-on-surface-variant rounded-xl font-label-touch text-label-touch flex items-center justify-center gap-2 cursor-default';
+        porterBtn.innerHTML = '<span class="material-symbols-outlined text-on-tertiary-container text-[22px]">done_all</span> <span>Porter Dispatched • सहायक रवाना</span>';
+        
+        porterStatusBox.className = 'bg-surface-container-high p-4 rounded-xl mb-4 transition-all';
+        porterStatusBox.innerHTML = `
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-on-tertiary-container text-[28px]">wheelchair_pickup</span>
+            <div class="flex flex-col">
+              <span class="font-label-touch text-label-touch text-primary">Attendant: Ramesh Kumar (Badge #14)</span>
+              <span class="font-label-md text-label-md text-on-surface">Arriving with Wheelchair to Room 104 in ~90 secs.</span>
+            </div>
+          </div>
+        `;
+        showToast('Attendant Ramesh Kumar is on the way to Room 104', 'accessible');
+      }, 1000);
+    });
+  }
+
+  // Audio Guide Toggle Micro-interaction
+  const voiceBtn = document.getElementById('voiceNarratorBtn');
+  let isPlaying = false;
+  if (voiceBtn) {
+    voiceBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        voiceBtn.innerHTML = '<span class="material-symbols-outlined text-[26px] animate-pulse">pause</span>';
+        showToast('ऑडियो निर्देश चल रहे हैं (Playing instructions in Hindi)...', 'volume_up');
+      } else {
+        voiceBtn.innerHTML = '<span class="material-symbols-outlined text-[26px]">record_voice_over</span>';
+        showToast('Audio guide paused / ऑडियो रोक दिया गया', 'volume_off');
+      }
+    });
+  }
+
+  // Reprint Button Interaction
+  const reprintBtn = document.getElementById('reprintBtn');
+  if (reprintBtn) {
+    reprintBtn.addEventListener('click', () => {
+      showToast('Prescription reprint sent to Kiosk Printer Slot #1', 'print');
+    });
+  }
+
+  // WhatsApp / SMS Delivery
+  const smsBtn = document.getElementById('smsBtn');
+  if (smsBtn) {
+    smsBtn.addEventListener('click', () => {
+      showToast('Prescription & lab slips forwarded to registered mobile +91-XXXXX-9214', 'chat');
+    });
+  }
+
+  // Final Exit Action
+  const finalExitBtn = document.getElementById('finalExitBtn');
+  if (finalExitBtn) {
+    finalExitBtn.addEventListener('click', () => {
+      showToast('Thank you! Wishing you a speedy recovery • धन्यवाद!', 'verified');
+      setTimeout(() => {
+        // Safe redirect simulation for Kiosk interface reset
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 1200);
+    });
+  }
+</script></main><footer class="fixed bottom-0 left-0 right-0 h-16 z-50 bg-primary-container text-on-primary shadow-[0_-2px_10px_rgba(0,0,0,0.1)] flex items-center px-gutter-kiosk justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary-container text-[24px]">emergency</span><span class="font-label-touch text-label-touch font-semibold text-white tracking-wide">🚨 Emergency? Press Attendant Help • आपातकाल? सहायक बुलाएँ</span></div><div class="flex items-center gap-2 text-on-primary-container"><span class="material-symbols-outlined text-[18px]">lock</span><span class="font-label-md text-label-md">Session confidential &amp; 256-bit ABDM encrypted (सत्र गोपनीय एवं सुरक्षित है)</span></div><div class="flex items-center gap-2 bg-surface-container-lowest/10 px-3 py-1.5 rounded-full"><span class="material-symbols-outlined text-secondary-fixed text-[18px]">touch_app</span><span class="font-label-triage text-label-triage text-secondary-fixed uppercase tracking-wider">Touch Screen Enabled</span></div></footer></body></html>

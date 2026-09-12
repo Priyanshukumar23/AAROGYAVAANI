@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>MediKiosk Doctor Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-high": "#dce9ff",
+          "primary-fixed-dim": "#b0c8eb",
+          "inverse-primary": "#b0c8eb",
+          "inverse-surface": "#213145",
+          "error": "#ba1a1a",
+          "on-error": "#ffffff",
+          "on-secondary-fixed": "#001d31",
+          "surface-container-low": "#eff4ff",
+          "on-surface-variant": "#43474d",
+          "on-tertiary-fixed-variant": "#005137",
+          "on-surface": "#0b1c30",
+          "surface-variant": "#d3e4fe",
+          "on-primary": "#ffffff",
+          "secondary": "#006398",
+          "surface": "#f8f9ff",
+          "on-primary-fixed-variant": "#314865",
+          "on-secondary-container": "#00476e",
+          "surface-tint": "#49607e",
+          "secondary-container": "#5bb8fe",
+          "on-secondary-fixed-variant": "#004b73",
+          "on-secondary": "#ffffff",
+          "inverse-on-surface": "#eaf1ff",
+          "secondary-fixed": "#cce5ff",
+          "on-primary-container": "#768dad",
+          "on-tertiary-container": "#1a9e70",
+          "tertiary-container": "#002a1b",
+          "tertiary": "#001209",
+          "primary-container": "#0a2540",
+          "background": "#f8f9ff",
+          "surface-dim": "#cbdbf5",
+          "surface-container-highest": "#d3e4fe",
+          "secondary-fixed-dim": "#93ccff",
+          "tertiary-fixed": "#85f8c4",
+          "outline-variant": "#c4c6ce",
+          "primary-fixed": "#d2e4ff",
+          "outline": "#74777e",
+          "primary": "#000f22",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed-dim": "#68dba9",
+          "surface-container": "#e5eeff",
+          "error-container": "#ffdad6",
+          "on-background": "#0b1c30",
+          "on-primary-fixed": "#001c37",
+          "on-tertiary-fixed": "#002114",
+          "surface-bright": "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "on-error-container": "#93000a"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "tablet-edge-margin": "2rem",
+          "gutter-kiosk": "2rem",
+          "touch-min-patient": "4rem",
+          "component-gap-lg": "1.5rem",
+          "touch-min-staff": "2.75rem",
+          "component-gap-sm": "0.75rem",
+          "kiosk-edge-margin": "3rem",
+          "gutter-compact": "1rem"
+        },
+        "fontFamily": {
+          "display-kiosk": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "label-touch": [
+            "Inter"
+          ],
+          "body-xl": [
+            "Inter"
+          ],
+          "display-kiosk-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "label-triage": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "display-kiosk": [
+            "48px",
+            {
+              "lineHeight": "56px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-touch": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-xl": [
+            "20px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-kiosk-mobile": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "label-triage": [
+            "13px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.05em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-xl-mobile": [
+            "26px",
+            {
+              "lineHeight": "34px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-6 py-5 bg-surface-container-low flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shrink-0 shadow-sm"><span class="material-symbols-outlined text-[24px]">local_hospital</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline-md text-headline-md tracking-tight text-on-surface font-bold truncate">MediKiosk</span><span class="px-1.5 py-0.5 rounded bg-secondary text-on-secondary font-label-triage text-[10px] uppercase font-bold tracking-wider">Doctor</span></div><span class="text-[12px] font-label-md text-on-surface-variant font-medium truncate">AIIMS New Delhi</span></div></div><div class="px-4 py-3"><span class="px-3 text-[11px] font-label-triage tracking-wider uppercase text-on-surface-variant/80 font-bold">Clinical Workflows</span></div><nav class="flex flex-col gap-1 px-3" data-active-classes="bg-primary-container text-white font-semibold shadow-sm"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="opd-queue" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">group</span><span class="font-label-md text-label-md flex-1">OPD Queue</span><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-bold font-label-triage">24 Live</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="patients-cases" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">folder_open</span><span class="font-label-md text-label-md">Patients &amp; Cases</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all group" data-path="red-flag-alerts" href="#"><span class="material-symbols-outlined text-[20px] text-error transition-colors">warning</span><span class="font-label-md text-label-md flex-1 text-on-surface group-hover:text-on-error-container font-semibold">Red Flag Alerts</span><span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="medical-documents-ocr" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">description</span><span class="font-label-md text-label-md">Medical Documents &amp; OCR</span></a><a aria-current="page" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-all group bg-primary-container text-white font-semibold shadow-sm" data-path="clinical-timeline" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">timeline</span><span class="font-label-md text-label-md">Clinical Timeline</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="consultation-workspace" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">stethoscope</span><span class="font-label-md text-label-md">Consultation Workspace</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="reports-analytics" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">bar_chart</span><span class="font-label-md text-label-md">Reports &amp; Analytics</span></a></nav></div><div class="p-3 bg-surface-container-low flex flex-col gap-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="clinical-support" href="#"><span class="material-symbols-outlined text-[20px]">help</span><span class="font-label-md text-label-md">Help &amp; Clinical Support</span></a><div class="p-3 rounded-lg bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex items-center justify-between"><div class="flex items-center gap-2.5 min-w-0"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-white font-bold text-xs shrink-0">RS</div><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md font-bold text-on-surface truncate">Dr. Rajesh Sharma</span><span class="text-[11px] font-label-md text-on-surface-variant truncate">MD (Internal Med)</span></div></div><a class="text-on-surface-variant hover:text-error hover:bg-surface-container-high p-1.5 rounded-lg transition-colors" data-path="doctor-login" href="#" title="Sign out of Chamber"><span class="material-symbols-outlined text-[18px]">logout</span></a></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6"><div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-secondary shrink-0"></span><div class="flex items-center gap-2 text-on-surface font-label-md text-label-md"><span class="font-semibold text-on-surface">Dept. of General Medicine</span><span class="text-outline-variant">•</span><span class="text-on-surface-variant">OPD Chamber Room 104</span><span class="text-outline-variant">•</span><span class="text-on-surface-variant text-[13px]">AIIMS New Delhi</span></div></div><div class="flex-1 max-w-lg mx-6"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">search</span><input class="w-full h-10 pl-10 pr-20 bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline font-body-md text-sm outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-secondary transition-all" placeholder="Search patient name, UHID, or Token A-XXX..." type="text"/><div class="absolute right-2.5 flex items-center gap-1"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[11px] font-mono font-semibold">⌘K</kbd></div></div></div><div class="flex items-center gap-4 shrink-0"><div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shrink-0 ring-4 ring-tertiary-fixed/30"></span><span class="font-label-triage text-[11px] text-on-surface uppercase tracking-wider font-bold">Available / In Chamber</span></div><div class="hidden xl:flex items-center gap-2 px-2.5 py-1.5 rounded-md bg-secondary-fixed/40"><span class="material-symbols-outlined text-secondary text-[16px]">verified</span><span class="font-label-triage text-[11px] text-on-secondary-fixed uppercase tracking-wider font-bold">ABDM v2 Sync</span></div><div class="relative"><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-error text-on-error font-label-triage text-[10px] flex items-center justify-center font-bold">2</span></div><div class="h-6 w-[1px] bg-surface-container-high"></div><div class="flex items-center gap-3 pl-1"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden 2xl:flex flex-col"><span class="text-[12px] font-bold text-on-surface leading-tight">Dr. Rajesh Sharma</span><span class="text-[10px] font-label-triage text-secondary font-semibold uppercase tracking-wider">Audit Active</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<!-- Top Command & Patient Identity Sticky Ribbon -->
+<section class="sticky top-16 z-30 bg-surface-container-lowest shadow-sm">
+<div class="px-8 py-5 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
+<!-- Title & Patient Identity Row -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-md shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">timeline</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Patient Longitudinal Medical Timeline</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-triage text-label-triage uppercase">ABDM v2 Verified</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-triage text-label-triage">HL7 FHIR R4</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+              Chronological longitudinal health record compiled from ABDM Health Locker, previous AIIMS visits, and MediKiosk OCR uploads
+            </p>
+</div>
+</div>
+<!-- Patient Quick Context Card -->
+<div class="flex items-center gap-4 bg-surface-container-low px-4 py-2.5 rounded-xl">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-sm shrink-0">
+            RS
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-on-surface truncate">Ramesh Kumar Sharma</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-md text-label-md">48 M</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="font-mono text-xs font-semibold tracking-wider text-secondary">UHID: AIIMS-2025-08492</span>
+<span>•</span>
+<span class="text-xs">ABHA: 91-8492-2041-9011</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-1.5 pl-3 border-l-0">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-triage text-label-triage font-bold">PENICILLIN ALLERGY</span>
+</div>
+</div>
+</div>
+<!-- Filter Controls, Search & Actions Bar -->
+<div class="flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3 pt-2">
+<!-- Event Category Chips -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 xl:pb-0 scrollbar-none" id="filter-tabs">
+<button class="px-3.5 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold shrink-0 shadow-sm flex items-center gap-2 transition-all" data-filter="all">
+<span>All Events</span>
+<span class="px-1.5 py-0.2 bg-white/20 rounded-full text-xs">8</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md shrink-0 flex items-center gap-2 transition-all" data-filter="opd">
+<span>OPD Visits</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded-full text-xs">3</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md shrink-0 flex items-center gap-2 transition-all" data-filter="rx">
+<span>Prescriptions</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded-full text-xs">2</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md shrink-0 flex items-center gap-2 transition-all" data-filter="labs">
+<span>Lab Reports</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded-full text-xs">2</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md shrink-0 flex items-center gap-2 transition-all" data-filter="admission">
+<span>Hospital Admissions</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded-full text-xs">1</span>
+</button>
+</div>
+<!-- Search Bar & Utility Controls -->
+<div class="flex flex-wrap items-center gap-2.5">
+<div class="relative flex-1 sm:w-80">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px] pointer-events-none">filter_alt</span>
+<input class="w-full h-9 pl-9 pr-8 bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline font-body-md text-xs outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-secondary transition-all" id="timeline-search" placeholder="Filter by condition, medication, or doctor..." type="text"/>
+<button class="hidden absolute right-2.5 top-2 text-outline hover:text-on-surface" id="clear-search"><span class="material-symbols-outlined text-[16px]">close</span></button>
+</div>
+<button class="h-9 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" id="compact-toggle">
+<span class="material-symbols-outlined text-[18px]">view_agenda</span>
+<span id="compact-label">Compact View</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">ios_share</span>
+<span>Export EHR Summary</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center gap-1.5 hover:bg-secondary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Historical Note</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Timeline Content Container -->
+<div class="max-w-[1600px] mx-auto w-full px-8 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Primary Longitudinal Thread (Col 8) -->
+<div class="lg:col-span-8 flex flex-col gap-10">
+<!-- ================= YEAR: 2025 ================= -->
+<div class="timeline-year-group relative" data-year="2025">
+<!-- Year Marker Badge & Rail Anchor -->
+<div class="flex items-center gap-4 mb-6">
+<div class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-headline-md text-headline-md font-bold tracking-tight shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">event_available</span>
+<span>2025</span>
+</div>
+<div class="flex-1 h-[2px] bg-surface-container-highest"></div>
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-semibold">Current Year • 3 Encounters</span>
+</div>
+<!-- Vertical Connecting Track -->
+<div class="relative pl-8 sm:pl-10 space-y-6 before:content-[''] before:absolute before:left-3.5 sm:before:left-4 before:top-2 before:bottom-2 before:w-[3px] before:bg-gradient-to-b before:from-secondary before:via-secondary/40 before:to-surface-container-highest">
+<!-- Encounter 1: TODAY • 24 Oct 2025 (ACTIVE OPD VISIT) -->
+<div class="timeline-card relative group" data-category="opd" data-keywords="chest discomfort acute bp ecg rajesh sharma general medicine token a-142">
+<!-- Node Indicator -->
+<div class="absolute -left-8 sm:-left-10 top-5 w-7 h-7 rounded-full bg-secondary ring-4 ring-secondary-fixed/50 flex items-center justify-center text-on-secondary shadow-md">
+<span class="material-symbols-outlined text-[16px]">stethoscope</span>
+</div>
+<!-- Main Card Container -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-md transition-all hover:shadow-lg">
+<!-- Encounter Banner / Top Meta -->
+<div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b-0">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded-md bg-secondary text-on-secondary font-label-triage text-label-triage uppercase tracking-wider font-bold animate-pulse">
+                      TODAY • 24 OCT 2025
+                    </span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-triage text-label-triage font-bold">
+                      TOKEN A-142
+                    </span>
+<span class="text-xs font-label-md text-on-surface-variant">09:42 AM IST</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim ring-2 ring-tertiary-fixed/40"></span>
+<span class="font-label-triage text-label-triage uppercase text-on-surface font-bold">Active Intake Complete</span>
+</div>
+</div>
+<!-- Encounter Core Body -->
+<div class="mt-3 flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div class="space-y-2 max-w-2xl">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Current Active OPD Visit</h2>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant font-label-md text-label-md">Chamber Room 104</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<span class="font-semibold text-on-surface">Consulting Clinician:</span> Dr. Rajesh Sharma, MD (Internal Medicine)
+                    </p>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface font-semibold text-sm">
+<span class="material-symbols-outlined text-[18px] text-error">ecg_heart</span>
+<span>Clinical Presentation &amp; Triage Vitals:</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                        Patient walked into MediKiosk presenting with <span class="font-bold text-error">Acute chest discomfort (Severity: 8/10)</span> radiating to left shoulder, onset 2 hours prior. Blood Pressure elevated at <span class="font-bold text-error">150/94 mmHg</span>, Pulse 88 bpm regular, SpO2 97% on room air.
+                      </p>
+<div class="flex items-center gap-2 pt-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">assignment_turned_in</span>
+<span>Stat 12-Lead ECG ordered • Point-of-Care Troponin-I test pending review</span>
+</div>
+</div>
+</div>
+<!-- Quick Stats Tile -->
+<div class="p-3 rounded-xl bg-error-container/40 flex flex-col gap-1.5 shrink-0 sm:w-48">
+<span class="font-label-triage text-[11px] text-on-error-container uppercase font-bold tracking-wider">Triage Priority</span>
+<span class="font-headline-md text-headline-md font-bold text-error">P1 High Urgent</span>
+<span class="text-[12px] text-on-error-container">Re-evaluate within 15 min</span>
+</div>
+</div>
+<!-- Card Action Strip -->
+<div class="mt-5 pt-4 flex flex-wrap items-center justify-between gap-3 bg-surface-container-low/50 -mx-6 -mb-6 px-6 py-3 rounded-b-2xl">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">sensors</span>
+<span>MediKiosk Kiosk #01 Automated Vitals Streamed</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors">
+                      View Chamber Vitals
+                    </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold transition-colors flex items-center gap-1.5 shadow-sm">
+<span>Begin Clinical Exam</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Encounter 2: 18 Aug 2025 (LABORATORY PATHOLOGY PANEL) -->
+<div class="timeline-card relative group" data-category="labs" data-keywords="glucose hemoglobin cholesterol lab report pathology civil hospital ocr kiosk">
+<!-- Node Indicator -->
+<div class="absolute -left-8 sm:-left-10 top-5 w-7 h-7 rounded-full bg-surface-container-lowest ring-2 ring-outline-variant flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[16px]">biotech</span>
+</div>
+<!-- Main Card Container -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">18 Aug 2025</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-triage text-label-triage uppercase">
+                      Lab Pathology Panel
+                    </span>
+<span class="text-xs font-label-md text-on-surface-variant">Civil Hospital, Rohini</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">document_scanner</span>
+<span>Scanned via MediKiosk Kiosk 03 (OCR Extracted)</span>
+</div>
+</div>
+<!-- Structured Findings Metrics -->
+<div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3">
+<!-- Metric 1 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-xs">
+<span>Fasting Blood Glucose</span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-headline-md text-headline-md font-bold text-error">148</span>
+<span class="text-xs text-on-surface-variant font-medium">mg/dL</span>
+</div>
+<span class="text-[11px] text-error font-semibold mt-1">High (Ref: 70–100)</span>
+</div>
+<!-- Metric 2 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-xs">
+<span>Hemoglobin (Hb)</span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-headline-md text-headline-md font-bold text-error">10.2</span>
+<span class="text-xs text-on-surface-variant font-medium">g/dL</span>
+</div>
+<span class="text-[11px] text-error font-semibold mt-1">Mild Anemia (Ref: 13.5–17.5)</span>
+</div>
+<!-- Metric 3 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-xs">
+<span>Total Cholesterol</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">224</span>
+<span class="text-xs text-on-surface-variant font-medium">mg/dL</span>
+</div>
+<span class="text-[11px] text-on-surface-variant font-semibold mt-1">Borderline High (Ref: &lt;200)</span>
+</div>
+</div>
+<!-- Sparkline Trend Thumbnail -->
+<div class="mt-4 p-3 rounded-xl bg-surface-container-low/60 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px]">trending_up</span>
+<div class="flex flex-col">
+<span class="font-label-md text-xs font-semibold text-on-surface">3-Year Fasting Glucose Trend</span>
+<span class="text-[11px] text-on-surface-variant">Gradual upward drift: 126 mg/dL (2021) → 134 mg/dL (2023) → 148 mg/dL (2025)</span>
+</div>
+</div>
+<!-- Inline Micro Sparkline SVG -->
+<div class="w-28 h-8 shrink-0">
+<svg class="w-full h-full" fill="none" viewbox="0 0 100 30">
+<path class="text-error" d="M5 25 L 35 18 L 65 14 L 95 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle class="text-on-surface-variant" cx="5" cy="25" fill="currentColor" r="3"></circle>
+<circle class="text-on-surface-variant" cx="35" cy="18" fill="currentColor" r="3"></circle>
+<circle class="text-on-surface-variant" cx="65" cy="14" fill="currentColor" r="3"></circle>
+<circle class="text-error" cx="95" cy="4" fill="currentColor" r="3.5"></circle>
+</svg>
+</div>
+</div>
+<!-- Action Triggers -->
+<div class="mt-4 pt-3 flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>View Scanned Slip</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-secondary/10 hover:bg-secondary/20 text-secondary font-label-md text-label-md font-semibold flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">bar_chart</span>
+<span>View Biomarkers</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Encounter 3: 12 Jul 2025 (OUTPATIENT CARDIOLOGY CONSULTATION) -->
+<div class="timeline-card relative group" data-category="opd rx" data-keywords="cardiology consultation verma hypertension telmisartan metformin aiims delhi">
+<!-- Node Indicator -->
+<div class="absolute -left-8 sm:-left-10 top-5 w-7 h-7 rounded-full bg-surface-container-lowest ring-2 ring-outline-variant flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[16px]">clinical_notes</span>
+</div>
+<!-- Main Card Container -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">12 Jul 2025</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-triage text-label-triage uppercase">
+                      OPD Cardiology Consultation
+                    </span>
+<span class="text-xs font-label-md text-on-surface-variant">AIIMS New Delhi</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-triage text-label-triage font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                    ABDM Verified Record
+                  </span>
+</div>
+<div class="space-y-2 mt-2">
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold">Dr. A. K. Verma, MD (Cardiology)</span> • Room 12 Cardiology Outpatient Clinic
+                  </p>
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-label-md text-xs">
+                      Primary Diagnosis: <strong class="text-on-surface">Essential Hypertension (ICD-11: BA00), Stage 1</strong>
+</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-label-md text-xs">
+                      Sitting BP: <strong>144/88 mmHg</strong>
+</span>
+</div>
+<!-- Prescriptions Block -->
+<div class="mt-3 p-3.5 rounded-xl bg-surface-container-low">
+<span class="font-label-triage text-[11px] uppercase font-bold text-on-surface-variant tracking-wider block mb-2">Prescribed Regimen (60 Days Supply)</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<div class="p-2.5 rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">pill</span>
+<div class="flex flex-col">
+<span class="font-bold text-xs text-on-surface">Tab Telmisartan 40mg</span>
+<span class="text-[11px] text-on-surface-variant">Once daily (OD) in morning</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold">Active</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">pill</span>
+<div class="flex flex-col">
+<span class="font-bold text-xs text-on-surface">Tab Metformin 500mg</span>
+<span class="text-[11px] text-on-surface-variant">Twice daily (BD) with meals</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold">Active</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= YEAR: 2024 ================= -->
+<div class="timeline-year-group relative" data-year="2024">
+<!-- Year Marker Badge -->
+<div class="flex items-center gap-4 mb-6">
+<div class="px-3.5 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-headline-md text-headline-md font-bold tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">history</span>
+<span>2024</span>
+</div>
+<div class="flex-1 h-[2px] bg-surface-container-highest"></div>
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-semibold">1 Inpatient Record</span>
+</div>
+<!-- Vertical Rail -->
+<div class="relative pl-8 sm:pl-10 space-y-6 before:content-[''] before:absolute before:left-3.5 sm:before:left-4 before:top-2 before:bottom-2 before:w-[3px] before:bg-surface-container-highest">
+<!-- Encounter 4: 14 May 2024 (INPATIENT HOSPITAL DISCHARGE) -->
+<div class="timeline-card relative group" data-category="admission" data-keywords="hospital admission discharge gastroenteritis dehydration iv rehydration district hospital">
+<!-- Node Indicator -->
+<div class="absolute -left-8 sm:-left-10 top-5 w-7 h-7 rounded-full bg-surface-container-lowest ring-2 ring-outline-variant flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[16px]">hotel</span>
+</div>
+<!-- Main Card Container -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">14 May 2024</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-triage text-label-triage uppercase">
+                      Inpatient Hospital Discharge
+                    </span>
+<span class="text-xs font-label-md text-on-surface-variant">District General Hospital</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-md text-xs font-semibold">
+                    Length of Stay: 3 Days (IPD-88210)
+                  </span>
+</div>
+<div class="space-y-3 mt-1">
+<p class="font-body-md text-body-md text-on-surface">
+                    3-day acute ward admission secondary to <span class="font-semibold">Acute Infectious Gastroenteritis with Moderate Dehydration</span>. Treated with intravenous fluid resuscitation (Normal Saline &amp; Ringer Lactate 3.5L total), antiemetics, and oral rehydration salts.
+                  </p>
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="text-xs font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">verified</span>
+                      Discharge Note Summary:
+                    </span>
+<p class="text-xs text-on-surface-variant">
+                      Hemodynamically stable on discharge (BP 128/78, Pulse 74 regular). Serum creatinine normalized to 0.9 mg/dL (admission 1.4 mg/dL prerenal azotemia). Advised light bland diet and follow-up in primary care.
+                    </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">attachment</span>
+<span>Scanned 2-page paper discharge summary attached</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span>View Summary PDF</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= YEAR: 2022 (CRITICAL ALLERGY EVENT) ================= -->
+<div class="timeline-year-group relative" data-year="2022">
+<!-- Year Marker Badge -->
+<div class="flex items-center gap-4 mb-6">
+<div class="px-3.5 py-1.5 rounded-lg bg-error-container text-on-error-container font-headline-md text-headline-md font-bold tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-error">report_problem</span>
+<span>2022</span>
+</div>
+<div class="flex-1 h-[2px] bg-error-container"></div>
+<span class="font-label-triage text-label-triage uppercase text-error font-bold">1 Critical Sentinel Event</span>
+</div>
+<!-- Vertical Rail with Warning Tint -->
+<div class="relative pl-8 sm:pl-10 space-y-6 before:content-[''] before:absolute before:left-3.5 sm:before:left-4 before:top-2 before:bottom-2 before:w-[3px] before:bg-error/30">
+<!-- Encounter 5: 19 Nov 2022 (EMERGENCY DEPARTMENT • PENICILLIN ANAPHYLAXIS) -->
+<div class="timeline-card relative group" data-category="opd admission" data-keywords="emergency allergy anaphylaxis penicillin amoxicillin bronchospasm safdarjung">
+<!-- Node Indicator -->
+<div class="absolute -left-8 sm:-left-10 top-5 w-7 h-7 rounded-full bg-error text-on-error ring-4 ring-error-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[16px]">emergency</span>
+</div>
+<!-- Main Card Container (Highlighted Warning Aesthetics) -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-md hover:shadow-lg transition-all border-0">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">19 Nov 2022</span>
+<span class="px-2.5 py-0.5 rounded-md bg-error text-on-error font-label-triage text-label-triage uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span>
+                      Emergency Dept Presentation
+                    </span>
+<span class="text-xs font-label-md text-on-surface-variant">Safdarjung Hospital, New Delhi</span>
+</div>
+<span class="px-2.5 py-0.5 rounded bg-error-container text-on-error-container font-label-triage text-label-triage font-bold">
+                    ED-TRIAGE RED FLAG
+                  </span>
+</div>
+<div class="mt-3 p-4 rounded-xl bg-error-container/20 flex flex-col gap-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[22px]">warning</span>
+<h3 class="font-headline-md text-headline-md font-bold text-error">Severe Adverse Drug Reaction / Penicillin Anaphylaxis</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                    Patient arrived in Acute Respiratory Distress 20 minutes following intramuscular <strong class="text-error">Amoxicillin</strong> administration at an external private clinic. Developed acute generalized urticaria, bilateral periorbital and lip angioedema, and marked expiratory bronchospasm.
+                  </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+<div class="p-2.5 rounded-lg bg-surface-container-lowest">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider block">Acute Intervention</span>
+<span class="text-xs font-semibold text-on-surface">IM Epinephrine 0.5mg Stat • IV Hydrocortisone 200mg • Nebulized Salbutamol</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider block">Registry Action</span>
+<span class="text-xs font-semibold text-error">Permanent Penicillin Class Contraindication recorded in National Health Repository</span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-xs text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-[16px]">verified_user</span>
+<span class="font-semibold text-on-surface">Universal EHR Flag:</span>
+<span>All Beta-lactam antibiotics permanently locked from auto-prescription</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-error text-on-error font-label-md text-label-md font-semibold hover:bg-error/90 transition-colors">
+                    View Emergency Crash Sheet
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= YEARS: 2021 & 2019 (FOUNDATIONAL CHRONIC ONSETS) ================= -->
+<div class="timeline-year-group relative" data-year="historical">
+<!-- Year Marker Badge -->
+<div class="flex items-center gap-4 mb-6">
+<div class="px-3.5 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-headline-md text-headline-md font-bold tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">source_notes</span>
+<span>2021 &amp; 2019</span>
+</div>
+<div class="flex-1 h-[2px] bg-surface-container-highest"></div>
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-semibold">2 Baseline Diagnoses</span>
+</div>
+<!-- Vertical Rail -->
+<div class="relative pl-8 sm:pl-10 space-y-6 before:content-[''] before:absolute before:left-3.5 sm:before:left-4 before:top-2 before:bottom-2 before:w-[3px] before:bg-surface-container-highest">
+<!-- Encounter 6: 15 Oct 2021 (INITIAL TYPE 2 DIABETES DIAGNOSIS) -->
+<div class="timeline-card relative group" data-category="opd labs" data-keywords="diabetes mellitus t2dm phc fasting glucose diagnosis baseline">
+<!-- Node Indicator -->
+<div class="absolute -left-8 sm:-left-10 top-5 w-7 h-7 rounded-full bg-surface-container-lowest ring-2 ring-outline-variant flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+</div>
+<!-- Card Container -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-2">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">15 Oct 2021</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-triage text-label-triage uppercase">
+                      Primary Chronic Diagnosis
+                    </span>
+</div>
+<span class="text-xs text-on-surface-variant">Primary Health Centre (PHC) Najafgarh</span>
+</div>
+<div class="space-y-1 mt-1">
+<h4 class="font-headline-md text-sm font-bold text-on-surface">Initial Type 2 Diabetes Mellitus Diagnosis</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Screened during routine community health camp. Fasting blood sugar 162 mg/dL confirmed on repeat 3 days later. HbA1c at intake was 7.8%. Started on Metformin 500mg OD and diabetic lifestyle counselling.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Encounter 7: 04 Mar 2019 (HYPERTENSION DIAGNOSIS RECORDED) -->
+<div class="timeline-card relative group" data-category="opd" data-keywords="hypertension diagnosis baseline 2019 civil dispensary blood pressure">
+<!-- Node Indicator -->
+<div class="absolute -left-8 sm:-left-10 top-5 w-7 h-7 rounded-full bg-surface-container-lowest ring-2 ring-outline-variant flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+</div>
+<!-- Card Container -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-2">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">04 Mar 2019</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-triage text-label-triage uppercase">
+                      Baseline Clinical Onset
+                    </span>
+</div>
+<span class="text-xs text-on-surface-variant">Civil Municipal Dispensary, Delhi</span>
+</div>
+<div class="space-y-1 mt-1">
+<h4 class="font-headline-md text-sm font-bold text-on-surface">Hypertension Diagnosis Recorded</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Initial documentation of persistent resting systolic pressure &gt; 140 mmHg over 3 independent visits. Earliest digital record migrated to ABDM Health Locker from municipal legacy health registry.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Longitudinal Insights, Biomarker Trends & EHR Sources (Col 4) -->
+<div class="lg:col-span-4 flex flex-col gap-6 sticky top-48">
+<!-- Clinical Trajectory Widget -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">ssid_chart</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Disease Trajectory</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-triage text-xs font-semibold">6 Yrs View</span>
+</div>
+<!-- Multi-Parametric Visual Metric Tracker -->
+<div class="space-y-4 pt-1">
+<!-- Blood Pressure Progression -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-xs">
+<span class="font-bold text-on-surface">Blood Pressure (Systolic Mean)</span>
+<span class="font-semibold text-error">150 mmHg (Peak Today)</span>
+</div>
+<!-- Mini Horizontal Multi-Segment Range -->
+<div class="w-full h-2.5 rounded-full bg-surface-container-high flex overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim" style="width: 35%" title="Normal Range"></div>
+<div class="h-full bg-secondary-container" style="width: 35%" title="Stage 1"></div>
+<div class="h-full bg-error" style="width: 30%" title="Stage 2 / Current"></div>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant">
+<span>2019: 138 mmHg</span>
+<span>2022: 142 mmHg</span>
+<span class="font-bold text-error">2025: 150 mmHg</span>
+</div>
+</div>
+<!-- Glycemic Control HbA1c -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between text-xs">
+<span class="font-bold text-on-surface">HbA1c Glycated Hemoglobin</span>
+<span class="font-semibold text-error">7.9% (Suboptimal)</span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container-high flex overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim" style="width: 40%"></div>
+<div class="h-full bg-secondary-container" style="width: 25%"></div>
+<div class="h-full bg-error" style="width: 35%"></div>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant">
+<span>Target: &lt;6.5%</span>
+<span>2021: 7.8%</span>
+<span class="font-bold text-error">Current: 7.9%</span>
+</div>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-secondary shrink-0 mt-0.5">neurology</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface">AI Clinical Co-Pilot:</strong> Patient exhibits progressive metabolic clustering (HTN + T2DM + Dyslipidemia). Current acute chest pain warrants rapid ruling out of Acute Coronary Syndrome (ACS).
+            </p>
+</div>
+</div>
+<!-- ABDM & Integrated Data Sources Registry -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">cloud_sync</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">EHR Source Repositories</h3>
+</div>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+</div>
+<div class="space-y-2.5">
+<!-- Source 1 -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-xs text-on-surface">ABDM Health Locker</span>
+<span class="text-[11px] text-on-surface-variant">Consent Artifact #IN-DL-881920</span>
+</div>
+</div>
+<span class="text-[11px] font-bold text-secondary">Active Link</span>
+</div>
+<!-- Source 2 -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">local_hospital</span>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-xs text-on-surface">AIIMS e-Hospital Core</span>
+<span class="text-[11px] text-on-surface-variant">OPD Cardiology / Internal Med</span>
+</div>
+</div>
+<span class="text-[11px] font-bold text-secondary">Synced 5m ago</span>
+</div>
+<!-- Source 3 -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">document_scanner</span>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-xs text-on-surface">MediKiosk OCR Engine</span>
+<span class="text-[11px] text-on-surface-variant">Physical Slip Scan (Kiosk 03)</span>
+</div>
+</div>
+<span class="text-[11px] font-bold text-on-surface-variant">1 File Parsed</span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Request Additional Records from ABDM</span>
+</button>
+</div>
+<!-- Chronic Problem List Snapshot -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Active Problem List</h3>
+<ul class="space-y-2 text-xs">
+<li class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-semibold text-on-surface">1. Essential Hypertension</span>
+<span class="text-on-surface-variant font-mono">Since 2019</span>
+</li>
+<li class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-semibold text-on-surface">2. Type 2 Diabetes Mellitus</span>
+<span class="text-on-surface-variant font-mono">Since 2021</span>
+</li>
+<li class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-semibold text-on-surface">3. Dyslipidemia</span>
+<span class="text-on-surface-variant font-mono">Since Aug 2025</span>
+</li>
+<li class="flex items-center justify-between p-2 rounded-lg bg-error-container/30 text-error">
+<span class="font-bold">4. Penicillin Anaphylaxis</span>
+<span class="font-bold font-mono">2022 (Severe)</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Sticky Action Dock (Fulfills exact spec) -->
+<footer class="sticky bottom-0 z-40 bg-surface-container-lowest shadow-[0_-4px_12px_rgba(0,0,0,0.06)] px-8 py-4">
+<div class="max-w-[1600px] mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4">
+<!-- Summary Spec String -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">manage_search</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-sm font-bold text-on-surface" id="summary-count-label">
+            Showing 6 verified clinical encounters spanning 2019–2025
+          </span>
+<span class="text-[11px] text-on-surface-variant">
+            Patient UHID: AIIMS-2025-08492 • ABDM Unified Health Record Session Active
+          </span>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<a class="flex-1 sm:flex-initial h-11 px-5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-colors" data-path="patients-cases" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Return to Patient Case</span>
+</a>
+<a class="flex-1 sm:flex-initial h-11 px-6 rounded-lg bg-primary-container text-on-primary hover:bg-primary-container/90 font-label-md text-label-md font-bold flex items-center justify-center gap-2 transition-colors shadow-sm" data-path="consultation-workspace" href="#">
+<span class="material-symbols-outlined text-[20px]">stethoscope</span>
+<span>Open Consultation Workspace</span>
+</a>
+</div>
+</div>
+</footer>
+<!-- Interactive Client-side Logic (Filtering, Live Search, Compact View) -->
+<script>
+    (function initTimelineControls() {
+      const searchInput = document.getElementById('timeline-search');
+      const clearSearchBtn = document.getElementById('clear-search');
+      const filterTabs = document.getElementById('filter-tabs');
+      const compactBtn = document.getElementById('compact-toggle');
+      const compactLabel = document.getElementById('compact-label');
+      const summaryLabel = document.getElementById('summary-count-label');
+      const timelineCards = document.querySelectorAll('.timeline-card');
+      const yearGroups = document.querySelectorAll('.timeline-year-group');
+
+      let currentFilter = 'all';
+      let isCompact = false;
+
+      // Filter Tabs Handling
+      filterTabs.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterTabs.querySelectorAll('button').forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary', 'font-semibold', 'shadow-sm');
+            b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          });
+          btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          btn.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold', 'shadow-sm');
+
+          currentFilter = btn.getAttribute('data-filter');
+          applyFilters();
+        });
+      });
+
+      // Search Handling
+      searchInput.addEventListener('input', (e) => {
+        if (e.target.value.trim().length > 0) {
+          clearSearchBtn.classList.remove('hidden');
+        } else {
+          clearSearchBtn.classList.add('hidden');
+        }
+        applyFilters();
+      });
+
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearchBtn.classList.add('hidden');
+        applyFilters();
+        searchInput.focus();
+      });
+
+      // Compact Mode Toggle
+      compactBtn.addEventListener('click', () => {
+        isCompact = !isCompact;
+        compactLabel.textContent = isCompact ? "Expanded View" : "Compact View";
+        
+        timelineCards.forEach(card => {
+          const innerContent = card.querySelector('.space-y-2, .space-y-3, .mt-3');
+          if (isCompact) {
+            card.classList.add('py-3');
+            if (innerContent) innerContent.classList.add('hidden');
+          } else {
+            card.classList.remove('py-3');
+            if (innerContent) innerContent.classList.remove('hidden');
+          }
+        });
+      });
+
+      function applyFilters() {
+        const query = searchInput.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        timelineCards.forEach(card => {
+          const cat = card.getAttribute('data-category') || '';
+          const keywords = card.getAttribute('data-keywords') || '';
+          const cardText = card.innerText.toLowerCase();
+
+          const matchesCat = (currentFilter === 'all') || cat.includes(currentFilter);
+          const matchesQuery = !query || keywords.toLowerCase().includes(query) || cardText.includes(query);
+
+          if (matchesCat && matchesQuery) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Hide year markers if no children are visible
+        yearGroups.forEach(group => {
+          const hasVisible = Array.from(group.querySelectorAll('.timeline-card')).some(c => !c.classList.contains('hidden'));
+          if (hasVisible) {
+            group.classList.remove('hidden');
+          } else {
+            group.classList.add('hidden');
+          }
+        });
+
+        summaryLabel.textContent = `Showing ${visibleCount} matching clinical encounters spanning 2019–2025`;
+      }
+    })();
+  </script>
+</div></main></div></body></html>

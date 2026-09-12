@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-high":"#dce9ff","surface-bright":"#f8f9ff","inverse-surface":"#213145","on-secondary-container":"#00476e","inverse-primary":"#b0c8eb","error":"#ba1a1a","surface-tint":"#49607e","tertiary-fixed-dim":"#68dba9","secondary":"#006398","on-background":"#0b1c30","on-tertiary":"#ffffff","tertiary":"#001209","secondary-container":"#5bb8fe","primary-fixed-dim":"#b0c8eb","error-container":"#ffdad6","on-secondary-fixed-variant":"#004b73","secondary-fixed-dim":"#93ccff","on-tertiary-container":"#1a9e70","tertiary-fixed":"#85f8c4","outline-variant":"#c4c6ce","primary-fixed":"#d2e4ff","primary-container":"#0a2540","outline":"#74777e","primary":"#000f22","surface":"#f8f9ff","surface-variant":"#d3e4fe","surface-container-low":"#eff4ff","on-tertiary-fixed-variant":"#005137","on-error":"#ffffff","tertiary-container":"#002a1b","secondary-fixed":"#cce5ff","inverse-on-surface":"#eaf1ff","on-surface":"#0b1c30","on-surface-variant":"#43474d","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#314865","on-primary-container":"#768dad","on-secondary":"#ffffff","on-secondary-fixed":"#001d31","on-tertiary-fixed":"#002114","on-primary":"#ffffff","background":"#f8f9ff","surface-container":"#e5eeff","surface-dim":"#cbdbf5","on-primary-fixed":"#001c37","on-error-container":"#93000a","surface-container-highest":"#d3e4fe"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"touch-min-staff":"2.75rem","component-gap-sm":"0.75rem","gutter-compact":"1rem","component-gap-lg":"1.5rem","touch-min-patient":"4rem","tablet-edge-margin":"2rem","gutter-kiosk":"2rem","kiosk-edge-margin":"3rem"},fontFamily:{"body-xl":["Inter"],"display-kiosk":["Plus Jakarta Sans"],"body-md":["Inter"],"label-triage":["Inter"],"headline-md":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-lg":["Plus Jakarta Sans"],"label-touch":["Inter"],"display-kiosk-mobile":["Plus Jakarta Sans"],"label-md":["Inter"]},fontSize:{"body-xl":["20px",{"lineHeight":"30px","fontWeight":"400"}],"display-kiosk":["48px",{"lineHeight":"56px","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-triage":["13px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-touch":["18px",{"lineHeight":"24px","fontWeight":"600"}],"display-kiosk-mobile":["36px",{"lineHeight":"44px","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col justify-between selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 max-w-7xl mx-auto px-kiosk-edge-margin flex items-center justify-between"><div class="flex items-center gap-component-gap-lg"><div class="w-14 h-14 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[32px]">local_hospital</span></div><div class="flex flex-col"><div class="flex items-center gap-component-gap-sm"><span class="font-headline-lg text-headline-lg text-primary tracking-tight">MediKiosk</span><span class="font-label-triage text-label-triage uppercase px-2 py-0.5 rounded bg-surface-container text-secondary font-bold tracking-wider">PATIENT PORT</span></div><span class="font-label-md text-label-md text-on-surface-variant font-medium">AI-Powered Clinical Intake &amp; Hospital Platform</span></div></div><div class="flex items-center gap-component-gap-lg"><div class="flex items-center bg-surface-container-low rounded-xl p-1.5 h-touch-min-patient"><button class="h-full px-5 rounded-lg bg-primary-container text-on-primary font-label-touch text-label-touch flex items-center justify-center transition-colors" type="button">English</button><button class="h-full px-5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-touch text-label-touch flex items-center justify-center transition-colors" type="button">हिन्दी</button></div><button class="h-touch-min-patient px-6 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-secondary-container font-label-touch text-label-touch flex items-center gap-3 transition-colors" type="button"><span class="material-symbols-outlined text-[26px]">volume_up</span><span>ऑडियो सहायता (Audio)</span></button><button class="h-touch-min-patient px-6 rounded-xl bg-error-container text-on-error-container font-label-touch text-label-touch flex items-center gap-2 transition-colors active:opacity-90" type="button"><span class="material-symbols-outlined text-[26px]">support_agent</span><span>Help / सहायता</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="w-full bg-surface-container-low"><div class="max-w-7xl mx-auto px-kiosk-edge-margin py-3 flex items-center justify-between"><div class="flex items-center gap-3"><span class="w-3 h-3 rounded-full bg-secondary animate-pulse"></span><span class="font-headline-md text-headline-md text-on-surface tracking-wide uppercase">STEP 4 • MEDICAL DOCUMENTS &amp; OCR (मेडिकल दस्तावेज़ स्कैन)</span></div><nav class="flex items-center gap-component-gap-sm" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><a class="px-4 py-2 text-on-surface-variant hover:text-on-surface font-label-md text-label-md rounded-lg transition-colors" data-path="scan-documents" href="#">Document Capture</a><a aria-current="page" class="px-4 py-2 transition-colors bg-primary-container text-on-primary font-bold rounded-lg" data-path="ocr-review" href="#">Review Extracted Data</a><a class="px-4 py-2 text-on-surface-variant hover:text-on-surface font-label-md text-label-md rounded-lg transition-colors" data-path="upload-records" href="#">Upload Digital Records</a></nav></div></div></header><main class="w-full pt-28 max-w-7xl mx-auto px-kiosk-edge-margin pb-28"><div class="flex flex-col w-full gap-component-gap-lg">
+<!-- Top Hero Status Notification & Title Block -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-component-gap-lg">
+<div class="flex items-start gap-4">
+<div class="w-16 h-16 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">document_scanner</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-triage text-label-triage uppercase px-2.5 py-1 rounded bg-surface-container-high text-secondary font-bold tracking-wider">
+            ABDM OCR ENGINE v3.4 • ACTIVE
+          </span>
+<span class="inline-flex items-center gap-1.5 text-on-tertiary-container font-label-triage text-label-triage bg-surface-container-low px-2 py-0.5 rounded">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span> 89% AI Confidence
+          </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight mt-1">
+          Review Extracted Information
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-medium">
+          निकाली गई जानकारी की जाँच करें एवं आवश्यकतानुसार सुधारें
+        </p>
+</div>
+</div>
+<!-- Live Assistive Audio Action Pill -->
+<div class="flex items-center gap-3 shrink-0 self-start md:self-auto">
+<button class="h-touch-min-patient px-6 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-touch text-label-touch flex items-center gap-3 transition-colors active:scale-98" onclick="speakSummary()" type="button">
+<span class="material-symbols-outlined text-[28px] text-secondary">record_voice_over</span>
+<span class="text-left leading-tight">
+<span class="block text-[15px] font-bold">बोलकर पढ़ें</span>
+<span class="block text-xs font-normal text-on-surface-variant">Listen to summary</span>
+</span>
+</button>
+</div>
+</div>
+<!-- Amber Soft Advisory Banner (Handwritten Review Warning) -->
+<div class="w-full bg-surface-container-high rounded-xl p-5 shadow-sm flex items-start sm:items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px] text-error">warning</span>
+</div>
+<div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold leading-snug">
+          ⚠️ Some information may be incorrect or unclear in handwritten notes. Please review and confirm before continuing.
+        </p>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium">
+          हस्तलिखित पर्चे में कुछ जानकारी अधूरी या अस्पष्ट हो सकती है, कृपया आगे बढ़ने से पहले जाँच लें।
+        </p>
+</div>
+<span class="shrink-0 font-label-triage text-label-triage uppercase px-3 py-1 rounded bg-surface-container text-on-surface-variant self-start sm:self-center">
+        Mandatory Review
+      </span>
+</div>
+</div>
+<!-- Main Multi-Column Split: Scanned Physical Document Proof & Interactive Categorized Cards -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter-kiosk items-start">
+<!-- Left Column: Scanned Source Document Viewer & Micro-Audit Pane (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-component-gap-lg">
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">image</span>
+<span class="font-headline-md text-headline-md text-primary">Original Slip Preview</span>
+</div>
+<span class="font-label-triage text-label-triage bg-surface-container text-on-surface-variant px-2 py-0.5 rounded uppercase">
+            Page 1 of 1
+          </span>
+</div>
+<!-- High contrast mock image preview container -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container shadow-inner group">
+<img class="w-full h-80 object-cover object-top" data-alt="High-resolution clinical scan of a physical medical OPD slip from AIIMS New Delhi with clearly readable handwritten doctor notes, stamped signatures, blue hospital emblem header, dosage table, and diagnostic stamps under bright hospital scanner light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHPJWtIBQDZ5igvtL4qicoKwBGaoWkZbi-knSHWzOYNGSJJu-rouzW2OVGxvN9rwibAHshp7lEkhZocEKCCbgk2X4bO0wTlGITF6HWpgM-kpHMscpBa5edYI3pW1sPNh5g8Dkw8-3FDP936MTUBZW9V-N674B1QDPPof-wYn6rJlzErr-ImdsTn-HFRevVwJHorSOAO-DKIoXCWTNBryOYqg9a3A2D-3MprAPj3hjvNgh1T5UEZras"/>
+<!-- Document Scan Highlights Overlay -->
+<div class="absolute inset-0 bg-primary/20 pointer-events-none flex flex-col justify-between p-3">
+<div class="self-end bg-primary-container/90 text-on-primary font-label-triage text-label-triage px-2.5 py-1 rounded shadow-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">check_circle</span>
+<span>Optical Alignment 100%</span>
+</div>
+<div class="bg-surface-container-lowest/95 p-3 rounded-lg shadow-md flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">zoom_in</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Touch slip to zoom</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors" type="button">
+                Full Screen
+              </button>
+</div>
+</div>
+</div>
+<!-- Document Security & ABDM Sync Stamp -->
+<div class="bg-surface-container-low rounded-lg p-3.5 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-primary">ABDM Fast-Track Verified</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">HPR ID: 29-4102-8812 • National Health Authority Sandbox</span>
+</div>
+</div>
+</div>
+<!-- Quick Document Telemetry Bento Card -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col gap-3">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant tracking-wider">AI Recognition Breakdown</span>
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface">Printed Metadata</span>
+<span class="font-label-md text-label-md text-on-tertiary-container font-bold">98% Accuracy</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full w-[98%] rounded-full"></div>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-body-md text-body-md text-on-surface">Doctor Handwriting</span>
+<span class="font-label-md text-label-md text-secondary font-bold">81% Accuracy</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[81%] rounded-full"></div>
+</div>
+<p class="font-body-md text-body-md text-xs text-on-surface-variant mt-2">
+          Note: Medications marked with ⚠️ require visual cross-reference with doctor's handwritten ink on the left.
+        </p>
+</div>
+</div>
+<!-- Right Column: Extracted Cards with High-Contrast Touch Actions (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-component-gap-lg">
+<!-- CARD 1: DOCUMENT DETAILS (दस्तावेज़ विवरण) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm transition-all duration-200" id="card-doc-details">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">assignment</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary tracking-tight">1. Document Details</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">(दस्तावेज़ विवरण)</span>
+</div>
+<span class="font-label-triage text-label-triage text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded font-bold">
+                ✓ High Confidence (उच्च विश्वसनीयता)
+              </span>
+</div>
+</div>
+<!-- Action Button Pair (Min Patient Reach Friendly) -->
+<div class="flex items-center gap-2">
+<button class="h-touch-min-staff px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-touch text-label-touch flex items-center gap-2 transition-colors active:scale-95" onclick="toggleEdit('doc-details')" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+<span>Edit / बदलें</span>
+</button>
+<button class="h-touch-min-staff px-4 rounded-lg bg-primary-container text-on-primary font-label-touch text-label-touch flex items-center gap-2 transition-colors active:scale-95 shadow-sm" onclick="markCardConfirmed('card-doc-details')" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">check_circle</span>
+<span>Correct / सही है</span>
+</button>
+</div>
+</div>
+<!-- Extracted Data Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="bg-surface-container-low p-4 rounded-xl">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant tracking-wider block mb-1">Document Category</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary font-bold">Outpatient Prescription</span>
+<span class="px-2 py-0.5 rounded text-xs bg-surface-container text-secondary font-bold">OPD पर्चा</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant tracking-wider block mb-1">Hospital / Institute</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">AIIMS New Delhi</span>
+<span class="block font-body-md text-body-md text-on-surface-variant text-sm font-medium">Cardiology Department • OPD Room 12</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant tracking-wider block mb-1">Consulting Physician</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">Dr. A. K. Verma, MD</span>
+<span class="block font-body-md text-body-md text-on-surface-variant text-sm font-medium">Reg #DMC-49210 (Cardiology Unit-II)</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant tracking-wider block mb-1">Prescription Date (दिनांक)</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary font-bold">12 July 2025</span>
+<span class="font-label-triage text-label-triage bg-surface-container text-on-surface px-2 py-0.5 rounded">6 Days Ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: DETECTED DIAGNOSIS / CLINICAL IMPRESSION -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm transition-all duration-200" id="card-diagnosis">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">stethoscope</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary tracking-tight">2. Detected Diagnosis</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">(जांची गई बीमारी / नैदानिक प्रभाव)</span>
+</div>
+<span class="font-label-triage text-label-triage text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded font-bold">
+                ✓ High Confidence (ICD-11 Linked)
+              </span>
+</div>
+</div>
+<!-- Action Button Pair -->
+<div class="flex items-center gap-2">
+<button class="h-touch-min-staff px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-touch text-label-touch flex items-center gap-2 transition-colors active:scale-95" onclick="toggleEdit('diagnosis')" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+<span>Edit</span>
+</button>
+<button class="h-touch-min-staff px-4 rounded-lg bg-primary-container text-on-primary font-label-touch text-label-touch flex items-center gap-2 transition-colors active:scale-95 shadow-sm" onclick="markCardConfirmed('card-diagnosis')" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">check_circle</span>
+<span>Correct</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+<!-- Primary Diagnosis Tile -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant">Primary Diagnosis</span>
+<span class="font-label-triage text-label-triage px-2 py-0.5 rounded bg-surface-container text-secondary font-bold">BA00 • ICD-11</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary font-bold leading-tight">
+                Essential Hypertension
+              </div>
+<span class="font-body-lg text-body-lg text-secondary font-semibold block mt-0.5">
+                उच्च रक्तचाप (High Blood Pressure)
+              </span>
+</div>
+<div class="mt-4 pt-2 flex items-center gap-2 text-on-tertiary-container text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Clinician cross-verified</span>
+</div>
+</div>
+<!-- Secondary Diagnosis Tile -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant">Secondary Diagnosis</span>
+<span class="font-label-triage text-label-triage px-2 py-0.5 rounded bg-surface-container text-secondary font-bold">5A11 • ICD-11</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary font-bold leading-tight">
+                Type 2 Diabetes Mellitus
+              </div>
+<span class="font-body-lg text-body-lg text-secondary font-semibold block mt-0.5">
+                टाइप २ मधुमेह (शुगर / Diabetes)
+              </span>
+</div>
+<div class="mt-4 pt-2 flex items-center gap-2 text-on-tertiary-container text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Clinician cross-verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 3: MEDICATIONS DETECTED (पहचानी गई दवाइयाँ) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm transition-all duration-200" id="card-medications">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">medication</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary tracking-tight">3. Medications Detected</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">(पहचानी गई दवाइयाँ - 3 Items)</span>
+</div>
+<span class="font-label-triage text-label-triage text-error bg-error-container px-2 py-0.5 rounded font-bold">
+                ⚠️ 1 Item Requires Patient Verification
+              </span>
+</div>
+</div>
+<button class="h-touch-min-staff px-4 rounded-lg bg-surface-container-high hover:bg-surface-container text-secondary font-label-touch text-label-touch flex items-center gap-2 transition-colors active:scale-95" onclick="addNewMedication()" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Add Missing Medicine</span>
+</button>
+</div>
+<!-- Medicine List Stack -->
+<div class="flex flex-col gap-3 pt-2">
+<!-- Medicine Item 1 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">pill</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary font-bold">Tab. Telmisartan 40mg</span>
+<span class="font-label-triage text-label-triage px-2 py-0.5 rounded bg-surface-container-highest text-on-tertiary-container font-bold">
+                    Verified ✓
+                  </span>
+</div>
+<div class="flex items-center gap-3 mt-1 text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">schedule</span> Once Daily (1-0-0)
+                  </span>
+<span>•</span>
+<span>Morning, before food (सुबह नाश्ते से पहले)</span>
+</div>
+</div>
+</div>
+<!-- Item Action Pair -->
+<div class="flex items-center gap-2 self-end md:self-auto shrink-0">
+<button class="h-touch-min-staff px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit / सुधारें</span>
+</button>
+<button class="h-touch-min-staff px-3 rounded-lg bg-surface-container-high text-secondary font-label-md text-label-md flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">help</span>
+<span>Not Sure</span>
+</button>
+</div>
+</div>
+<!-- Medicine Item 2 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">pill</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary font-bold">Tab. Metformin 500mg</span>
+<span class="font-label-triage text-label-triage px-2 py-0.5 rounded bg-surface-container-highest text-on-tertiary-container font-bold">
+                    Verified ✓
+                  </span>
+</div>
+<div class="flex items-center gap-3 mt-1 text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">schedule</span> Twice Daily (1-0-1)
+                  </span>
+<span>•</span>
+<span>After meals (भोजन के बाद)</span>
+</div>
+</div>
+</div>
+<!-- Item Action Pair -->
+<div class="flex items-center gap-2 self-end md:self-auto shrink-0">
+<button class="h-touch-min-staff px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit / सुधारें</span>
+</button>
+<button class="h-touch-min-staff px-3 rounded-lg bg-surface-container-high text-secondary font-label-md text-label-md flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">help</span>
+<span>Not Sure</span>
+</button>
+</div>
+</div>
+<!-- Medicine Item 3 (Needs Verification Alert state) -->
+<div class="bg-surface-container-high p-4 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-error shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-md text-headline-md text-primary font-bold">Tab. Atorvastatin 10mg</span>
+<span class="font-label-triage text-label-triage px-2 py-0.5 rounded bg-surface-container-lowest text-error font-bold">
+                    Needs Verification ⚠️ (पुष्टि आवश्यक)
+                  </span>
+</div>
+<div class="flex items-center gap-3 mt-1 text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center gap-1 font-semibold text-error">
+<span class="material-symbols-outlined text-[18px]">nightlight</span> Once daily at night (0-0-1)
+                  </span>
+<span>•</span>
+<span class="text-on-surface">Handwriting dosage stroke ambiguous on slip</span>
+</div>
+</div>
+</div>
+<!-- Item Action Pair with emphasized tactile touch -->
+<div class="flex items-center gap-2 self-end md:self-auto shrink-0">
+<button class="h-touch-min-staff px-4 rounded-lg bg-secondary text-on-secondary font-label-touch text-label-touch flex items-center gap-1.5 transition-transform active:scale-95 shadow-sm" onclick="resolvePrescriptionItem(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Confirm 10mg</span>
+</button>
+<button class="h-touch-min-staff px-3 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md flex items-center gap-1.5 hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Change / बदलें</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 4: INVESTIGATIONS ORDERED / TESTS (जांच) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm transition-all duration-200" id="card-tests">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">biotech</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary tracking-tight">4. Investigations Ordered</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">(जांच एवं प्रयोगशाला परीक्षण)</span>
+</div>
+<span class="font-label-triage text-label-triage text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded font-bold">
+                2 Lab Panels Detected
+              </span>
+</div>
+</div>
+<!-- Action Button Pair -->
+<div class="flex items-center gap-2">
+<button class="h-touch-min-staff px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-touch text-label-touch flex items-center gap-2 transition-colors active:scale-95" onclick="toggleEdit('tests')" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+<span>Edit</span>
+</button>
+<button class="h-touch-min-staff px-4 rounded-lg bg-primary-container text-on-primary font-label-touch text-label-touch flex items-center gap-2 transition-colors active:scale-95 shadow-sm" onclick="markCardConfirmed('card-tests')" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">check_circle</span>
+<span>Correct</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">bloodtype</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-primary font-bold block">Fasting Blood Sugar (FBS) &amp; HbA1c</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">ग्लाइकेटेड हीमोग्लोबिन एवं फास्टिंग शुगर</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">task_alt</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-primary font-bold block">Lipid Profile Complete</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">कोलेस्ट्रॉल एवं लिपिड स्तर जांच</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">task_alt</span>
+</div>
+</div>
+</div>
+<!-- CARD 5: PROCEDURES / SURGERIES (प्रक्रियाएं एवं सर्जरी) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm" id="card-procedures">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">healing</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary tracking-tight">5. Procedures / Surgeries</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">(प्रक्रियाएं एवं पूर्व ऑपरेशन)</span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">
+                Nil Recorded
+              </span>
+</div>
+</div>
+<button class="h-touch-min-staff px-3.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Procedure</span>
+</button>
+</div>
+<div class="mt-4 p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[22px]">info</span>
+<span class="font-body-md text-body-md text-on-surface-variant">
+              None reported in this document ('Not provided in this slip' / इस पर्चे में कोई शल्य चिकित्सा दर्ज नहीं है)
+            </span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase">Clear</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Physical Touch Navigation & Decision Bar (Bottom Anchor / Reach Rule compliant) -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-5 shadow-sm mt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<!-- Secondary / Back / Rescan Trigger -->
+<button class="w-full sm:w-auto h-touch-min-patient px-8 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-touch text-label-touch flex items-center justify-center gap-3 transition-colors active:scale-98" onclick="history.back()" type="button">
+<span class="material-symbols-outlined text-[26px]">replay</span>
+<div class="flex flex-col text-left">
+<span class="font-bold">Rescan Document</span>
+<span class="text-xs text-on-surface-variant font-normal">दोबारा स्कैन करें</span>
+</div>
+</button>
+<!-- Center Session Counter & Assurance -->
+<div class="hidden lg:flex items-center gap-3 px-4 py-2 bg-surface-container-low rounded-lg text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[20px]">lock_clock</span>
+<span>Step 4 of 6 • Data auto-synced to PMJAY/ABHA profile</span>
+</div>
+<!-- Primary Action: 64px+ Ergonomic High-Impact Confirmation CTA -->
+<button class="w-full sm:w-auto h-touch-min-patient px-10 rounded-xl bg-primary-container hover:bg-secondary text-on-primary font-label-touch text-label-touch flex items-center justify-center gap-4 transition-all shadow-md active:scale-98" onclick="confirmAllAndProceed()" type="button">
+<div class="flex flex-col text-right">
+<span class="text-[20px] font-bold">Confirm Extracted Details</span>
+<span class="text-xs text-secondary-fixed font-medium">विवरण की पुष्टि करें एवं आगे बढ़ें</span>
+</div>
+<span class="material-symbols-outlined text-[30px] text-tertiary-fixed">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+  function markCardConfirmed(cardId) {
+    const card = document.getElementById(cardId);
+    if (!card) return;
+    card.classList.add('bg-surface-container-low');
+    const checkBadge = document.createElement('div');
+    checkBadge.className = 'mt-3 p-3 bg-surface-container-lowest rounded-lg flex items-center gap-2 text-on-tertiary-container font-label-md text-label-md animate-fade-in';
+    checkBadge.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span> <span>Confirmed by patient on screen (पुष्टि की गई)</span>';
+    
+    // Check if already added
+    if (!card.querySelector('.confirmed-stamp')) {
+      checkBadge.classList.add('confirmed-stamp');
+      card.appendChild(checkBadge);
+    }
+  }
+
+  function resolvePrescriptionItem(btn) {
+    const parentContainer = btn.closest('.bg-surface-container-high');
+    if (!parentContainer) return;
+    parentContainer.className = 'bg-surface-container-low p-4 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all';
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span> <span>Confirmed</span>';
+    btn.className = 'h-touch-min-staff px-4 rounded-lg bg-surface-container text-on-tertiary-container font-label-md text-label-md flex items-center gap-1.5 cursor-default';
+  }
+
+  function toggleEdit(section) {
+    alert('Direct on-screen bilingual keyboard opened for section: ' + section + '. You may adjust dosage or names.');
+  }
+
+  function addNewMedication() {
+    alert('Add Medication modal opened. Please enter medicine brand or generic composition.');
+  }
+
+  function speakSummary() {
+    if ('speechSynthesis' in window) {
+      const text = "आपके पर्चे में आवश्यक उच्च रक्तचाप और टाइप २ मधुमेह की पहचान हुई है। तीन दवाइयाँ मिली हैं। कृपया एट्रोवास्टेटिन की खुराक की पुष्टि करें।";
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'hi-IN';
+      utterance.rate = 0.95;
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert('Audio narration active: Telmisartan 40mg once daily, Metformin 500mg twice daily, Atorvastatin 10mg verified.');
+    }
+  }
+
+  function confirmAllAndProceed() {
+    // Navigate to step 5 in workflow
+    const targetUrl = window.location.pathname.includes('#') ? window.location.pathname : '#';
+    window.location.href = targetUrl;
+  }
+</script></main><footer class="fixed bottom-0 left-0 right-0 w-full z-40 bg-surface-container-lowest shadow-[0_-2px_12px_rgba(0,0,0,0.04)]"><div class="h-24 max-w-7xl mx-auto px-kiosk-edge-margin flex items-center justify-between"><div class="flex items-center gap-component-gap-lg"><div class="flex items-center gap-3 px-4 py-2 rounded-lg bg-surface-container-low text-error"><span class="material-symbols-outlined text-[24px]">emergency</span><span class="font-label-touch text-label-touch text-on-surface font-semibold">Emergency? Press Attendant Help</span></div><div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[20px] text-tertiary-container">verified_user</span><span>Session confidential &amp; 256-bit encrypted (सत्र गोपनीय एवं सुरक्षित है)</span></div></div><div class="flex items-center gap-component-gap-lg"><span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider">ABDM / DISHA Compliant Kiosk System</span><div class="h-touch-min-patient px-6 rounded-xl bg-surface-container flex items-center gap-2 text-on-surface font-label-touch text-label-touch"><span class="material-symbols-outlined text-[22px] text-secondary">touch_app</span><span>Touch Screen Enabled</span></div></div></div></footer></body></html>

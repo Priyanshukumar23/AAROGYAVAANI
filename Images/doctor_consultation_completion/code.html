@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>MediKiosk Doctor Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-high": "#dce9ff",
+          "primary-fixed-dim": "#b0c8eb",
+          "inverse-primary": "#b0c8eb",
+          "inverse-surface": "#213145",
+          "error": "#ba1a1a",
+          "on-error": "#ffffff",
+          "on-secondary-fixed": "#001d31",
+          "surface-container-low": "#eff4ff",
+          "on-surface-variant": "#43474d",
+          "on-tertiary-fixed-variant": "#005137",
+          "on-surface": "#0b1c30",
+          "surface-variant": "#d3e4fe",
+          "on-primary": "#ffffff",
+          "secondary": "#006398",
+          "surface": "#f8f9ff",
+          "on-primary-fixed-variant": "#314865",
+          "on-secondary-container": "#00476e",
+          "surface-tint": "#49607e",
+          "secondary-container": "#5bb8fe",
+          "on-secondary-fixed-variant": "#004b73",
+          "on-secondary": "#ffffff",
+          "inverse-on-surface": "#eaf1ff",
+          "secondary-fixed": "#cce5ff",
+          "on-primary-container": "#768dad",
+          "on-tertiary-container": "#1a9e70",
+          "tertiary-container": "#002a1b",
+          "tertiary": "#001209",
+          "primary-container": "#0a2540",
+          "background": "#f8f9ff",
+          "surface-dim": "#cbdbf5",
+          "surface-container-highest": "#d3e4fe",
+          "secondary-fixed-dim": "#93ccff",
+          "tertiary-fixed": "#85f8c4",
+          "outline-variant": "#c4c6ce",
+          "primary-fixed": "#d2e4ff",
+          "outline": "#74777e",
+          "primary": "#000f22",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed-dim": "#68dba9",
+          "surface-container": "#e5eeff",
+          "error-container": "#ffdad6",
+          "on-background": "#0b1c30",
+          "on-primary-fixed": "#001c37",
+          "on-tertiary-fixed": "#002114",
+          "surface-bright": "#f8f9ff",
+          "surface-container-lowest": "#ffffff",
+          "on-error-container": "#93000a"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "tablet-edge-margin": "2rem",
+          "gutter-kiosk": "2rem",
+          "touch-min-patient": "4rem",
+          "component-gap-lg": "1.5rem",
+          "touch-min-staff": "2.75rem",
+          "component-gap-sm": "0.75rem",
+          "kiosk-edge-margin": "3rem",
+          "gutter-compact": "1rem"
+        },
+        "fontFamily": {
+          "display-kiosk": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "label-touch": [
+            "Inter"
+          ],
+          "body-xl": [
+            "Inter"
+          ],
+          "display-kiosk-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "label-triage": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "display-kiosk": [
+            "48px",
+            {
+              "lineHeight": "56px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-touch": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-xl": [
+            "20px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-kiosk-mobile": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "label-triage": [
+            "13px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.05em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-xl-mobile": [
+            "26px",
+            {
+              "lineHeight": "34px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-6 py-5 bg-surface-container-low flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shrink-0 shadow-sm"><span class="material-symbols-outlined text-[24px]">local_hospital</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline-md text-headline-md tracking-tight text-on-surface font-bold truncate">MediKiosk</span><span class="px-1.5 py-0.5 rounded bg-secondary text-on-secondary font-label-triage text-[10px] uppercase font-bold tracking-wider">Doctor</span></div><span class="text-[12px] font-label-md text-on-surface-variant font-medium truncate">AIIMS New Delhi</span></div></div><div class="px-4 py-3"><span class="px-3 text-[11px] font-label-triage tracking-wider uppercase text-on-surface-variant/80 font-bold">Clinical Workflows</span></div><nav class="flex flex-col gap-1 px-3" data-active-classes="bg-primary-container text-white font-semibold shadow-sm"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="opd-queue" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">group</span><span class="font-label-md text-label-md flex-1">OPD Queue</span><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-bold font-label-triage">24 Live</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="patients-cases" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">folder_open</span><span class="font-label-md text-label-md">Patients &amp; Cases</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all group" data-path="red-flag-alerts" href="#"><span class="material-symbols-outlined text-[20px] text-error transition-colors">warning</span><span class="font-label-md text-label-md flex-1 text-on-surface group-hover:text-on-error-container font-semibold">Red Flag Alerts</span><span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="medical-documents-ocr" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">description</span><span class="font-label-md text-label-md">Medical Documents &amp; OCR</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="clinical-timeline" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">timeline</span><span class="font-label-md text-label-md">Clinical Timeline</span></a><a aria-current="page" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-all group bg-primary-container text-white font-semibold shadow-sm" data-path="consultation-workspace" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">stethoscope</span><span class="font-label-md text-label-md">Consultation Workspace</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="reports-analytics" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">bar_chart</span><span class="font-label-md text-label-md">Reports &amp; Analytics</span></a></nav></div><div class="p-3 bg-surface-container-low flex flex-col gap-2"><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="clinical-support" href="#"><span class="material-symbols-outlined text-[20px]">help</span><span class="font-label-md text-label-md">Help &amp; Clinical Support</span></a><div class="p-3 rounded-lg bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)] flex items-center justify-between"><div class="flex items-center gap-2.5 min-w-0"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-white font-bold text-xs shrink-0">RS</div><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md font-bold text-on-surface truncate">Dr. Rajesh Sharma</span><span class="text-[11px] font-label-md text-on-surface-variant truncate">MD (Internal Med)</span></div></div><a class="text-on-surface-variant hover:text-error hover:bg-surface-container-high p-1.5 rounded-lg transition-colors" data-path="doctor-login" href="#" title="Sign out of Chamber"><span class="material-symbols-outlined text-[18px]">logout</span></a></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6"><div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-secondary shrink-0"></span><div class="flex items-center gap-2 text-on-surface font-label-md text-label-md"><span class="font-semibold text-on-surface">Dept. of General Medicine</span><span class="text-outline-variant">•</span><span class="text-on-surface-variant">OPD Chamber Room 104</span><span class="text-outline-variant">•</span><span class="text-on-surface-variant text-[13px]">AIIMS New Delhi</span></div></div><div class="flex-1 max-w-lg mx-6"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">search</span><input class="w-full h-10 pl-10 pr-20 bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline font-body-md text-sm outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-secondary transition-all" placeholder="Search patient name, UHID, or Token A-XXX..." type="text"/><div class="absolute right-2.5 flex items-center gap-1"><kbd class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[11px] font-mono font-semibold">⌘K</kbd></div></div></div><div class="flex items-center gap-4 shrink-0"><div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shrink-0 ring-4 ring-tertiary-fixed/30"></span><span class="font-label-triage text-[11px] text-on-surface uppercase tracking-wider font-bold">Available / In Chamber</span></div><div class="hidden xl:flex items-center gap-2 px-2.5 py-1.5 rounded-md bg-secondary-fixed/40"><span class="material-symbols-outlined text-secondary text-[16px]">verified</span><span class="font-label-triage text-[11px] text-on-secondary-fixed uppercase tracking-wider font-bold">ABDM v2 Sync</span></div><div class="relative"><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-error text-on-error font-label-triage text-[10px] flex items-center justify-center font-bold">2</span></div><div class="h-6 w-[1px] bg-surface-container-high"></div><div class="flex items-center gap-3 pl-1"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden 2xl:flex flex-col"><span class="text-[12px] font-bold text-on-surface leading-tight">Dr. Rajesh Sharma</span><span class="text-[10px] font-label-triage text-secondary font-semibold uppercase tracking-wider">Audit Active</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<div class="p-6 md:p-8 max-w-7xl mx-auto w-full flex flex-col gap-6">
+<!-- Top Status Banner & Session ID -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2.5 py-1 rounded bg-tertiary-container text-tertiary-fixed font-label-triage text-xs uppercase tracking-wider font-bold">OPD Discharge Slip Active</span>
+<span class="text-outline-variant text-xs">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">ABDM Ref: <span class="font-mono text-on-surface font-semibold">IN-DL-AIIMS-2025-08492-TX</span></span>
+<span class="text-outline-variant text-xs">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Chamber 104 • 11:42 AM</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Consultation Finalized &amp; Dispatched</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Outpatient visit completed successfully • Token A-142 Ramesh Kumar Sharma (48 M)</p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<a class="px-4 py-2.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-variant transition-colors flex items-center gap-2" data-path="opd-queue" href="#">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+<span>Return to Live Queue</span>
+</a>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors flex items-center gap-2" id="btnBreak" onclick="toggleBreakMode()">
+<span class="material-symbols-outlined text-[18px]">coffee</span>
+<span id="breakText">Take 5-Min Break</span>
+</button>
+</div>
+</div>
+<!-- Hero Success Confirmation Callout -->
+<div class="relative overflow-hidden bg-primary-container text-on-primary p-6 md:p-8 rounded-xl shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="flex items-start gap-4 z-10 min-w-0">
+<div class="w-14 h-14 rounded-xl bg-tertiary-container text-tertiary-fixed flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[34px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-triage text-xs uppercase tracking-widest text-tertiary-fixed font-bold">EMR Telemetry Locked</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+<span class="text-xs font-mono text-primary-fixed-dim">Hash: SHA256-4b90...a81c</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-primary">Consultation Successfully Completed for Token A-142</h2>
+<p class="font-body-md text-body-md text-primary-fixed max-w-2xl">
+            Patient records signed, ABDM synchronized, and prescription dispatched to pharmacy and mobile. Clinical encounter archived under ABHA # 91-4820-9921-1049.
+          </p>
+</div>
+</div>
+<!-- Quick stats pill -->
+<div class="flex items-center gap-4 bg-surface-container-lowest/10 backdrop-blur px-5 py-3 rounded-lg shrink-0 z-10">
+<div class="flex flex-col">
+<span class="font-label-triage text-[11px] uppercase tracking-wider text-primary-fixed-dim">Encounter Duration</span>
+<span class="font-headline-md text-headline-md font-bold text-on-primary">14m 28s</span>
+</div>
+<div class="h-8 w-[1px] bg-primary-fixed-dim/30"></div>
+<div class="flex flex-col">
+<span class="font-label-triage text-[11px] uppercase tracking-wider text-primary-fixed-dim">Audit Stamp</span>
+<span class="font-label-md text-label-md font-semibold text-tertiary-fixed">MCI-44910 VALID</span>
+</div>
+</div>
+<!-- Background subtle decorative geometric element -->
+<div class="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-secondary/10 pointer-events-none blur-2xl"></div>
+</div>
+<!-- Main 2-Column Clinical Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- LEFT COLUMN: Verification & Dispatch Dossier (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Session Verification Checklist Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between pb-3 bg-surface-container-low/50 -mx-6 -mt-6 p-6 rounded-t-xl">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[22px]">fact_check</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Session Verification Checklist</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-triage text-xs font-bold">6 of 6 Verified</span>
+</div>
+<div class="flex flex-col gap-2.5 pt-1">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low transition-all">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">AI clinical intake &amp; patient history reviewed by Dr. Sharma</span>
+<span class="font-body-md text-xs text-on-surface-variant">Validated Kiosk voice-transcript (Hindi-English code-switch) and prior 2024 AIIMS OPD summaries.</span>
+</div>
+<span class="font-mono text-xs text-on-surface-variant shrink-0">11:31 AM</span>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low transition-all">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">In-chamber physical examination &amp; ECG evaluation recorded</span>
+<span class="font-body-md text-xs text-on-surface-variant">BP: 142/88 mmHg, SpO2: 98%, Rhythm regular sinus without acute ST elevation.</span>
+</div>
+<span class="font-mono text-xs text-on-surface-variant shrink-0">11:36 AM</span>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low transition-all">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">ICD-11 diagnoses coded (Essential Hypertension &amp; Reflux)</span>
+<span class="font-body-md text-xs text-on-surface-variant">Codes: BA00 (Essential hypertension) &amp; DA22 (Gastro-oesophageal reflux disease).</span>
+</div>
+<span class="font-mono text-xs text-on-surface-variant shrink-0">11:39 AM</span>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low transition-all">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">3-drug prescription generated with zero beta-lactam contraindications</span>
+<span class="font-body-md text-xs text-on-surface-variant">Drug-drug interaction engine evaluated; penicillin allergy flag honored; dosage matched eGFR (82 mL/min).</span>
+</div>
+<span class="font-mono text-xs text-on-surface-variant shrink-0">11:40 AM</span>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low transition-all">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Fasting lab orders synchronized with AIIMS HIS</span>
+<span class="font-body-md text-xs text-on-surface-variant">Lipid Profile + HbA1c requisition sent to Dept of Biochemistry (Central Lab Floor 2).</span>
+</div>
+<span class="font-mono text-xs text-on-surface-variant shrink-0">11:41 AM</span>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low transition-all">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-tertiary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">4-week follow-up appointment locked in central scheduling</span>
+<span class="font-body-md text-xs text-on-surface-variant">Scheduled: Tuesday, March 25, 2025 • Chamber 104 • Fasting blood draw at 07:30 AM.</span>
+</div>
+<span class="font-mono text-xs text-on-surface-variant shrink-0">11:42 AM</span>
+</div>
+</div>
+</div>
+<!-- Summary Dispatch Dossier -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between pb-3 bg-surface-container-low/50 -mx-6 -mt-6 p-6 rounded-t-xl">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[22px]">inventory_2</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Summary Dispatch Dossier</h3>
+</div>
+<span class="font-label-triage text-xs uppercase tracking-wider text-secondary font-bold">Encrypted Dispatch</span>
+</div>
+<!-- Patient Identity Details Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-triage text-[11px] uppercase tracking-wider text-on-surface-variant">Patient Name</span>
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Ramesh Kumar Sharma</span>
+<span class="text-xs text-on-surface-variant">48 Yrs / Male</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-triage text-[11px] uppercase tracking-wider text-on-surface-variant">UHID / ABHA</span>
+<span class="font-mono text-sm font-bold text-secondary truncate">AIIMS-2025-08492</span>
+<span class="text-xs text-on-surface-variant font-mono">Token: A-142 (OPD-GEN)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-triage text-[11px] uppercase tracking-wider text-on-surface-variant">Attending Clinician</span>
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Dr. Rajesh Sharma, MD</span>
+<span class="text-xs text-on-surface-variant">Reg: MCI-44910</span>
+</div>
+</div>
+<!-- Prescribed Medications Table -->
+<div class="flex flex-col gap-2">
+<span class="font-label-triage text-xs uppercase tracking-wider text-on-surface-variant font-bold">Dispensing Orders (e-Prescription)</span>
+<div class="flex flex-col gap-2">
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-md bg-secondary text-white flex items-center justify-center font-bold text-xs">Rx1</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Tab. Telmisartan 40mg</span>
+<span class="text-xs text-on-surface-variant">Once daily (OD) Morning before food • 30 Days (30 tabs)</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-high text-on-surface text-xs font-mono font-semibold">Pharmacy Slot A-3</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-md bg-secondary text-white flex items-center justify-center font-bold text-xs">Rx2</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Cap. Pantoprazole 40mg</span>
+<span class="text-xs text-on-surface-variant">Once daily (OD) Morning empty stomach • 14 Days (14 caps)</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-high text-on-surface text-xs font-mono font-semibold">Pharmacy Slot A-3</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-md bg-secondary text-white flex items-center justify-center font-bold text-xs">Rx3</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Tab. Metformin 500mg (SR)</span>
+<span class="text-xs text-on-surface-variant">Twice daily (BD) with meals • 30 Days (60 tabs)</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-high text-on-surface text-xs font-mono font-semibold">Pharmacy Slot B-1</span>
+</div>
+</div>
+</div>
+<!-- Multi-channel delivery telemetry badges -->
+<div class="flex flex-col gap-2 pt-2">
+<span class="font-label-triage text-xs uppercase tracking-wider text-on-surface-variant font-bold">Automated Delivery Channels Status</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-[20px]">print</span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed ring-2 ring-tertiary-fixed-dim/40"></span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Kiosk Slip #01</span>
+<span class="text-xs text-on-surface-variant leading-relaxed">Thermal copy printed at Exit Turnstile Bay 2.</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-[20px]">chat</span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed ring-2 ring-tertiary-fixed-dim/40"></span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">WhatsApp &amp; SMS</span>
+<span class="text-xs text-on-surface-variant leading-relaxed">Delivered PDF with QR to +91 98765 43210.</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-[20px]">cloud_sync</span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed ring-2 ring-tertiary-fixed-dim/40"></span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">ABDM Locker</span>
+<span class="text-xs text-on-surface-variant leading-relaxed">Sync successful to NDHM Ayushman Bharat gateway.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Actions & Next Patient Workflow (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- NEXT PATIENT WORKFLOW (High visual prominence) -->
+<div class="bg-primary-container text-on-primary p-6 rounded-xl shadow-md flex flex-col gap-5">
+<div class="flex items-center justify-between pb-3 bg-surface-container-lowest/10 -mx-6 -mt-6 p-6 rounded-t-xl">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-ping"></span>
+<span class="font-label-triage text-xs uppercase tracking-wider text-secondary-container font-bold">Chamber Queue Ready</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed/20 text-primary-fixed text-xs font-mono font-bold">OPD 104</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-triage text-xs uppercase tracking-wider text-primary-fixed-dim">Next Patient in Chamber Queue</span>
+<div class="flex items-center justify-between gap-2 mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-primary">Sunita Devi</span>
+<span class="px-3 py-1 rounded-full bg-secondary text-on-secondary font-mono text-sm font-bold tracking-wider">Token A-128</span>
+</div>
+<div class="flex items-center gap-2 text-primary-fixed text-sm font-body-md mt-1">
+<span>54 Yrs / Female</span>
+<span>•</span>
+<span class="text-secondary-fixed">UHID: AIIMS-2025-09104</span>
+</div>
+</div>
+<!-- Patient Intake Brief preview -->
+<div class="p-3.5 rounded-lg bg-surface-container-lowest/10 backdrop-blur flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-triage text-[11px] uppercase tracking-wider text-primary-fixed-dim">Kiosk Triage Summary</span>
+<span class="px-2 py-0.5 rounded bg-amber-400 text-on-secondary-fixed text-[11px] font-label-triage font-bold">P2 Urgent</span>
+</div>
+<p class="text-sm font-body-md text-on-primary leading-snug">
+              "Productive cough and fever × 3 days. High blood pressure history. Oxygen Saturation: 96%."
+            </p>
+<div class="flex items-center gap-3 pt-1 text-xs text-primary-fixed">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">thermostat</span> 101.4 °F</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">favorite</span> 92 bpm</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">air</span> 18 /min</span>
+</div>
+</div>
+<!-- PRIMARY ACTION BUTTON: Call Next Patient -->
+<button class="w-full h-16 rounded-xl bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-headline-md text-headline-md font-bold shadow-md transition-all flex items-center justify-center gap-3 active:scale-[0.98]" id="callNextBtn" onclick="callNextPatient()">
+<span class="material-symbols-outlined text-[26px]">record_voice_over</span>
+<span>Call Next Patient (A-128) into Chamber</span>
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</button>
+<p class="text-center text-xs text-primary-fixed-dim">
+            Triggering chime in Waiting Hall B and updating electronic door display Room 104.
+          </p>
+</div>
+<!-- Quick Post-Consultation Document Actions -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between pb-3 bg-surface-container-low/50 -mx-6 -mt-6 p-6 rounded-t-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">print_connect</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Prescription &amp; Slip Control</h3>
+</div>
+<span class="font-label-triage text-xs uppercase text-on-surface-variant font-bold">A-142 Archive</span>
+</div>
+<div class="flex flex-col gap-3 pt-1">
+<button class="w-full h-12 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center justify-between px-4" onclick="simulatePrint()">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">description</span>
+<span>Print Official Signed Prescription Slip</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">print</span>
+</button>
+<button class="w-full h-12 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center justify-between px-4" onclick="simulateResend()">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">share</span>
+<span>Resend Digital Copy via WhatsApp / SMS</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">send</span>
+</button>
+<button class="w-full h-12 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center justify-between px-4" onclick="simulateViewPDF()">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">picture_as_pdf</span>
+<span>View Full Consultation PDF (Signed)</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">open_in_new</span>
+</button>
+</div>
+<!-- Digital Doctor Signature Card -->
+<div class="mt-2 p-3.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<!-- Digital signature icon stamp -->
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary font-bold">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Digital Signature Applied</span>
+<span class="text-xs text-on-surface-variant font-mono">e-Sign Cert: DL-AIIMS-44910-2025</span>
+</div>
+</div>
+<!-- Verification QR Mock -->
+<div class="w-10 h-10 rounded bg-on-surface p-1 flex items-center justify-center text-surface-container-lowest">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</div>
+</div>
+</div>
+<!-- Waiting Queue Snapshot Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Remaining OPD Load</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-triage text-xs font-bold">23 Waiting</span>
+</div>
+<!-- Progress Visualization (Inline SVG) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-xs font-label-md text-on-surface-variant">
+<span>Shift Progress (Room 104)</span>
+<span class="font-bold text-on-surface">21 of 44 Consulted (48%)</span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all" style="width: 48%;"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-triage text-[11px] uppercase tracking-wider text-on-surface-variant">Average Time / Pt</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">12.4 min</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-triage text-[11px] uppercase tracking-wider text-on-surface-variant">Est. Queue Clear</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">02:15 PM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container (Simulated) -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="bg-primary-container text-on-primary px-5 py-3.5 rounded-xl shadow-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-[22px]" id="toastIcon">check_circle</span>
+<span class="font-label-md text-label-md font-semibold" id="toastMsg">Action completed successfully</span>
+</div>
+</div>
+</div>
+<script>
+  function showToast(message, iconName = 'check_circle') {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMsg');
+    const toastIcon = document.getElementById('toastIcon');
+    if (!toast || !toastMsg || !toastIcon) return;
+    
+    toastMsg.textContent = message;
+    toastIcon.textContent = iconName;
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    }, 3200);
+  }
+
+  function callNextPatient() {
+    const btn = document.getElementById('callNextBtn');
+    if (btn) {
+      btn.innerHTML = `
+        <span class="material-symbols-outlined animate-spin text-[24px]">sync</span>
+        <span>Calling Token A-128 into Room 104...</span>
+      `;
+      btn.disabled = true;
+    }
+    showToast("Calling Token A-128 (Sunita Devi) into Chamber 104", "campaign");
+    setTimeout(() => {
+      window.location.hash = "#opd-queue";
+    }, 1200);
+  }
+
+  function simulatePrint() {
+    showToast("Dispatched signed prescription copy to Chamber Laser Jet printer", "print");
+  }
+
+  function simulateResend() {
+    showToast("Encrypted PDF dispatched via WhatsApp to +91 98765 43210", "send");
+  }
+
+  function simulateViewPDF() {
+    showToast("Generating official signed AIIMS EMR Consultation Slip...", "picture_as_pdf");
+  }
+
+  let onBreak = false;
+  function toggleBreakMode() {
+    const textSpan = document.getElementById('breakText');
+    const btn = document.getElementById('btnBreak');
+    onBreak = !onBreak;
+    if (onBreak) {
+      if (textSpan) textSpan.textContent = "End 5-Min Break";
+      if (btn) btn.classList.add('bg-error-container', 'text-on-error-container');
+      showToast("Chamber status set to 'Short Clinical Break' (5 min)", "pause_circle");
+    } else {
+      if (textSpan) textSpan.textContent = "Take 5-Min Break";
+      if (btn) btn.classList.remove('bg-error-container', 'text-on-error-container');
+      showToast("Chamber status restored to 'Active Consultations'", "play_circle");
+    }
+  }
+</script></main></div></body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=Plus+Jakarta+Sans:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#f8f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e5eeff",
+            "surface-container-high": "#dce9ff",
+            "surface-container-highest": "#d3e4fe",
+            "surface-variant": "#d3e4fe",
+            "primary": "#000f22",
+            "primary-container": "#0a2540",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#768dad",
+            "secondary": "#006398",
+            "secondary-container": "#e0f2fe",
+            "on-secondary-container": "#00476e",
+            "tertiary-container": "#002a1b",
+            "tertiary-fixed": "#85f8c4",
+            "tertiary-fixed-dim": "#68dba9",
+            "on-tertiary-container": "#1a9e70",
+            "error": "#ba1a1a",
+            "error-container": "#fee2e2",
+            "on-error-container": "#991b1b",
+            "outline": "#74777e",
+            "outline-variant": "#c4c6ce",
+            "on-surface": "#0b1c30",
+            "on-surface-variant": "#43474d"
+          },
+          "fontFamily": {
+            "headline": ["Plus Jakarta Sans", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased select-none min-h-screen flex flex-col">
+<!-- Step 1 Clean Patient Header -->
+<header class="w-full bg-surface-container-lowest border-b border-surface-container shadow-sm sticky top-0 z-40">
+<div class="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
+<!-- Logo + Hospital Subtitle -->
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-tertiary-fixed">local_hospital</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-2xl font-bold text-primary tracking-tight">MediKiosk</span>
+<span class="text-sm font-medium text-on-surface-variant">AI-Powered Clinical Intake • AI क्लिनिकल इनटेक</span>
+</div>
+</div>
+<!-- Accessible Top Actions: Audio, Language, Help -->
+<div class="flex items-center gap-3">
+<!-- Audio Assistance Toggle -->
+<button class="h-14 px-5 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary flex items-center gap-2.5 transition-all active:scale-95 border border-surface-container-highest cursor-pointer" id="audioToggleBtn" type="button">
+<span class="material-symbols-outlined text-secondary text-[26px]">volume_up</span>
+<span class="text-base font-semibold">Audio • ऑडियो</span>
+</button>
+<!-- Language Selector -->
+<button class="h-14 px-5 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary flex items-center gap-2.5 transition-all active:scale-95 border border-surface-container-highest cursor-pointer" type="button">
+<span class="material-symbols-outlined text-secondary text-[24px]">translate</span>
+<span class="text-base font-bold">English / हिन्दी</span>
+</button>
+<!-- Attendant / Staff Help -->
+<button class="h-14 px-6 rounded-xl bg-error-container hover:bg-red-200 text-on-error-container flex items-center gap-2.5 transition-all active:scale-95 cursor-pointer font-bold" id="helpDeskBtn" type="button">
+<span class="material-symbols-outlined text-error text-[24px]">help</span>
+<span class="text-base">Help • सहायता</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Reassuring Content -->
+<main class="flex-1 max-w-5xl w-full mx-auto px-6 py-10 flex flex-col justify-center">
+<!-- Single Focused Task Heading -->
+<div class="text-center mb-8">
+<h1 class="font-headline text-3xl md:text-4xl font-extrabold text-primary tracking-tight mb-2">
+        Please Confirm Your Details
+      </h1>
+<p class="text-xl md:text-2xl font-semibold text-secondary mb-2">
+        कृपया अपने विवरण की पुष्टि करें
+      </p>
+<p class="text-lg text-on-surface-variant">
+        Check that your name and details are correct before issuing your token.
+      </p>
+</div>
+<!-- Clean, High-Contrast Patient Summary Card -->
+<div class="bg-surface-container-lowest rounded-2xl border-2 border-surface-container-highest shadow-lg overflow-hidden mb-8">
+<!-- Top Patient Identity Banner -->
+<div class="bg-primary-container px-8 py-6 text-white flex items-center gap-5">
+<div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed">person</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-widest text-surface-variant font-bold">Patient Name • मरीज का नाम</span>
+<h2 class="font-headline text-2xl md:text-3xl font-bold tracking-tight text-white">
+            Ramesh Kumar Sharma
+          </h2>
+<span class="text-lg font-medium text-surface-variant">
+            रमेश कुमार शर्मा
+          </span>
+</div>
+</div>
+<!-- Essential Patient Details Grid -->
+<div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-6 bg-surface-container-lowest">
+<!-- Age & Gender -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-surface-container flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-2xl">wc</span>
+</div>
+<div>
+<div class="text-xs uppercase font-bold text-on-surface-variant tracking-wider">Age &amp; Gender • आयु व लिंग</div>
+<div class="font-headline text-2xl font-bold text-primary mt-0.5">48 Years • Male</div>
+<div class="text-base text-on-surface-variant font-medium">४८ वर्ष • पुरुष</div>
+</div>
+</div>
+<!-- Mobile Number -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-surface-container flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-2xl">call</span>
+</div>
+<div>
+<div class="text-xs uppercase font-bold text-on-surface-variant tracking-wider">Mobile Number • मोबाइल नंबर</div>
+<div class="font-headline text-2xl font-bold text-primary mt-0.5 tracking-wide">+91 98765 43210</div>
+<div class="text-sm text-on-tertiary-container font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Verified for SMS Token
+            </div>
+</div>
+</div>
+<!-- Patient ID / ABHA ID -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-surface-container flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-2xl">badge</span>
+</div>
+<div>
+<div class="text-xs uppercase font-bold text-on-surface-variant tracking-wider">Patient ID / ABHA • पहचान संख्या</div>
+<div class="font-headline text-2xl font-bold text-primary mt-0.5 font-mono">AIIMS-2025-08492</div>
+<div class="text-sm text-on-surface-variant font-medium">ABHA ID: 91-4582-9012-3456</div>
+</div>
+</div>
+<!-- City & State -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-surface-container flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-2xl">location_on</span>
+</div>
+<div>
+<div class="text-xs uppercase font-bold text-on-surface-variant tracking-wider">City / State • शहर व राज्य</div>
+<div class="font-headline text-2xl font-bold text-primary mt-0.5">South Delhi, Delhi</div>
+<div class="text-base text-on-surface-variant font-medium">साकेत, दक्षिणी दिल्ली, दिल्ली</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Two Large Explicit Decision Buttons -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+<!-- Left: No, Make Changes -->
+<button class="min-h-[84px] px-6 py-4 rounded-2xl bg-surface-container-lowest hover:bg-surface-container border-2 border-outline-variant text-primary shadow-sm hover:shadow transition-all flex items-center justify-center gap-4 cursor-pointer active:scale-[0.99]" id="makeChangesBtn" type="button">
+<span class="material-symbols-outlined text-3xl text-secondary">replay</span>
+<div class="flex flex-col text-left">
+<span class="font-headline text-xl font-bold leading-tight">No, Make Changes</span>
+<span class="text-base text-on-surface-variant font-medium">जानकारी बदलें • Correct Info</span>
+</div>
+</button>
+<!-- Right: Yes, This Is Correct -->
+<button class="min-h-[84px] px-8 py-4 rounded-2xl bg-primary-container hover:bg-primary text-white shadow-md hover:shadow-xl transition-all flex items-center justify-between cursor-pointer active:scale-[0.99] group border-2 border-transparent" id="confirmProceedBtn" type="button">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-2xl">check</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-headline text-xl font-extrabold leading-tight text-white">Yes, This Is Correct</span>
+<span class="text-base text-surface-variant font-medium">हाँ, सब सही है • Issue Token</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-3xl text-tertiary-fixed transition-transform group-hover:translate-x-1.5">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Clean, Reassuring Footer -->
+<footer class="w-full py-5 border-t border-surface-container bg-surface-container-lowest mt-auto">
+<div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+<div class="flex items-center gap-2 text-on-surface-variant text-base">
+<span class="material-symbols-outlined text-secondary text-xl">contact_support</span>
+<span>Need help? Press the <strong>Help</strong> button or ask any hospital attendant nearby.</span>
+</div>
+<div class="text-sm font-medium text-on-surface-variant">
+        अस्पताल सहायता डेस्क कभी भी उपलब्ध है
+      </div>
+</div>
+</footer>
+<!-- Simple Modal for Changes / Assistance -->
+<div class="fixed inset-0 z-50 bg-primary/50 backdrop-blur-sm hidden flex items-center justify-center p-6" id="simpleModal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-2xl p-8 flex flex-col gap-6 text-center">
+<div class="w-16 h-16 rounded-full bg-error-container text-error mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl">support_agent</span>
+</div>
+<div>
+<h3 class="font-headline text-2xl font-bold text-primary mb-1">Attendant Called • सहायक को बुलाया गया</h3>
+<p class="text-base text-on-surface-variant">A hospital staff member is coming to this kiosk to assist you with editing your details.</p>
+<p class="text-sm text-secondary font-medium mt-1">अस्पताल कर्मचारी आपकी सहायता के लिए आ रहे हैं।</p>
+</div>
+<button class="h-14 w-full rounded-xl bg-primary-container text-white font-bold text-lg hover:bg-primary transition-colors cursor-pointer" id="closeModalBtn" type="button">
+        OK • ठीक है
+      </button>
+</div>
+</div>
+<script>
+    const audioBtn = document.getElementById('audioToggleBtn');
+    const makeChangesBtn = document.getElementById('makeChangesBtn');
+    const helpBtn = document.getElementById('helpDeskBtn');
+    const confirmProceedBtn = document.getElementById('confirmProceedBtn');
+    const modal = document.getElementById('simpleModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    // Simple audio toggle feedback
+    if (audioBtn) {
+      let isAudioPlaying = false;
+      audioBtn.addEventListener('click', () => {
+        isAudioPlaying = !isAudioPlaying;
+        const icon = audioBtn.querySelector('.material-symbols-outlined');
+        const text = audioBtn.querySelector('span:last-child');
+        if (isAudioPlaying) {
+          audioBtn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+          icon.textContent = 'volume_up';
+          text.textContent = 'Playing • सुन रहे हैं...';
+          setTimeout(() => {
+            isAudioPlaying = false;
+            audioBtn.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+            icon.textContent = 'volume_up';
+            text.textContent = 'Audio • ऑडियो';
+          }, 3500);
+        }
+      });
+    }
+
+    // Modal triggers
+    if (makeChangesBtn) {
+      makeChangesBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+    }
+    if (helpBtn) {
+      helpBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+    }
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+
+    // Confirm button feedback
+    if (confirmProceedBtn) {
+      confirmProceedBtn.addEventListener('click', () => {
+        confirmProceedBtn.classList.add('pointer-events-none', 'opacity-90');
+        confirmProceedBtn.innerHTML = `
+          <div class="flex items-center gap-3 w-full justify-center py-2">
+            <span class="material-symbols-outlined text-3xl animate-spin text-tertiary-fixed">progress_activity</span>
+            <span class="font-headline text-xl font-bold text-white">Printing Token • टोकन बन रहा है...</span>
+          </div>
+        `;
+        setTimeout(() => {
+          confirmProceedBtn.innerHTML = `
+            <div class="flex items-center gap-3 w-full justify-center py-2">
+              <span class="material-symbols-outlined text-3xl text-tertiary-fixed">check_circle</span>
+              <span class="font-headline text-xl font-bold text-white">Token #204 Issued!</span>
+            </div>
+          `;
+        }, 1200);
+      });
+    }
+  </script>
+</body></html>

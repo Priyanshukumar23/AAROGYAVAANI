@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f8f9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e5eeff",
+            "surface-container-high": "#dce9ff",
+            "surface-container-highest": "#d3e4fe",
+            "primary": "#000f22",
+            "primary-container": "#0a2540",
+            "on-primary": "#ffffff",
+            "secondary": "#006398",
+            "secondary-fixed": "#cce5ff",
+            "secondary-container": "#5bb8fe",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#001d31",
+            "on-secondary-fixed-variant": "#004b73",
+            "on-surface": "#0b1c30",
+            "on-surface-variant": "#43474d",
+            "outline": "#74777e",
+            "outline-variant": "#c4c6ce",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#85f8c4"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "1rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased select-none min-h-screen flex flex-col justify-between">
+<!-- Step 1 Clean Patient Header (No tabs, no staff menus, no profile icons) -->
+<header class="w-full bg-surface-container-lowest border-b border-surface-container py-4 px-6 md:px-12 shadow-sm sticky top-0 z-40">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+<!-- MediKiosk Brand -->
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[28px]">local_hospital</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-2xl text-primary leading-tight">MediKiosk</span>
+<span class="text-sm font-medium text-on-surface-variant">AI-Powered Clinical Intake</span>
+</div>
+</div>
+<!-- Clean Patient Controls -->
+<div class="flex items-center gap-3">
+<!-- Audio Assistance Toggle -->
+<button class="h-14 px-5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2.5 transition-colors cursor-pointer border border-surface-container text-base font-medium active:scale-95" type="button">
+<span class="material-symbols-outlined text-secondary text-[24px]">volume_up</span>
+<span>Audio</span>
+</button>
+<!-- Language Switcher -->
+<button class="h-14 px-5 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary flex items-center gap-2.5 transition-colors cursor-pointer border border-surface-container text-base font-bold active:scale-95" type="button">
+<span class="material-symbols-outlined text-secondary text-[24px]">translate</span>
+<span>English / हिन्दी</span>
+</button>
+<!-- Attendant / Help Button -->
+<button class="h-14 px-5 rounded-xl bg-error-container text-on-error-container hover:bg-red-200 flex items-center gap-2.5 transition-colors cursor-pointer text-base font-semibold active:scale-95" type="button">
+<span class="material-symbols-outlined text-[24px]">help</span>
+<span>Help / सहायता</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Patient Interaction Area -->
+<main class="w-full flex-grow py-8 px-6 md:px-12 flex flex-col justify-center">
+<div class="max-w-6xl mx-auto w-full flex flex-col gap-6">
+<!-- Single Primary Task Heading -->
+<div class="text-center md:text-left space-y-1">
+<h1 class="font-headline text-3xl md:text-4xl font-extrabold text-primary tracking-tight">
+          Which OPD do you want to visit?
+        </h1>
+<p class="text-xl md:text-2xl font-semibold text-secondary">
+          आप किस OPD में जाना चाहते हैं?
+        </p>
+</div>
+<!-- Search & Voice Guidance Bar -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3 mt-1">
+<div class="md:col-span-8 relative flex items-center">
+<span class="material-symbols-outlined absolute left-5 text-outline text-[30px] pointer-events-none">search</span>
+<input class="w-full h-16 pl-16 pr-12 rounded-2xl bg-surface-container-lowest border-2 border-surface-container focus:border-secondary text-lg text-on-surface placeholder:text-outline shadow-sm focus:outline-none transition-all" id="opd-search" placeholder="Search department or symptom (e.g. fever, tooth pain, eye test)..." type="text"/>
+<button class="absolute right-4 text-outline hover:text-primary p-2" onclick="document.getElementById('opd-search').value = '';" type="button">
+<span class="material-symbols-outlined text-[24px]">cancel</span>
+</button>
+</div>
+<div class="md:col-span-4">
+<button class="w-full h-16 px-6 rounded-2xl bg-secondary-fixed hover:bg-secondary-container text-on-secondary-fixed flex items-center justify-center gap-3 transition-colors shadow-sm cursor-pointer active:scale-95" id="voice-mic-btn" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary shadow-xs">
+<span class="material-symbols-outlined text-[24px]">mic</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-headline font-bold text-base text-secondary">Speak Department</span>
+<span class="text-xs font-semibold text-on-secondary-fixed-variant">बोलकर खोजें</span>
+</div>
+</button>
+</div>
+</div>
+<!-- 6 Spacious, Accessible Department Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-2" id="dept-grid">
+<!-- 1. General Medicine (Selected by Default) -->
+<div class="dept-card group cursor-pointer rounded-2xl p-6 bg-surface-container-low border-2 border-secondary shadow-sm flex flex-col justify-between min-h-[160px] transition-all transform active:scale-[0.98]" data-dept="general-medicine">
+<div class="flex items-start gap-4">
+<div class="icon-box w-16 h-16 rounded-2xl bg-secondary text-on-secondary flex items-center justify-center flex-shrink-0 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[36px]">stethoscope</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline text-xl md:text-2xl font-bold text-primary">General Medicine</h2>
+<p class="text-lg font-bold text-secondary -mt-0.5">सामान्य चिकित्सा</p>
+<p class="text-sm font-medium text-on-surface-variant mt-2 leading-snug">
+                Fever, cough, BP, health check
+              </p>
+</div>
+</div>
+<div class="selection-indicator flex items-center gap-2 mt-4 pt-3 border-t border-surface-container text-secondary font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Selected Department</span>
+</div>
+</div>
+<!-- 2. Orthopedics -->
+<div class="dept-card group cursor-pointer rounded-2xl p-6 bg-surface-container-lowest border-2 border-transparent hover:border-surface-variant shadow-sm hover:shadow flex flex-col justify-between min-h-[160px] transition-all transform active:scale-[0.98]" data-dept="orthopedics">
+<div class="flex items-start gap-4">
+<div class="icon-box w-16 h-16 rounded-2xl bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[36px]">orthopedics</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline text-xl md:text-2xl font-bold text-primary">Orthopedics</h2>
+<p class="text-lg font-bold text-secondary -mt-0.5">हड्डी एवं जोड़</p>
+<p class="text-sm font-medium text-on-surface-variant mt-2 leading-snug">
+                Bone, joints, fracture, back pain
+              </p>
+</div>
+</div>
+<div class="selection-indicator hidden items-center gap-2 mt-4 pt-3 border-t border-surface-container text-secondary font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Selected Department</span>
+</div>
+</div>
+<!-- 3. Pediatrics / Child -->
+<div class="dept-card group cursor-pointer rounded-2xl p-6 bg-surface-container-lowest border-2 border-transparent hover:border-surface-variant shadow-sm hover:shadow flex flex-col justify-between min-h-[160px] transition-all transform active:scale-[0.98]" data-dept="pediatrics">
+<div class="flex items-start gap-4">
+<div class="icon-box w-16 h-16 rounded-2xl bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[36px]">child_care</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline text-xl md:text-2xl font-bold text-primary">Pediatrics / Child</h2>
+<p class="text-lg font-bold text-secondary -mt-0.5">बाल रोग</p>
+<p class="text-sm font-medium text-on-surface-variant mt-2 leading-snug">
+                Children and infant health
+              </p>
+</div>
+</div>
+<div class="selection-indicator hidden items-center gap-2 mt-4 pt-3 border-t border-surface-container text-secondary font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Selected Department</span>
+</div>
+</div>
+<!-- 4. Eye Care / Ophthalmology -->
+<div class="dept-card group cursor-pointer rounded-2xl p-6 bg-surface-container-lowest border-2 border-transparent hover:border-surface-variant shadow-sm hover:shadow flex flex-col justify-between min-h-[160px] transition-all transform active:scale-[0.98]" data-dept="ophthalmology">
+<div class="flex items-start gap-4">
+<div class="icon-box w-16 h-16 rounded-2xl bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[36px]">visibility</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline text-xl md:text-2xl font-bold text-primary">Eye Care (Eye)</h2>
+<p class="text-lg font-bold text-secondary -mt-0.5">नेत्र रोग</p>
+<p class="text-sm font-medium text-on-surface-variant mt-2 leading-snug">
+                Vision, eye redness, irritation
+              </p>
+</div>
+</div>
+<div class="selection-indicator hidden items-center gap-2 mt-4 pt-3 border-t border-surface-container text-secondary font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Selected Department</span>
+</div>
+</div>
+<!-- 5. ENT -->
+<div class="dept-card group cursor-pointer rounded-2xl p-6 bg-surface-container-lowest border-2 border-transparent hover:border-surface-variant shadow-sm hover:shadow flex flex-col justify-between min-h-[160px] transition-all transform active:scale-[0.98]" data-dept="ent">
+<div class="flex items-start gap-4">
+<div class="icon-box w-16 h-16 rounded-2xl bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[36px]">hearing</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline text-xl md:text-2xl font-bold text-primary">ENT</h2>
+<p class="text-lg font-bold text-secondary -mt-0.5">कान, नाक, गला</p>
+<p class="text-sm font-medium text-on-surface-variant mt-2 leading-snug">
+                Ear, nose, throat
+              </p>
+</div>
+</div>
+<div class="selection-indicator hidden items-center gap-2 mt-4 pt-3 border-t border-surface-container text-secondary font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Selected Department</span>
+</div>
+</div>
+<!-- 6. Dental -->
+<div class="dept-card group cursor-pointer rounded-2xl p-6 bg-surface-container-lowest border-2 border-transparent hover:border-surface-variant shadow-sm hover:shadow flex flex-col justify-between min-h-[160px] transition-all transform active:scale-[0.98]" data-dept="dental">
+<div class="flex items-start gap-4">
+<div class="icon-box w-16 h-16 rounded-2xl bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[36px]">dentistry</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline text-xl md:text-2xl font-bold text-primary">Dental</h2>
+<p class="text-lg font-bold text-secondary -mt-0.5">दांत चिकित्सा</p>
+<p class="text-sm font-medium text-on-surface-variant mt-2 leading-snug">
+                Teeth, mouth pain
+              </p>
+</div>
+</div>
+<div class="selection-indicator hidden items-center gap-2 mt-4 pt-3 border-t border-surface-container text-secondary font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Selected Department</span>
+</div>
+</div>
+</div>
+<!-- Reassuring Triage Assistance Pill -->
+<div class="p-4 md:p-5 rounded-2xl bg-surface-container-lowest border border-surface-container flex items-center gap-4 shadow-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">support_agent</span>
+</div>
+<p class="text-sm md:text-base text-on-surface-variant leading-relaxed">
+<strong class="text-primary">Not sure which clinic to choose?</strong> Don't worry, select the closest department and our hospital staff will assist you. • यदि निश्चित नहीं हैं, तो किसी भी नजदीकी विभाग को चुनें।
+        </p>
+</div>
+</div>
+</main>
+<!-- Clear, High-Contrast Footer Navigation -->
+<footer class="w-full bg-surface-container-lowest border-t border-surface-container py-5 px-6 md:px-12 sticky bottom-0 z-40">
+<div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+<!-- Large Back Button -->
+<button class="w-full sm:w-auto h-16 px-8 rounded-2xl bg-surface-container-low hover:bg-surface-container text-primary font-headline font-bold text-lg flex items-center justify-center gap-3 transition-all border border-surface-container active:scale-95 cursor-pointer" onclick="window.history.back();" type="button">
+<span class="material-symbols-outlined text-[26px]">arrow_back</span>
+<span>Back • पीछे जाएँ</span>
+</button>
+<!-- Prominent Confirm Button -->
+<button class="w-full sm:w-auto min-w-[280px] md:min-w-[340px] h-16 px-10 rounded-2xl bg-primary hover:bg-primary-container text-on-primary font-headline font-bold text-lg flex items-center justify-center gap-3 shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer" id="confirm-btn" type="button">
+<span>Confirm Department</span>
+<span class="material-symbols-outlined text-[26px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+<script>
+    (function() {
+      const cards = document.querySelectorAll('.dept-card');
+      const confirmBtn = document.getElementById('confirm-btn');
+      let selectedName = 'General Medicine (सामान्य चिकित्सा)';
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          cards.forEach(c => {
+            c.classList.remove('bg-surface-container-low', 'border-secondary');
+            c.classList.add('bg-surface-container-lowest', 'border-transparent');
+            
+            const iconBox = c.querySelector('.icon-box');
+            if (iconBox) {
+              iconBox.classList.remove('bg-secondary', 'text-on-secondary');
+              iconBox.classList.add('bg-surface-container-high', 'text-primary');
+            }
+            
+            const indicator = c.querySelector('.selection-indicator');
+            if (indicator) {
+              indicator.classList.add('hidden');
+              indicator.classList.remove('flex');
+            }
+          });
+
+          card.classList.remove('bg-surface-container-lowest', 'border-transparent');
+          card.classList.add('bg-surface-container-low', 'border-secondary');
+
+          const activeIcon = card.querySelector('.icon-box');
+          if (activeIcon) {
+            activeIcon.classList.remove('bg-surface-container-high', 'text-primary');
+            activeIcon.classList.add('bg-secondary', 'text-on-secondary');
+          }
+
+          const activeIndicator = card.querySelector('.selection-indicator');
+          if (activeIndicator) {
+            activeIndicator.classList.remove('hidden');
+            activeIndicator.classList.add('flex');
+          }
+
+          const title = card.querySelector('h2');
+          const sub = card.querySelector('p');
+          if (title && sub) {
+            selectedName = `${title.innerText} (${sub.innerText})`;
+          }
+        });
+      });
+
+      if (confirmBtn) {
+        confirmBtn.addEventListener('click', () => {
+          alert('Department Confirmed: ' + selectedName);
+        });
+      }
+
+      const voiceBtn = document.getElementById('voice-mic-btn');
+      if (voiceBtn) {
+        voiceBtn.addEventListener('click', () => {
+          const input = document.getElementById('opd-search');
+          if (input) {
+            input.value = "Fever and cough (बुखार और खांसी)";
+            input.focus();
+          }
+        });
+      }
+    })();
+  </script>
+</body></html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-low":"#eff4ff","on-background":"#0b1c30","on-surface":"#0b1c30","on-error-container":"#93000a","outline":"#74777e","on-secondary-container":"#00476e","on-secondary":"#ffffff","inverse-primary":"#b0c8eb","surface-container-highest":"#d3e4fe","primary-container":"#0a2540","surface-container":"#e5eeff","on-surface-variant":"#43474d","surface-container-lowest":"#ffffff","on-primary-container":"#768dad","error":"#ba1a1a","surface-bright":"#f8f9ff","on-tertiary-fixed-variant":"#005137","secondary-container":"#5bb8fe","on-primary":"#ffffff","inverse-on-surface":"#eaf1ff","tertiary-container":"#002a1b","on-tertiary-fixed":"#002114","surface":"#f8f9ff","inverse-surface":"#213145","surface-dim":"#cbdbf5","primary-fixed-dim":"#b0c8eb","on-error":"#ffffff","outline-variant":"#c4c6ce","on-secondary-fixed":"#001d31","tertiary":"#001209","on-tertiary-container":"#1a9e70","on-primary-fixed":"#001c37","on-primary-fixed-variant":"#314865","secondary-fixed-dim":"#93ccff","surface-tint":"#49607e","secondary-fixed":"#cce5ff","tertiary-fixed-dim":"#68dba9","secondary":"#006398","primary-fixed":"#d2e4ff","tertiary-fixed":"#85f8c4","surface-variant":"#d3e4fe","on-tertiary":"#ffffff","background":"#f8f9ff","error-container":"#ffdad6","primary":"#000f22","on-secondary-fixed-variant":"#004b73","surface-container-high":"#dce9ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"component-gap-lg":"1.5rem","touch-min-staff":"2.75rem","tablet-edge-margin":"2rem","component-gap-sm":"0.75rem","kiosk-edge-margin":"3rem","gutter-compact":"1rem","gutter-kiosk":"2rem","touch-min-patient":"4rem"},"fontFamily":{"body-lg":["Inter"],"display-kiosk":["Plus Jakarta Sans"],"body-xl":["Inter"],"label-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"display-kiosk-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-touch":["Inter"],"headline-xl":["Plus Jakarta Sans"],"label-triage":["Inter"],"body-md":["Inter"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-kiosk":["48px",{"lineHeight":"56px","fontWeight":"700"}],"body-xl":["20px",{"lineHeight":"30px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","fontWeight":"600"}],"display-kiosk-mobile":["36px",{"lineHeight":"44px","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-touch":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-triage":["13px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="p-4 flex items-center justify-between gap-2"><div class="flex items-center gap-3 min-w-0"><img alt="Brand logo. - Primary color: #0a2540 - Font: plusJakartaSans - Mode: light - Roundness: rounded-sm " class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xufayy7-uglGbTP_EOes8m8HTIpMB-d0ya10o6-D0C4GzSZsxTJHZnv_ZdK0JxYdfz6DMyt4NTRWOlRVnaZmHKcu69P2VKZGotNCuwr86-k4l8wAd3hSE0beLcUiRMgR1jt7VQyDsUlzN9mJAPQvyTKkmYk66fkQUCZZogwCx1_0Dkzt31zdxjYXbfTtS4uLydVvNPxPNEqS5BJjAtUMkgn00rwh3Vt6iDGFKOVJ5wqG1R_r73Netdf2M"/><div class="flex flex-col min-w-0"><span class="font-headline-md text-headline-md text-primary tracking-tight truncate">MediKiosk</span><span class="font-label-triage text-label-triage uppercase text-on-surface-variant">Enterprise Ops</span></div></div><div class="w-2 h-2 rounded-full bg-secondary shrink-0"></div></div><div class="px-4 py-2"><div class="p-3 bg-surface-container-low rounded-lg"><div class="flex items-center justify-between mb-1.5"><span class="font-label-triage text-label-triage text-on-surface-variant uppercase">Facility Context</span><span class="flex items-center gap-1 font-label-triage text-label-triage text-secondary"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>LIVE</span></div><div class="flex items-center justify-between gap-2"><div class="min-w-0"><p class="font-label-md text-label-md text-on-surface font-semibold truncate">AIIMS New Delhi</p><p class="font-label-triage text-label-triage text-on-surface-variant truncate">Central Administration • केंद्रीय प्रशासन</p></div><button class="p-1 text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">swap_vert</span></button></div></div></div><div class="px-4 py-1.5"><div class="flex items-center justify-between px-3 py-2 bg-surface-container rounded-lg"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-md text-label-md text-on-surface font-medium">All Systems Nominal</span></div><span class="font-label-triage text-label-triage text-on-surface-variant">100%</span></div></div><div class="px-4 pt-3 pb-1"><span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider">Clinical Modules • मॉड्यूल</span></div><nav class="flex-1 px-3 space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="overview-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md truncate">Overview / Dashboard</span><span class="font-label-triage text-label-triage opacity-75 truncate">सिंहावलोकन एवं डैशबोर्ड</span></div></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="kiosk-fleet" href="#"><span class="material-symbols-outlined text-[20px]">devices_other</span><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md truncate">Kiosk Fleet</span><span class="font-label-triage text-label-triage opacity-75 truncate">कियोस्क नेटवर्क प्रबंधन</span></div></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="staff-and-doctors" href="#"><span class="material-symbols-outlined text-[20px]">stethoscope</span><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md truncate">Staff &amp; Doctors</span><span class="font-label-triage text-label-triage opacity-75 truncate">चिकित्सक एवं स्वास्थ्यकर्मी</span></div></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="opd-operations" href="#"><span class="material-symbols-outlined text-[20px]">local_hospital</span><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md truncate">OPD Operations</span><span class="font-label-triage text-label-triage opacity-75 truncate">ओपीडी एवं टोकन प्रवाह</span></div></a><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary font-semibold" data-path="analytics-and-reports" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md truncate">Analytics &amp; Reports</span><span class="font-label-triage text-label-triage opacity-75 truncate">विश्लेषण एवं रिपोर्ट</span></div></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-and-access" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md truncate">Audit &amp; Access</span><span class="font-label-triage text-label-triage opacity-75 truncate">ऑडिट एवं सुरक्षा लॉग</span></div></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="system-and-compliance" href="#"><span class="material-symbols-outlined text-[20px]">policy</span><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md truncate">System &amp; Compliance</span><span class="font-label-triage text-label-triage opacity-75 truncate">प्रणाली एवं अनुपालन</span></div></a><a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="alert-center" href="#"><div class="flex items-center gap-3 min-w-0"><span class="material-symbols-outlined text-[20px]">notifications_active</span><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md truncate">Alert Center</span><span class="font-label-triage text-label-triage opacity-75 truncate">आपातकालीन सतर्कता</span></div></div><span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-triage text-label-triage">1</span></a></nav><div class="p-4 bg-surface-container-low/50"><div class="flex items-center gap-2"><a class="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="help-and-support" href="#"><span class="material-symbols-outlined text-[18px]">help</span><span class="font-label-md text-label-md">Help</span></a><a class="flex items-center justify-center py-2 px-3 rounded-lg bg-surface-container-lowest text-error hover:bg-error-container hover:text-on-error-container transition-colors" data-path="login" href="#" title="Sign Out"><span class="material-symbols-outlined text-[18px]">logout</span></a></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6"><div class="flex items-center gap-4 min-w-0"><div class="flex flex-col min-w-0"><span class="font-headline-md text-headline-md text-primary tracking-tight truncate">AIIMS Central Operations</span><span class="font-label-triage text-label-triage text-on-surface-variant truncate">अखिल भारतीय आयुर्विज्ञान संस्थान • नई दिल्ली</span></div><span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-triage text-label-triage whitespace-nowrap">Hospital Administrator (Super Admin)</span></div><div class="flex items-center gap-4 shrink-0"><div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span class="font-label-md text-label-md whitespace-nowrap">11:45 AM IST • Shift 1</span></div><button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-md text-label-md hidden md:inline">Search</span><kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-[11px] font-mono text-on-surface-variant">⌘K</kbd></button><div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-md text-label-md text-on-surface font-medium whitespace-nowrap">8/8 Kiosks Online</span></div><a class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-error-container text-on-error-container hover:opacity-90 transition-opacity" data-path="alert-center" href="#"><span class="material-symbols-outlined text-[18px]">warning</span><span class="font-label-triage text-label-triage font-bold whitespace-nowrap">1 CRITICAL</span></a><div class="h-6 w-px bg-outline-variant/30"></div><div class="flex items-center gap-3"><div class="flex flex-col items-end min-w-0"><span class="font-label-md text-label-md text-on-surface font-semibold truncate max-w-[210px]">Dr. Vikramaditya Sen</span><span class="font-label-triage text-label-triage text-on-surface-variant truncate max-w-[210px]">Medical Superintendent &amp; COO</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-background min-h-screen w-full px-8"><div class="flex flex-col w-full pb-16 space-y-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pt-4">
+<div class="flex flex-col gap-1 max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-triage text-label-triage uppercase">NABH &amp; ABDM Tier-4 Telemetry</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-triage text-label-triage text-on-surface-variant">Live Pipeline Sync: 11:45:02 IST</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">
+        Hospital Operational Analytics &amp; Executive Intelligence
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        अस्पताल संचालन विश्लेषण एवं रिपोर्ट • Comprehensive throughput trends, kiosk utilization, triage velocity, OCR accuracy, and accessibility demographics.
+      </p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="flex items-center gap-2 h-11 px-4 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Schedule Automated Briefing</span>
+</button>
+<button class="flex items-center gap-2 h-11 px-4 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Raw Data (CSV)</span>
+</button>
+<button class="flex items-center gap-2 h-11 px-5 rounded-lg bg-primary text-on-primary hover:bg-primary/90 transition-all shadow-sm font-label-md text-label-md font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>NABH Dossier (PDF)</span>
+</button>
+</div>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-1.5 p-1 bg-surface-container-low rounded-lg">
+<span class="px-2.5 font-label-triage text-label-triage uppercase text-on-surface-variant">Timeframe:</span>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md transition-colors bg-surface-container-lowest text-on-surface font-semibold shadow-sm" type="button">Today (Live)</button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-colors" type="button">Last 7 Days</button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-colors" type="button">Month to Date</button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-colors" type="button">Quarterly</button>
+<div class="h-4 w-px bg-outline-variant/40 mx-1"></div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-triage text-label-triage">
+<span class="material-symbols-outlined text-[16px] text-secondary">date_range</span>
+<span>01 Oct - 24 Oct 2025</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">domain</span>
+<label class="font-label-triage text-label-triage uppercase text-on-surface-variant" for="deptSelect">Department:</label>
+<select class="bg-transparent text-on-surface font-label-md text-label-md font-medium focus:outline-none cursor-pointer" id="deptSelect">
+<option>All Hospital Units (सभी विभाग)</option>
+<option>General Medicine (सामान्य चिकित्सा)</option>
+<option>Cardiology (हृदय रोग विभाग)</option>
+<option>Emergency &amp; Triage Units</option>
+<option>Orthopedics (अस्थि रोग विभाग)</option>
+<option>Pediatrics (बाल चिकित्सा)</option>
+</select>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-low rounded-lg">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface">Auto-Refresh: <strong class="font-semibold">30s</strong></span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+<div class="p-5 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-2 mb-3">
+<div class="flex flex-col">
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider">Total Patient Volume</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant/70">कुल मरीज प्रवाह</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-primary tracking-tight font-bold">14,892</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-secondary font-label-triage text-label-triage font-bold">MTD</span>
+</div>
+<div class="flex items-center gap-1.5 mt-2 text-on-tertiary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+<span>+12.4%</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant font-normal">vs previous month</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-2 mb-3">
+<div class="flex flex-col">
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider">Kiosk Intake Speed</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant/70">औसत कियोस्क समय</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-xl text-headline-xl text-primary tracking-tight font-bold">3.2</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">Minutes</span>
+</div>
+<div class="flex items-center gap-1 mt-2 text-on-tertiary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+<span>82.2% faster</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant font-normal">(vs 18m manual)</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-2 mb-3">
+<div class="flex flex-col">
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider">Average OPD Wait</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant/70">ओपीडी प्रतीक्षा अवधि</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-xl text-headline-xl text-primary tracking-tight font-bold">26.5</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">Minutes</span>
+</div>
+<div class="flex items-center gap-1 mt-2 text-on-tertiary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>-41.1%</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant font-normal">below 45m benchmark</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 62%"></div>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-2 mb-3">
+<div class="flex flex-col">
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider">OCR Engine Precision</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant/70">दस्तावेज़ निष्कर्षण सटीकता</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">document_scanner</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-xl text-headline-xl text-primary tracking-tight font-bold">98.7%</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">Confidence</span>
+</div>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant font-label-md text-label-md">
+<span class="font-semibold text-on-surface">7,420</span>
+<span class="font-label-triage text-label-triage">clinical records digitized</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 98.7%"></div>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-2 mb-3">
+<div class="flex flex-col">
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider">P1 Triage Precision</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant/70">रेड-फ्लैग आपातकाल पहचान</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">e911_emergency</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-xl text-headline-xl text-primary tracking-tight font-bold">99.1%</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface font-label-triage text-label-triage font-semibold">0 Misses</span>
+</div>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant font-label-md text-label-md">
+<span class="font-semibold text-primary">182 critical cases</span>
+<span class="font-label-triage text-label-triage">intercepted</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 99.1%"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-8 p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+              Hourly Patient Inflow vs Chamber Consultation Pace
+            </h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-triage text-label-triage">08:00 - 16:00 IST</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            घंटेवार मरीज प्रवाह एवं डॉक्टर परामर्श दर • Comparing self-checkin, nurse triage tagging, and doctor signoffs.
+          </p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 font-label-triage text-label-triage text-on-surface-variant">
+<span class="w-3 h-3 rounded bg-primary"></span>
+<span>Kiosk Intake</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-triage text-label-triage text-on-surface-variant">
+<span class="w-3 h-3 rounded bg-secondary"></span>
+<span>Triage Velocity</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-triage text-label-triage text-on-surface-variant">
+<span class="w-3 h-3 rounded bg-surface-container-highest"></span>
+<span>Consultation</span>
+</div>
+</div>
+</div>
+<div class="p-3 mb-6 bg-surface-container-low rounded-lg flex items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<span class="font-label-md text-label-md text-on-surface">
+<strong>Critical Inflow Surge Detected:</strong> Peak intake concentrated between <span class="text-primary font-bold">10:00 AM - 11:30 AM</span> (318 patients/hr). AI buffer dynamic queue reassigned +2 triage desks.
+          </span>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest font-label-triage text-label-triage text-on-surface-variant shrink-0">Buffer Activated</span>
+</div>
+<div class="relative w-full h-72 flex items-end justify-between pt-8 pb-6 px-2">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-6">
+<div class="w-full flex items-center justify-between text-on-surface-variant/40 font-label-triage text-[11px]">
+<span>350 pts</span>
+<div class="flex-1 ml-3 h-px bg-surface-container-high"></div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant/40 font-label-triage text-[11px]">
+<span>280 pts</span>
+<div class="flex-1 ml-3 h-px bg-surface-container-high"></div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant/40 font-label-triage text-[11px]">
+<span>210 pts</span>
+<div class="flex-1 ml-3 h-px bg-surface-container-high"></div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant/40 font-label-triage text-[11px]">
+<span>140 pts</span>
+<div class="flex-1 ml-3 h-px bg-surface-container-high"></div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant/40 font-label-triage text-[11px]">
+<span>70 pts</span>
+<div class="flex-1 ml-3 h-px bg-surface-container-high"></div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant/40 font-label-triage text-[11px]">
+<span>0</span>
+<div class="flex-1 ml-3 h-px bg-surface-container-high"></div>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-10">
+<div class="flex items-end gap-1 h-56 w-full justify-center">
+<div class="w-2.5 bg-primary rounded-t-sm" style="height: 35%" title="08:00 Kiosk Intake: 120"></div>
+<div class="w-2.5 bg-secondary rounded-t-sm" style="height: 30%" title="08:00 Triage: 105"></div>
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 25%" title="08:00 Chamber: 85"></div>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">08:00</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-10">
+<div class="flex items-end gap-1 h-56 w-full justify-center">
+<div class="w-2.5 bg-primary rounded-t-sm" style="height: 60%" title="09:00 Kiosk Intake: 210"></div>
+<div class="w-2.5 bg-secondary rounded-t-sm" style="height: 52%" title="09:00 Triage: 180"></div>
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 44%" title="09:00 Chamber: 154"></div>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">09:00</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-10">
+<div class="flex items-end gap-1 h-56 w-full justify-center">
+<div class="w-2.5 bg-primary rounded-t-sm" style="height: 92%" title="10:00 Kiosk Intake: 318"></div>
+<div class="w-2.5 bg-secondary rounded-t-sm" style="height: 84%" title="10:00 Triage: 290"></div>
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 72%" title="10:00 Chamber: 250"></div>
+</div>
+<span class="font-label-triage text-label-triage font-bold text-error">10:00*</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-10">
+<div class="flex items-end gap-1 h-56 w-full justify-center">
+<div class="w-2.5 bg-primary rounded-t-sm" style="height: 88%" title="11:00 Kiosk Intake: 305"></div>
+<div class="w-2.5 bg-secondary rounded-t-sm" style="height: 82%" title="11:00 Triage: 284"></div>
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 76%" title="11:00 Chamber: 265"></div>
+</div>
+<span class="font-label-triage text-label-triage font-bold text-error">11:00*</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-10">
+<div class="flex items-end gap-1 h-56 w-full justify-center">
+<div class="w-2.5 bg-primary rounded-t-sm" style="height: 65%" title="12:00 Kiosk Intake: 226"></div>
+<div class="w-2.5 bg-secondary rounded-t-sm" style="height: 68%" title="12:00 Triage: 235"></div>
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 70%" title="12:00 Chamber: 242"></div>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">12:00</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-10">
+<div class="flex items-end gap-1 h-56 w-full justify-center">
+<div class="w-2.5 bg-primary rounded-t-sm" style="height: 40%" title="13:00 Kiosk Intake: 140"></div>
+<div class="w-2.5 bg-secondary rounded-t-sm" style="height: 48%" title="13:00 Triage: 168"></div>
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 55%" title="13:00 Chamber: 192"></div>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">13:00</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-10">
+<div class="flex items-end gap-1 h-56 w-full justify-center">
+<div class="w-2.5 bg-primary rounded-t-sm" style="height: 48%" title="14:00 Kiosk Intake: 167"></div>
+<div class="w-2.5 bg-secondary rounded-t-sm" style="height: 50%" title="14:00 Triage: 175"></div>
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 52%" title="14:00 Chamber: 180"></div>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">14:00</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-10">
+<div class="flex items-end gap-1 h-56 w-full justify-center">
+<div class="w-2.5 bg-primary rounded-t-sm" style="height: 30%" title="15:00 Kiosk Intake: 105"></div>
+<div class="w-2.5 bg-secondary rounded-t-sm" style="height: 35%" title="15:00 Triage: 122"></div>
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 42%" title="15:00 Chamber: 146"></div>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">15:00</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-10">
+<div class="flex items-end gap-1 h-56 w-full justify-center">
+<div class="w-2.5 bg-primary rounded-t-sm" style="height: 18%" title="16:00 Kiosk Intake: 62"></div>
+<div class="w-2.5 bg-secondary rounded-t-sm" style="height: 22%" title="16:00 Triage: 78"></div>
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 32%" title="16:00 Chamber: 112"></div>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">16:00</span>
+</div>
+</div>
+<div class="mt-4 pt-4 flex flex-wrap items-center justify-between gap-4 text-on-surface-variant">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="font-label-triage text-label-triage uppercase">Daily Throughput Max:</span>
+<span class="font-label-md text-label-md font-semibold text-primary">318 Pts/Hr</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-triage text-label-triage uppercase">Chamber Clearance Index:</span>
+<span class="font-label-md text-label-md font-semibold text-secondary">94.8%</span>
+</div>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant/80">Historical Shift Variance: ±4.2%</span>
+</div>
+</div>
+<div class="lg:col-span-4 p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 pb-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+              Departmental Load
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">विभागीय मरीज भार विभाजन</p>
+</div>
+<span class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[20px]">pie_chart</span>
+</span>
+</div>
+<div class="relative py-4 flex items-center justify-center">
+<svg class="w-48 h-48 transform -rotate-90" viewbox="0 0 120 120">
+<circle cx="60" cy="60" fill="none" r="48" stroke="#d3e4fe" stroke-width="16"></circle>
+<circle cx="60" cy="60" fill="none" r="48" stroke="#000f22" stroke-dasharray="301.59" stroke-dashoffset="186.98" stroke-width="16"></circle>
+<circle cx="60" cy="60" fill="none" r="48" stroke="#006398" stroke-dasharray="301.59" stroke-dashoffset="235.24" stroke-dashoffset-placeholder="calc(301.59 * (1 - 0.22))" stroke-width="16" style="transform: rotate(136.8deg); transform-origin: center;"></circle>
+<circle cx="60" cy="60" fill="none" r="48" stroke="#5bb8fe" stroke-dasharray="301.59" stroke-dashoffset="253.33" stroke-width="16" style="transform: rotate(216deg); transform-origin: center;"></circle>
+<circle cx="60" cy="60" fill="none" r="48" stroke="#768dad" stroke-dasharray="301.59" stroke-dashoffset="259.36" stroke-width="16" style="transform: rotate(273.6deg); transform-origin: center;"></circle>
+<circle cx="60" cy="60" fill="none" r="48" stroke="#cbd5e1" stroke-dasharray="301.59" stroke-dashoffset="271.43" stroke-width="16" style="transform: rotate(324deg); transform-origin: center;"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">14.8k</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase">Patients</span>
+</div>
+</div>
+<div class="space-y-3 pt-4">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-on-surface font-medium">General Medicine (सामान्य चिकित्सा)</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">38%</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Cardiology (हृदय रोग विभाग)</span>
+</div>
+<span class="font-label-md text-label-md text-secondary font-bold">22%</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Orthopedics (अस्थि रोग विभाग)</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">16%</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-on-primary-container"></span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Pediatrics (बाल चिकित्सा)</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">14%</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-surface-dim"></span>
+<span class="font-label-md text-label-md text-on-surface font-medium">General Surgery (शल्य चिकित्सा)</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">10%</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant font-label-triage text-label-triage">
+<span>Active Doctor Chambers: 46</span>
+<span class="text-secondary font-bold">Chamber Occupancy: 96.2%</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 pb-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-lg text-headline-lg text-primary tracking-tight">Fleet Telemetry</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-secondary font-label-triage text-label-triage font-bold">8/8 ONLINE</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">कियोस्क नेटवर्क स्थिति एवं उपयोगिता दर</p>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low text-secondary">
+<span class="material-symbols-outlined text-[20px]">monitor_heart</span>
+</div>
+</div>
+<div class="p-3 mb-4 bg-surface-container-low rounded-lg flex items-center justify-between">
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase">Aggregated Downtime Today</span>
+<span class="font-label-md text-label-md text-on-tertiary-container font-bold">0.02% (Nominal)</span>
+</div>
+<div class="space-y-3.5">
+<div>
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">KSK-01 (Main Atrium)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">142 pts • <strong>94%</strong></span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">KSK-02 (Cardio Annex)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">128 pts • <strong>88%</strong></span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">KSK-03 (OPD Tower A)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">136 pts • <strong>91%</strong></span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 91%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">KSK-04 (OPD Tower B)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">119 pts • <strong>84%</strong></span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 84%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">KSK-05 (Pediatric Gate)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">104 pts • <strong>79%</strong></span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 79%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">KSK-06 to KSK-08 (Civil Wing)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant">288 pts • <strong>82% avg</strong></span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 82%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between text-on-surface-variant font-label-triage text-label-triage">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">check</span>
+<span>Printers &amp; OCR Modules Calibrated</span>
+</div>
+<span class="text-primary font-bold">Paper Level: 84%</span>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 pb-4">
+<div class="flex flex-col">
+<h3 class="font-headline-lg text-headline-lg text-primary tracking-tight">Language &amp; Accessibility</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">भाषा एवं दिव्यांगजन सुगमता उपयोग</p>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[20px]">accessibility_new</span>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider block mb-2">Native Language Distribution</span>
+<div class="flex h-3 w-full rounded-full overflow-hidden bg-surface-container-low">
+<div class="bg-primary h-full" style="width: 58%" title="Hindi: 58%"></div>
+<div class="bg-secondary h-full" style="width: 28%" title="English: 28%"></div>
+<div class="bg-secondary-container h-full" style="width: 14%" title="Regional: 14%"></div>
+</div>
+<div class="flex items-center justify-between mt-2 font-label-triage text-label-triage">
+<span class="text-primary font-bold">हिन्दी (58%)</span>
+<span class="text-secondary font-bold">English (28%)</span>
+<span class="text-on-secondary-container font-semibold">ਪੰਜਾਬੀ / اردو / ગુજરાતી (14%)</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Voice Intake (Audio AI)</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant">कम साक्षरता वाले मरीजों द्वारा प्रयुक्त</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-primary font-bold">48%</span>
+<span class="font-label-triage text-label-triage text-secondary font-medium">7,148 sessions</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">contrast</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">High-Contrast / Large Text</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant">वरिष्ठ नागरिक एवं दृष्टिबाधित मोड</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-primary font-bold">18%</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant">Elderly visitors</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">accessible</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Wheelchair Assistance</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant">सहायक एवं व्हीलचेयर अनुरोध</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-error font-bold">34 Dispatched</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant">Avg arrival 1.8m</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant font-label-triage text-label-triage">
+<span>Assistive Kiosk Mode: Active</span>
+<span class="text-on-tertiary-container font-semibold">100% Multilingual Compliance</span>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 pb-4">
+<div class="flex flex-col">
+<h3 class="font-headline-lg text-headline-lg text-primary tracking-tight">Document Ingestion</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">चिकित्सा दस्तावेज़ स्कैन विश्लेषण</p>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+</div>
+<div class="p-3 mb-4 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<span class="font-label-triage text-label-triage text-on-surface">ABDM Ayushman Bharat Sync</span>
+</div>
+<span class="font-label-triage text-label-triage font-bold text-on-tertiary-container">ACTIVE</span>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between items-center mb-1.5 font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">prescriptions</span>
+<span class="text-on-surface font-semibold">Prescriptions (पर्चा)</span>
+</div>
+<span class="font-bold text-primary">54% <span class="font-normal text-on-surface-variant font-label-triage">(4,007 files)</span></span>
+</div>
+<div class="w-full bg-surface-container-low h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 54%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1.5 font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">biotech</span>
+<span class="text-on-surface font-semibold">Lab Reports (जांच रिपोर्ट)</span>
+</div>
+<span class="font-bold text-secondary">28% <span class="font-normal text-on-surface-variant font-label-triage">(2,078 files)</span></span>
+</div>
+<div class="w-full bg-surface-container-low h-2.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 28%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1.5 font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface">assignment_turned_in</span>
+<span class="text-on-surface font-semibold">Discharge Summaries</span>
+</div>
+<span class="font-bold text-on-surface">12% <span class="font-normal text-on-surface-variant font-label-triage">(890 files)</span></span>
+</div>
+<div class="w-full bg-surface-container-low h-2.5 rounded-full overflow-hidden">
+<div class="bg-surface-container-highest h-full rounded-full" style="width: 12%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1.5 font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">badge</span>
+<span class="text-on-surface font-semibold">Insurance &amp; ABHA Cards</span>
+</div>
+<span class="font-bold text-on-tertiary-container">6% <span class="font-normal text-on-surface-variant font-label-triage">(445 cards)</span></span>
+</div>
+<div class="w-full bg-surface-container-low h-2.5 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 6%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between text-on-surface-variant font-label-triage text-label-triage">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Optical Character Neural Engine v3.4</span>
+</div>
+<span class="text-primary font-bold">Latency: 410ms</span>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[28px]">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-md text-headline-md text-primary">National Accreditation Board for Hospitals (NABH) Conformance Summary</h4>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-triage text-label-triage font-bold">100% COMPLIANT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Audit cycle Q4-2025: All patient timestamps, triage escalation trails, voice recordings, and OCR metadata conform to MoHFW Digital Health guidelines and Section 21 of DISHA regulations.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="h-11 px-4 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md font-semibold" type="button">
+        View Audit Trail Log
+      </button>
+<button class="h-11 px-5 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 transition-all font-label-md text-label-md font-semibold shadow-sm flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Download Official Certification</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Filter bar interactions
+  document.querySelectorAll('.p-1.bg-surface-container-low button').forEach(button => {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.p-1.bg-surface-container-low button').forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      this.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+      this.classList.remove('text-on-surface-variant');
+    });
+  });
+</script></main></div></body></html>

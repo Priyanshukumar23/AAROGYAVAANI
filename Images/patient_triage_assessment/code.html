@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","surface-tint":"#49607e","error-container":"#ffdad6","secondary":"#006398","tertiary-fixed-dim":"#68dba9","on-error-container":"#93000a","on-secondary":"#ffffff","secondary-fixed-dim":"#93ccff","on-surface-variant":"#43474d","error":"#ba1a1a","on-background":"#0b1c30","surface-container":"#e5eeff","surface-container-low":"#eff4ff","outline-variant":"#c4c6ce","surface-variant":"#d3e4fe","secondary-fixed":"#cce5ff","on-surface":"#0b1c30","on-tertiary-container":"#1a9e70","on-secondary-container":"#00476e","primary-fixed-dim":"#b0c8eb","on-primary-container":"#768dad","background":"#f8f9ff","surface-container-highest":"#d3e4fe","on-primary":"#ffffff","on-primary-fixed-variant":"#314865","inverse-primary":"#b0c8eb","primary-fixed":"#d2e4ff","on-primary-fixed":"#001c37","tertiary-container":"#002a1b","surface-container-high":"#dce9ff","on-tertiary-fixed-variant":"#005137","tertiary":"#001209","tertiary-fixed":"#85f8c4","outline":"#74777e","primary-container":"#0a2540","surface-dim":"#cbdbf5","primary":"#000f22","on-error":"#ffffff","on-secondary-fixed":"#001d31","surface-bright":"#f8f9ff","on-tertiary-fixed":"#002114","inverse-on-surface":"#eaf1ff","on-secondary-fixed-variant":"#004b73","inverse-surface":"#213145","secondary-container":"#5bb8fe","surface":"#f8f9ff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"touch-min-patient":"4rem","gutter-kiosk":"2rem","component-gap-lg":"1.5rem","kiosk-edge-margin":"3rem","touch-min-staff":"2.75rem","component-gap-sm":"0.75rem","gutter-compact":"1rem","tablet-edge-margin":"2rem"},fontFamily:{"headline-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"body-xl":["Inter"],"label-md":["Inter"],"display-kiosk":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-md":["Plus Jakarta Sans"],"label-touch":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-triage":["Inter"],"display-kiosk-mobile":["Plus Jakarta Sans"]},fontSize:{"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-xl":["20px",{"lineHeight":"30px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"display-kiosk":["48px",{"lineHeight":"56px","fontWeight":"700"}],"headline-xl":["32px",{"lineHeight":"40px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-touch":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","fontWeight":"600"}],"label-triage":["13px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"display-kiosk-mobile":["36px",{"lineHeight":"44px","fontWeight":"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-20 px-6 flex items-center gap-3 bg-surface-container-lowest"><img alt="Brand logo. - Primary color: #0a2540
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xufayy7-uglGbTP_EOes8m8HTIpMB-d0ya10o6-D0C4GzSZsxTJHZnv_ZdK0JxYdfz6DMyt4NTRWOlRVnaZmHKcu69P2VKZGotNCuwr86-k4l8wAd3hSE0beLcUiRMgR1jt7VQyDsUlzN9mJAPQvyTKkmYk66fkQUCZZogwCx1_0Dkzt31zdxjYXbfTtS4uLydVvNPxPNEqS5BJjAtUMkgn00rwh3Vt6iDGFKOVJ5wqG1R_r73Netdf2M"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold tracking-tight text-primary-container leading-none">MediKiosk</span><span class="font-label-triage text-label-triage uppercase text-secondary font-bold tracking-wider mt-1">NURSE PORTAL</span></div></div><div class="px-6 py-2"><span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">TRIAGE WORKFLOW</span></div><nav class="px-4 flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-bold rounded-xl shadow-[0_4px_12px_rgba(10,37,64,0.08)]"><a class="flex items-center justify-between px-3 h-11 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="dashboard" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Dashboard</span></div></a><a class="flex items-center justify-between px-3 h-11 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="triage-queue" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span><span class="font-label-md text-label-md">Triage Queue</span></div><span class="px-2 py-0.5 rounded-full font-label-triage text-label-triage bg-secondary-container text-on-secondary-container font-bold">8 Waiting</span></a><a class="flex items-center justify-between px-3 h-11 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="patients-intake" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span class="font-label-md text-label-md">Patients &amp; Intake</span></div></a><a class="flex items-center justify-between px-3 h-11 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="vital-signs" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">monitor_heart</span><span class="font-label-md text-label-md">Vital Signs</span></div></a><a class="flex items-center justify-between px-3 h-11 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="alerts-red-flags" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-error">notification_important</span><span class="font-label-md text-label-md">Alerts &amp; Red Flags</span></div><span class="w-2.5 h-2.5 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></a><a class="flex items-center justify-between px-3 h-11 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="documents" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">document_scanner</span><span class="font-label-md text-label-md">Documents</span></div></a><a class="flex items-center justify-between px-3 h-11 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="reports-history" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">assessment</span><span class="font-label-md text-label-md">Reports &amp; History</span></div></a></nav></div><div class="p-4 flex flex-col gap-1 bg-surface-container-lowest"><a class="flex items-center gap-3 px-3 h-11 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="help-clinical-support" href="#"><span class="material-symbols-outlined text-[20px]">help_outline</span><span class="font-label-md text-label-md">Help &amp; Clinical Support</span></a><a class="flex items-center gap-3 px-3 h-11 rounded-xl text-error hover:bg-error-container hover:text-on-error-container transition-all" data-path="logout-shift-handover" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span class="font-label-md text-label-md font-medium">Logout / Shift Handover</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-6 flex items-center justify-between gap-4"><div class="flex items-center gap-4 min-w-0"><div class="flex flex-col min-w-0"><div class="flex items-center gap-2"><span class="font-headline-md text-headline-md text-on-surface truncate">AIIMS New Delhi</span><span class="text-outline-variant">•</span><span class="font-body-md text-body-md text-on-surface-variant truncate">OPD Central Triage Desk (Ground Floor)</span><span class="px-2.5 py-0.5 rounded-full font-label-triage text-label-triage bg-surface-variant text-on-surface font-bold">Nurse / Triage</span></div><div class="flex items-center gap-2 mt-0.5"><span class="material-symbols-outlined text-secondary text-[16px]">verified_user</span><span class="font-label-triage text-label-triage text-secondary uppercase font-semibold">Secure Staff Access • ABDM &amp; NABH Audit Logged</span></div></div></div><div class="flex items-center gap-4 flex-shrink-0"><div class="hidden xl:flex items-center bg-surface-container-low px-3 h-10 rounded-xl text-on-surface-variant w-64 justify-between shadow-inner"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-md text-label-md text-on-surface-variant">Quick search...</span></div><kbd class="font-label-triage text-label-triage bg-surface-container-lowest px-1.5 py-0.5 rounded shadow-sm text-on-surface-variant font-mono">⌘K</kbd></div><button class="relative w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-4 h-4 rounded-full bg-error text-on-error font-label-triage text-[10px] flex items-center justify-center font-bold">3</span></button><div class="h-8 w-px bg-surface-container-high"></div><div class="flex items-center gap-3 pl-1"><div class="flex flex-col text-right"><div class="flex items-center justify-end gap-1.5"><span class="w-2 h-2 rounded-full bg-on-tertiary-container ring-2 ring-tertiary-fixed"></span><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Sr. Nurse Meena Kumari, RN</span></div><span class="font-label-triage text-label-triage text-on-surface-variant">DL-NUR-88421 • Available / On Duty</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full px-8 pt-20 bg-background min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Top Context Header Bar -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-6">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-triage text-label-triage uppercase text-secondary font-bold tracking-wider">Clinical Station 03</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-medium">Rapid Tri-Tier Assessment</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">Patient Triage Assessment</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Evaluate intake data, verify physiological vitals, and conduct clinical triage assessment.</p>
+</div>
+<!-- Active Clinical Telemetry Timer -->
+<div class="flex items-center gap-3 bg-surface-container-lowest px-4 py-2.5 rounded-xl shadow-sm self-start lg:self-auto">
+<div class="w-3 h-3 rounded-full bg-error animate-ping"></div>
+<div class="flex flex-col">
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase font-bold tracking-wider">Live Assessment Clock</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface tabular-nums" id="elapsed-timer">02m:15s</span>
+</div>
+</div>
+</div>
+<!-- Patient Identity & Status Banner -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 mb-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-2 h-full bg-error"></div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-center">
+<!-- Primary Demographics & Token -->
+<div class="xl:col-span-5 flex items-start gap-4">
+<div class="bg-primary-container text-on-primary font-headline-xl text-headline-xl font-bold px-4 py-3 rounded-xl tracking-tight shadow-md flex flex-col items-center justify-center min-w-[90px]">
+<span class="font-label-triage text-label-triage text-primary-fixed-dim uppercase tracking-widest leading-none">TOKEN</span>
+<span class="mt-1">A-142</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Ramesh Kumar Sharma</h2>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">48 Yrs • Male</span>
+</div>
+<div class="flex items-center gap-2 mt-1 font-body-md text-body-md text-on-surface-variant">
+<span class="font-label-triage text-label-triage uppercase text-secondary font-bold">UHID</span>
+<span class="font-mono text-on-surface font-semibold">AIIMS-2025-08492</span>
+<span>•</span>
+<span class="truncate">ABHA # 91-8842-1092-4410</span>
+</div>
+</div>
+</div>
+<!-- Clinical Assignment -->
+<div class="xl:col-span-3 flex flex-col justify-center">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">ASSIGNED DEPARTMENT</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-secondary text-[20px]">medical_services</span>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface">General Medicine</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant mt-0.5">Room 104 • Dr. Rajesh Sharma</span>
+</div>
+<!-- Triage & ABDM Flags -->
+<div class="xl:col-span-4 flex flex-wrap xl:justify-end gap-2 items-center">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-error-container text-on-error-container shadow-xs">
+<span class="material-symbols-outlined text-[18px]">crisis_alert</span>
+<span class="font-label-triage text-label-triage uppercase font-bold tracking-wider">RED FLAG ALERT DETECTED</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-bold shadow-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span class="font-label-triage text-label-triage uppercase">KIOSK INTAKE COMPLETED</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-bold shadow-xs">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">verified</span>
+<span class="font-label-triage text-label-triage uppercase">ABDM VERIFIED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Two-Column Clinical Assessment Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: Intake & Clinical Context (5 Columns) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- AI Intake Summary Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6">
+<div class="flex items-center justify-between gap-2 pb-4 mb-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">AI Intake Summary &amp; Symptoms</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">info</span>
+</div>
+<!-- Safety Disclaimer Badge -->
+<div class="p-3 bg-surface-container-high rounded-lg flex items-start gap-2.5 mb-5">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">shield</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-tight font-medium">
+            AI-generated summary — Nurse clinical verification mandatory prior to priority grading. Not a diagnostic decision.
+          </p>
+</div>
+<!-- Chief Complaint Section -->
+<div class="mb-5">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">CHIEF COMPLAINT</span>
+<div class="mt-1.5 p-4 rounded-xl bg-surface-container-low text-on-surface font-body-lg text-body-lg font-semibold leading-snug">
+            “Chest discomfort and tightness in center of chest upon mild exertion (~24h)”
+          </div>
+</div>
+<!-- Reported Symptoms -->
+<div class="mb-6">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">REPORTED SYMPTOMS LIST</span>
+<div class="flex flex-col gap-2.5 mt-2">
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5">warning</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Chest heaviness &amp; retrosternal ache</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Substernal location, radiating slightly to left shoulder. Severity rated 8/10.</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-triage text-label-triage font-bold flex-shrink-0">SEVERE</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">air</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Exertional breathlessness</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Dyspnea on walking 20 steps. Functional NYHA Grade II equivalent.</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-triage text-label-triage font-bold flex-shrink-0">MODERATE</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mt-0.5">water_drop</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Mild weakness &amp; diaphoresis</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Cold sweats reported at 04:00 AM onset today. Resolving temporarily.</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-triage text-label-triage font-bold flex-shrink-0">EPISODIC</span>
+</div>
+</div>
+</div>
+<!-- Provenance Badges -->
+<div class="flex flex-wrap items-center gap-2 pt-4">
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase font-semibold">Provenance:</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-triage text-label-triage font-bold">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+            PATIENT SELF-REPORTED
+          </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-triage text-label-triage font-bold">
+<span class="material-symbols-outlined text-[16px]">mic</span>
+            AUDIO TRANSCRIBED (HINDI / हिन्दी)
+          </span>
+</div>
+</div>
+<!-- Medical Baseline & Critical Allergy Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6">
+<!-- Allergy Alert Box -->
+<div class="p-4 rounded-xl bg-error-container text-on-error-container mb-5 shadow-xs">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[24px] text-error flex-shrink-0">emergency</span>
+<div class="flex flex-col">
+<span class="font-label-triage text-label-triage font-bold uppercase tracking-wider text-error">CRITICAL DRUG ALLERGY WARNING</span>
+<span class="font-headline-md text-headline-md font-bold mt-0.5">Severe Penicillin Anaphylaxis</span>
+<span class="font-body-md text-body-md mt-1 opacity-90">Documented ICD-10 Z88.0. Anaphylactic shock event recorded at Safdarjung Hospital (July 2022).</span>
+</div>
+</div>
+</div>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface mb-3">Chronic Baseline &amp; Regimen</h4>
+<!-- Comorbidities -->
+<div class="mb-4">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">COMORBID CONDITIONS</span>
+<div class="grid grid-cols-2 gap-3 mt-2">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Essential HTN</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant">Diagnosed 6 Yrs ago • Active</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Type 2 DM</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant">Diagnosed 4 Yrs ago • Active</span>
+</div>
+</div>
+</div>
+<!-- Active Medications -->
+<div>
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">ACTIVE MEDICATION REGIMEN (ABDM SYNCED)</span>
+<div class="flex flex-col gap-2 mt-2">
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">pill</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Tab Amlodipine 5mg</span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase font-medium">1 Tab OD (Morning)</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">pill</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Tab Metformin 500mg</span>
+</div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase font-medium">1 Tab BD (With meals)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Vital Signs Entry & Verification (7 Columns) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Header & Toggle Bar -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">vital_signs</span>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface">VITAL SIGNS ENTRY</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Automated sensory verification with override authorization.</p>
+</div>
+<!-- Capture Source Switcher -->
+<div class="flex bg-surface-container-high p-1 rounded-xl items-center self-start sm:self-auto">
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-all bg-primary-container text-on-primary shadow-xs flex items-center gap-1.5" id="toggle-auto" onclick="switchTelemetryMode('auto')">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+              Kiosk Station 03
+            </button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5" id="toggle-manual" onclick="switchTelemetryMode('manual')">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+              Nurse Manual
+            </button>
+</div>
+</div>
+<!-- 6 Large Touch-Friendly Vital Sign Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+<!-- Vital 1: Blood Pressure (OUT OF RANGE / ALERT) -->
+<div class="p-4 rounded-xl bg-error-container text-on-error-container flex flex-col justify-between relative shadow-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-triage text-label-triage uppercase font-bold tracking-wider text-error">BLOOD PRESSURE</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-error font-label-triage text-label-triage font-bold shadow-xs hover:bg-surface-container transition-all flex items-center gap-1" onclick="recheckCuff()">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+                Recheck Cuff
+              </button>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-xl text-[38px] leading-none font-bold text-on-error-container tabular-nums">150 / 94</span>
+<span class="font-label-md text-label-md font-semibold opacity-80">mmHg</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-error font-bold">warning</span>
+<span class="font-label-triage text-label-triage font-bold text-error">Stage 2 HTN • Configured Upper Limit Exceeded</span>
+</div>
+<span class="font-label-triage text-[11px] opacity-75 font-mono">AUTO-CAPTURED: Omron Station 03 • 09:41 AM</span>
+</div>
+</div>
+<!-- Vital 2: Heart Rate -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">HEART RATE (PULSE)</span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-xl text-[38px] leading-none font-bold text-on-surface tabular-nums">88</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">bpm</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-triage text-label-triage font-bold text-secondary">Borderline Regular Rhythm</span>
+<span class="font-label-triage text-[11px] text-on-surface-variant font-mono">AUTO-CAPTURED: PPG Sensor Station 03</span>
+</div>
+</div>
+<!-- Vital 3: SpO2 -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">OXYGEN SATURATION (SpO₂)</span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-xl text-[38px] leading-none font-bold text-on-surface tabular-nums">98</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">%</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-triage text-label-triage font-bold text-on-tertiary-container">Normative Room Air (95-100%)</span>
+<span class="font-label-triage text-[11px] text-on-surface-variant font-mono">AUTO-CAPTURED: Masimo Pulse-Ox</span>
+</div>
+</div>
+<!-- Vital 4: Body Temperature -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">BODY TEMPERATURE</span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-xl text-[38px] leading-none font-bold text-on-surface tabular-nums">98.4</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">°F</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-triage text-label-triage font-bold text-on-tertiary-container">Afebrile • Normal Range</span>
+<span class="font-label-triage text-[11px] text-on-surface-variant font-mono">AUTO-CAPTURED: Infrared Sensor</span>
+</div>
+</div>
+<!-- Vital 5: Respiratory Rate -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">RESPIRATORY RATE</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-triage text-label-triage font-bold">NURSE VERIFIED</span>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-xl text-[38px] leading-none font-bold text-on-surface tabular-nums">18</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">breaths/min</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-triage text-label-triage font-bold text-on-surface">Eupneic • Normal Baseline Range</span>
+<span class="font-label-triage text-[11px] text-on-surface-variant font-mono">ENTERED BY: Sr. Nurse Meena Kumari, RN</span>
+</div>
+</div>
+<!-- Vital 6: Pain Score (Severe) -->
+<div class="p-4 rounded-xl bg-error-container text-on-error-container flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-triage text-label-triage uppercase font-bold tracking-wider text-error">PAIN SCORE (VAS 1-10)</span>
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-triage text-label-triage font-bold">CRITICAL</span>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-xl text-[38px] leading-none font-bold text-error tabular-nums" id="pain-val-display">8 / 10</span>
+<span class="font-label-md text-label-md font-semibold text-on-error-container">Severe Pain</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-triage text-label-triage font-bold text-error">Severe Substernal Ache</span>
+<span class="font-label-triage text-[11px] opacity-75 font-mono">PATIENT SELF-REPORTED (AUDIO/SLIDER)</span>
+</div>
+</div>
+</div>
+<!-- Interactive Visual Pain Rating Selector Bar (Touch Optimized) -->
+<div class="mt-6 p-4 rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant font-bold tracking-wider">NURSE ADJUSTMENT SLIDER: VAS PAIN INTENSITY</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Current: <span id="pain-badge-text">8 - Severe Distress</span></span>
+</div>
+<div class="grid grid-cols-10 gap-1.5">
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" onclick="setPainScore(1)">1</button>
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" onclick="setPainScore(2)">2</button>
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" onclick="setPainScore(3)">3</button>
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" onclick="setPainScore(4)">4</button>
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" onclick="setPainScore(5)">5</button>
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" onclick="setPainScore(6)">6</button>
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" onclick="setPainScore(7)">7</button>
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-error text-on-error shadow-sm" onclick="setPainScore(8)">8</button>
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" onclick="setPainScore(9)">9</button>
+<button class="pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" onclick="setPainScore(10)">10</button>
+</div>
+<div class="flex justify-between items-center mt-2 px-1 text-[11px] font-label-triage uppercase text-on-surface-variant font-semibold">
+<span>0-2 Mild</span>
+<span>3-6 Moderate</span>
+<span class="text-error font-bold">7-10 Severe Pain</span>
+</div>
+</div>
+<!-- Live Nurse Verification Checkbox Strip -->
+<div class="mt-4 p-4 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Physiological Vitals Checked</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Validated against electronic intake record on desk.</span>
+</div>
+</div>
+<button class="px-4 py-2 rounded-lg font-label-md text-label-md font-bold bg-primary-container text-on-primary transition-all shadow-xs hover:bg-secondary" id="verify-all-btn" onclick="toggleVerifyAll()">
+            Verify All (6/6)
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Floating Action Bar (Anchored Clinical Navigation) -->
+<div class="sticky bottom-4 z-30 mt-8 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-4 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+<!-- Left: Secondary Exit Button -->
+<a class="w-full sm:w-auto px-6 h-12 rounded-xl bg-surface-container text-on-surface font-label-touch text-label-touch font-bold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span>Back to Triage Queue</span>
+</a>
+<!-- Center: Verification Audit Status -->
+<div class="flex items-center gap-3 text-center sm:text-left">
+<div class="w-3 h-3 rounded-full bg-on-tertiary-container ring-4 ring-tertiary-fixed"></div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface" id="audit-status-text">Vitals Status: 5 of 6 Verified</span>
+<span class="font-label-triage text-label-triage text-on-surface-variant">Attending: Sr. Nurse Meena Kumari • Desk 03</span>
+</div>
+</div>
+<!-- Right: Primary Action Button -->
+<button class="w-full sm:w-auto px-8 h-12 rounded-xl bg-primary-container text-on-primary font-label-touch text-label-touch font-bold flex items-center justify-center gap-2 shadow-md hover:bg-secondary active:scale-[0.98] transition-all" onclick="proceedToPriority()">
+<span>Proceed to Assign Priority</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+  // Elapsed timer incrementer
+  let seconds = 135;
+  setInterval(() => {
+    seconds++;
+    const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+    const s = String(seconds % 60).padStart(2, '0');
+    const timerElem = document.getElementById('elapsed-timer');
+    if (timerElem) timerElem.textContent = `${m}m:${s}s`;
+  }, 1000);
+
+  // Switch Telemetry Mode Toggle
+  function switchTelemetryMode(mode) {
+    const autoBtn = document.getElementById('toggle-auto');
+    const manBtn = document.getElementById('toggle-manual');
+    if (mode === 'auto') {
+      autoBtn.className = 'px-3 py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-all bg-primary-container text-on-primary shadow-xs flex items-center gap-1.5';
+      manBtn.className = 'px-3 py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5';
+    } else {
+      manBtn.className = 'px-3 py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-all bg-primary-container text-on-primary shadow-xs flex items-center gap-1.5';
+      autoBtn.className = 'px-3 py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center gap-1.5';
+    }
+  }
+
+  // Interactive Pain Scale Selector
+  function setPainScore(score) {
+    const painDisplay = document.getElementById('pain-val-display');
+    const painBadgeText = document.getElementById('pain-badge-text');
+    if (painDisplay) painDisplay.textContent = `${score} / 10`;
+
+    let label = 'Mild';
+    if (score >= 4 && score <= 6) label = 'Moderate';
+    if (score >= 7) label = 'Severe Distress';
+
+    if (painBadgeText) painBadgeText.textContent = `${score} - ${label}`;
+
+    // Update buttons styling
+    const btns = document.querySelectorAll('.pain-btn');
+    btns.forEach((b, idx) => {
+      const btnVal = idx + 1;
+      if (btnVal === score) {
+        b.className = 'pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-error text-on-error shadow-sm';
+      } else {
+        b.className = 'pain-btn h-12 rounded-lg font-headline-md text-headline-md font-bold flex items-center justify-center transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high';
+      }
+    });
+  }
+
+  // Cuff recheck micro-interaction
+  function recheckCuff() {
+    alert('Recheck signal sent to Station 03 Omron Cuff. Inflation starting in 3 seconds...');
+  }
+
+  // Verify all toggle
+  let allVerified = false;
+  function toggleVerifyAll() {
+    allVerified = !allVerified;
+    const btn = document.getElementById('verify-all-btn');
+    const auditText = document.getElementById('audit-status-text');
+    if (allVerified) {
+      btn.textContent = 'All Verified ✓';
+      btn.className = 'px-4 py-2 rounded-lg font-label-md text-label-md font-bold bg-on-tertiary-container text-on-tertiary transition-all shadow-xs';
+      if (auditText) auditText.textContent = 'Vitals Status: 6 of 6 Verified (Complete)';
+    } else {
+      btn.textContent = 'Verify All (6/6)';
+      btn.className = 'px-4 py-2 rounded-lg font-label-md text-label-md font-bold bg-primary-container text-on-primary transition-all shadow-xs hover:bg-secondary';
+      if (auditText) auditText.textContent = 'Vitals Status: 5 of 6 Verified';
+    }
+  }
+
+  function proceedToPriority() {
+    alert('Routing to Priority Grading Decision Panel (P1 Resuscitation / P2 Urgent)...');
+  }
+</script></main></div></body></html>

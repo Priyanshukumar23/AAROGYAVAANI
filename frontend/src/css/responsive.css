@@ -1,0 +1,40 @@
+/* page-specific + responsive */
+.hero-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.welcome-card { padding: 32px; display: flex; flex-direction: column; gap: 14px; }
+.welcome-card .big-icon { font-size: 44px; }
+.stat-strip { display: flex; gap: 12px; flex-wrap: wrap; }
+.dept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.login-wrap { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+.login-side { background: var(--navy); color: #fff; padding: 48px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.login-form { padding: 48px; display: flex; flex-direction: column; justify-content: center; max-width: 560px; width: 100%; margin: 0 auto; }
+.ocr-bar { height: 12px; background: var(--bg-rec); border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.ocr-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--navy)); transition: width .4s ease; }
+.call-hero { background: var(--p3-bg); border: 2px solid var(--p3); border-radius: 16px; padding: 28px; text-align: center; }
+.footer-note { text-align: center; color: var(--muted); font-size: 13px; padding: 18px; }
+
+@media (max-width: 1024px) {
+  h1.kiosk-display { font-size: 36px; line-height: 44px; }
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .split { grid-template-columns: 1fr; }
+  .split-2 { grid-template-columns: 1fr; }
+  .sidebar { width: 88px; }
+  .sidebar .label, .sidebar .doc-card, .sidebar .brand .sub { display: none; }
+  .side-link { justify-content: center; }
+  .login-wrap { grid-template-columns: 1fr; }
+  .login-side { padding: 28px; }
+}
+@media (max-width: 720px) {
+  .container.kiosk, .kiosk-top, .kiosk-nav { padding-left: 20px; padding-right: 20px; }
+  .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
+  .tile-grid, .lang-grid, .dept-grid, .hero-split { grid-template-columns: 1fr; }
+  .kpi-row { grid-template-columns: 1fr; }
+  .vital-grid { grid-template-columns: 1fr 1fr; }
+  .kiosk-nav { flex-direction: column; }
+  .token-hero .num { font-size: 56px; }
+  .staff-body { padding: 16px; }
+  .topbar { flex-wrap: wrap; }
+}
+@media print {
+  .sidebar, .topbar, .kiosk-nav, .kiosk-top, .no-print { display: none !important; }
+  .staff-body, .kiosk-body { padding: 0; }
+}

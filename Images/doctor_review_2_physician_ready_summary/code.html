@@ -1,0 +1,483 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#cce5ff","on-tertiary":"#ffffff","primary-fixed":"#d2e4ff","on-background":"#0b1c30","secondary":"#006398","surface-container-highest":"#d3e4fe","secondary-container":"#5bb8fe","on-secondary-fixed-variant":"#004b73","background":"#f8f9ff","on-primary-fixed":"#001c37","primary-fixed-dim":"#b0c8eb","primary":"#000f22","primary-container":"#0a2540","tertiary":"#001209","inverse-primary":"#b0c8eb","on-primary-container":"#768dad","surface-container":"#e5eeff","on-secondary-fixed":"#001d31","on-primary":"#ffffff","error":"#ba1a1a","on-surface-variant":"#43474d","surface-container-low":"#eff4ff","surface-variant":"#d3e4fe","surface-container-high":"#dce9ff","surface-container-lowest":"#ffffff","inverse-surface":"#213145","tertiary-fixed":"#85f8c4","on-tertiary-fixed-variant":"#005137","outline-variant":"#c4c6ce","outline":"#74777e","inverse-on-surface":"#eaf1ff","secondary-fixed-dim":"#93ccff","tertiary-fixed-dim":"#68dba9","on-primary-fixed-variant":"#314865","on-secondary":"#ffffff","surface-tint":"#49607e","on-surface":"#0b1c30","surface-bright":"#f8f9ff","tertiary-container":"#002a1b","on-error":"#ffffff","on-tertiary-fixed":"#002114","error-container":"#ffdad6","on-secondary-container":"#00476e","on-tertiary-container":"#1a9e70","surface":"#f8f9ff","on-error-container":"#93000a","surface-dim":"#cbdbf5"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"touch-min-staff":"2.75rem","gutter-compact":"1rem","tablet-edge-margin":"2rem","component-gap-lg":"1.5rem","kiosk-edge-margin":"3rem","component-gap-sm":"0.75rem","touch-min-patient":"4rem","gutter-kiosk":"2rem"},"fontFamily":{"display-kiosk-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-md":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-md":["Inter"],"label-triage":["Inter"],"body-md":["Inter"],"display-kiosk":["Plus Jakarta Sans"],"body-xl":["Inter"],"label-touch":["Inter"]},"fontSize":{"display-kiosk-mobile":["36px",{"lineHeight":"44px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"label-triage":["13px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-kiosk":["48px",{"lineHeight":"56px","fontWeight":"700"}],"body-xl":["20px",{"lineHeight":"30px","fontWeight":"400"}],"label-touch":["18px",{"lineHeight":"24px","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-kiosk-edge-margin flex items-center justify-between"><div class="flex items-center gap-component-gap-sm"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm flex-shrink-0"><span class="material-symbols-outlined text-[24px] text-secondary-fixed">local_hospital</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-tight text-primary-container leading-none">MediKiosk</span><span class="font-label-md text-label-md text-on-surface-variant font-medium mt-1">PATIENT PORT • AI Clinical Intake &amp; Queue</span></div></div><nav class="flex items-center gap-component-gap-sm" data-active-classes="bg-primary-container text-on-primary font-label-touch text-label-touch rounded-lg"><a class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-touch text-label-touch hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-2" data-path="language-selection" href="#"><span class="material-symbols-outlined text-secondary text-[22px]">translate</span>English | हिन्दी</a><a class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-touch text-label-touch hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-2" data-path="audio-assist" href="#"><span class="material-symbols-outlined text-secondary text-[22px]">volume_up</span>ऑडियो सहायता (Audio Assist)</a><a class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-touch text-label-touch hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-2" data-path="help-desk" href="#"><span class="material-symbols-outlined text-error text-[22px]">help</span>Help / सहायता</a></nav><div class="flex items-center gap-component-gap-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-12 w-full bg-surface-container px-kiosk-edge-margin flex items-center justify-between"><div class="flex items-center gap-component-gap-sm"><span class="material-symbols-outlined text-secondary text-[20px]">verified</span><span class="font-label-triage text-label-triage text-primary-container uppercase">STEP 5 • DOCTOR SUMMARY &amp; OPD QUEUE (डॉक्टर सारांश एवं प्रतीक्षा कतार)</span></div><div class="flex items-center gap-3"><span class="px-3 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-triage text-label-triage">TOKEN A-142</span><span class="px-3 py-1 rounded bg-surface-container-highest text-on-surface font-label-triage text-label-triage">ROOM 104 • OPD WING</span></div></div></header><main class="w-full pt-32 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-tablet-edge-margin lg:px-kiosk-edge-margin py-6">
+<!-- Top Guidance & Status Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-triage text-label-triage uppercase text-secondary tracking-widest">Pre-Consultation Clinical Intake Review</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">Please Confirm Your Information for the Doctor</h1>
+<p class="font-headline-lg text-headline-lg text-primary-container mt-1 font-semibold">डॉक्टर के पास भेजने से पहले अपनी जानकारी की पुष्टि करें</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">touch_app</span>
+          Review the information below. If anything looks incorrect, tap <strong>'Edit / बदलें'</strong> to fix it before sending.
+        </p>
+</div>
+<!-- Quick Triage Priority Ribbon -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex items-center gap-4 border border-outline-variant/30 self-start md:self-auto">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">medical_information</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-triage text-label-triage uppercase px-2.5 py-0.5 rounded bg-error-container text-on-error-container">PRIORITY 2 • URGENT ATTENTION</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface font-semibold mt-1">Assigned Physician: <span class="text-secondary font-bold">Dr. Rajesh Sharma</span></p>
+</div>
+</div>
+</div>
+<!-- 1. Clinical Disclaimer Notice -->
+<div class="w-full bg-surface-container-low rounded-xl p-4 md:p-5 mb-8 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start sm:items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex-shrink-0 flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[22px]">info</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-primary font-medium">
+<strong class="font-semibold text-secondary">Hospital Safety Policy:</strong> MediKiosk assists with intake only. Final diagnosis, prescription, and treatment decisions will be made in-person by Dr. Rajesh Sharma.
+          </p>
+<p class="font-label-md text-label-md text-on-surface-variant mt-0.5">
+            मेडीकियोस्क केवल पूर्व-पंजीकरण में सहायता करता है। अंतिम निदान एवं उपचार डॉ. राजेश शर्मा द्वारा प्रत्यक्ष रूप से किया जाएगा।
+          </p>
+</div>
+</div>
+<div class="flex-shrink-0">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md font-medium shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+          NABH &amp; ABDM Compliant
+        </span>
+</div>
+</div>
+<!-- 2. Structured Dossier Cards Grid (8 Core Sections) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-component-gap-lg">
+<!-- Card 1: Chief Complaint -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">ecg_heart</span>
+</div>
+<div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider block">01 • Chief Complaint</span>
+<span class="font-label-md text-label-md text-secondary font-medium">मुख्य शिकायत</span>
+</div>
+</div>
+<button aria-label="Edit Chief Complaint" class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors cursor-pointer" onclick="triggerEditModal('Chief Complaint')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">edit</span>
+<span class="">Edit / बदलें</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3.5 mt-2">
+<p class="font-body-lg text-body-lg text-primary font-semibold">"Chest discomfort and tightness in center of chest"</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">सीने के बीच में जकड़न एवं असहजता की शिकायत</p>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span> Verified via Patient Audio
+          </span>
+<span class="font-label-triage text-label-triage text-primary-container">VERIFIED</span>
+</div>
+</div>
+<!-- Card 2: Symptoms & Duration -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider block">02 • Symptoms &amp; Duration</span>
+<span class="font-label-md text-label-md text-secondary font-medium">लक्षण एवं अवधि</span>
+</div>
+</div>
+<button aria-label="Edit Symptoms and Duration" class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors cursor-pointer" onclick="triggerEditModal('Symptoms &amp; Duration')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">edit</span>
+<span class="">Edit / बदलें</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3.5 mt-2 space-y-1">
+<p class="font-body-lg text-body-lg text-primary font-semibold">Onset yesterday evening, lasting ~24 hours</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Mild breathlessness on exertion (चलने-फिरने में हल्की सांस फूलना)</p>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">history</span> Chronology: 24h Acute
+          </span>
+<span class="font-label-triage text-label-triage text-primary-container">STEADY</span>
+</div>
+</div>
+<!-- Card 3: Pain Location & Severity -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">body_system</span>
+</div>
+<div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider block">03 • Pain Location &amp; Severity</span>
+<span class="font-label-md text-label-md text-secondary font-medium">दर्द का स्थान व तीव्रता</span>
+</div>
+</div>
+<button aria-label="Edit Pain Location" class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors cursor-pointer" onclick="triggerEditModal('Pain Location &amp; Severity')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">edit</span>
+<span class="">Edit / बदलें</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3.5 mt-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-body-lg text-body-lg text-primary font-semibold">Substernal (Center of chest)</span>
+<span class="px-2.5 py-1 rounded bg-error-container text-on-error-container font-label-triage text-label-triage font-bold">8 / 10 SEVERE</span>
+</div>
+<!-- Pain Severity Meter visualization -->
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden flex gap-0.5">
+<div class="bg-secondary h-full w-[30%]"></div>
+<div class="bg-secondary h-full w-[30%]"></div>
+<div class="bg-error h-full w-[20%]"></div>
+<div class="bg-surface-container-highest h-full w-[20%]"></div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2">स्थान: मध्य वक्ष • तीव्रता: तीव्र दर्द (8/10)</p>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span> Non-radiating to left arm
+          </span>
+<span class="font-label-triage text-label-triage text-error">HIGH PAIN</span>
+</div>
+</div>
+<!-- Card 4: Existing Conditions -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">clinical_notes</span>
+</div>
+<div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider block">04 • Existing Conditions</span>
+<span class="font-label-md text-label-md text-secondary font-medium">मौजूदा पुरानी बीमारियाँ</span>
+</div>
+</div>
+<button aria-label="Edit Existing Conditions" class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors cursor-pointer" onclick="triggerEditModal('Existing Conditions')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">edit</span>
+<span class="">Edit / बदलें</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3.5 mt-2 flex flex-wrap gap-2">
+<div class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-body-md text-body-md flex items-center gap-2 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class=""><strong>Hypertension</strong> (उक्त रक्तचाप - 2019)</span>
+</div>
+<div class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-body-md text-body-md flex items-center gap-2 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class=""><strong>Type 2 Diabetes</strong> (मधुमेह - 2021)</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">health_and_safety</span> ABDM Health Locker Linked
+          </span>
+<span class="font-label-triage text-label-triage text-primary-container">2 DIAGNOSES</span>
+</div>
+</div>
+<!-- Card 5: Current Medications -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">medication</span>
+</div>
+<div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider block">05 • Current Medications</span>
+<span class="font-label-md text-label-md text-secondary font-medium">वर्तमान में ली जा रही दवाइयाँ</span>
+</div>
+</div>
+<button aria-label="Edit Current Medications" class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors cursor-pointer" onclick="triggerEditModal('Current Medications')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">edit</span>
+<span class="">Edit / बदलें</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3.5 mt-2 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-primary font-semibold">1. Amlodipine 5mg</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Daily Morning (सुबह)</span>
+</div>
+<div class="w-full bg-surface-container h-[1px]"></div>
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-primary font-semibold">2. Metformin 500mg</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Twice daily post meals (भोजन बाद)</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check</span> Taken this morning at 8:00 AM
+          </span>
+<span class="font-label-triage text-label-triage text-primary-container">ACTIVE REGIMEN</span>
+</div>
+</div>
+<!-- Card 6: Allergies & Alerts -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[20px]">notification_important</span>
+</div>
+<div>
+<span class="font-label-triage text-label-triage text-error uppercase tracking-wider block">06 • Allergies &amp; Alerts</span>
+<span class="font-label-md text-label-md text-error font-medium">एलर्जी एवं महत्वपूर्ण चेतावनी</span>
+</div>
+</div>
+<button aria-label="Edit Allergies" class="px-3.5 py-1.5 rounded-lg bg-error-container hover:bg-error/20 text-on-error-container font-label-md text-label-md flex items-center gap-1.5 transition-colors cursor-pointer" onclick="triggerEditModal('Allergies &amp; Alerts')" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">edit</span>
+<span class="">Edit / बदलें</span>
+</button>
+</div>
+<div class="bg-error-container/40 rounded-lg p-3.5 mt-2">
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-body-lg text-on-error-container font-bold">Penicillin Allergy</span>
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-triage text-label-triage">CRITICAL ALERT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">Causes acute skin rash &amp; facial swelling (पेनिसिलिन से चेहरे पर सूजन व लाल चकत्ते)</p>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-error flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">dangerous</span> Auto-flagged on Physician EHR
+          </span>
+<span class="font-label-triage text-label-triage text-error">1 CRITICAL</span>
+</div>
+</div>
+<!-- Card 7: Scanned Documents -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">document_scanner</span>
+</div>
+<div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider block">07 • Scanned Documents</span>
+<span class="font-label-md text-label-md text-secondary font-medium">संलग्न पर्ची व रिपोर्ट</span>
+</div>
+</div>
+<button aria-label="View or Edit Documents" class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors cursor-pointer" onclick="triggerEditModal('Scanned Documents')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">visibility</span>
+<span class="">View/Edit / देखें</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3.5 mt-2 space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">picture_as_pdf</span>
+<span class="font-body-md text-body-md text-primary font-semibold">AIIMS Prescription</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">12-Jul-2025</span>
+</div>
+<div class="w-full bg-surface-container h-[1px]"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">lab_profile</span>
+<span class="font-body-md text-body-md text-primary font-semibold">Civil Hospital Blood Panel</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">18-Aug-2025</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">cloud_done</span> 2 Records OCR Extracted
+          </span>
+<span class="font-label-triage text-label-triage text-primary-container">ATTACHED</span>
+</div>
+</div>
+<!-- Card 8: Lab Values & Vitals -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">vital_signs</span>
+</div>
+<div>
+<span class="font-label-triage text-label-triage text-on-surface-variant uppercase tracking-wider block">08 • Lab Values &amp; Vitals</span>
+<span class="font-label-md text-label-md text-secondary font-medium">रक्त परीक्षण एवं जांच आंकड़े</span>
+</div>
+</div>
+<button aria-label="Review Lab Values" class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-secondary-fixed text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors cursor-pointer" onclick="triggerEditModal('Lab Values')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">fact_check</span>
+<span class="">Review / जांचें</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3.5 mt-2 grid grid-cols-2 gap-3">
+<div class="p-2.5 rounded bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-on-surface-variant block">Fasting Blood Sugar</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md text-primary font-bold">148</span>
+<span class="font-label-md text-label-md text-on-surface-variant">mg/dL</span>
+</div>
+<span class="inline-block mt-1 font-label-triage text-label-triage text-error font-semibold">HIGH (उच्च)</span>
+</div>
+<div class="p-2.5 rounded bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-on-surface-variant block">Blood Pressure (BP)</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md text-primary font-bold">150/94</span>
+<span class="font-label-md text-label-md text-on-surface-variant">mmHg</span>
+</div>
+<span class="inline-block mt-1 font-label-triage text-label-triage text-error font-semibold">ELEVATED (बढ़ा हुआ)</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">monitor_heart</span> Measured at Kiosk Sensor Station
+          </span>
+<span class="font-label-triage text-label-triage text-primary-container">RECENT</span>
+</div>
+</div>
+</div>
+<!-- Attendant Support & Patient Comfort Box -->
+<div class="mt-8 bg-surface-container-low rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-primary font-medium">Need assistance updating your information? Kiosk Help Desk is nearby.</p>
+<p class="font-label-md text-label-md text-on-surface-variant">क्या जानकारी बदलने में सहायता चाहिए? सहायता कर्मचारी पास में उपलब्ध हैं।</p>
+</div>
+</div>
+<button class="w-full md:w-auto px-5 py-2.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-touch text-label-touch shadow-sm transition-colors flex items-center justify-center gap-2" onclick="alert('An OPD nurse/attendant has been notified to assist you at Kiosk A-142.')" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]">hail</span>
+        Request Attendant / सहायक बुलाएँ
+      </button>
+</div>
+<!-- 3. Bottom Physical Touch Navigation Zone -->
+<div class="mt-8 pt-6 border-t border-outline-variant/30 flex flex-col lg:flex-row items-center justify-between gap-4">
+<div class="flex flex-col sm:flex-row items-center w-full lg:w-auto gap-3">
+<!-- Back Button -->
+<button class="w-full sm:w-auto min-h-[64px] px-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-touch text-label-touch shadow-sm flex items-center justify-center gap-2 transition-colors cursor-pointer" onclick="window.history.back()" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+<span class="">Back / पीछे</span>
+</button>
+<!-- Listen Aloud Button -->
+<button class="w-full sm:w-auto min-h-[64px] px-7 rounded-lg bg-surface-container-high hover:bg-secondary-fixed text-primary font-label-touch text-label-touch shadow-sm flex items-center justify-center gap-2.5 transition-colors cursor-pointer" id="readAloudBtn" onclick="toggleSpeechSummary()" type="button">
+<span class="material-symbols-outlined text-secondary text-[24px]" id="audioIcon">volume_up</span>
+<span id="audioText" class="">🔊 Listen Aloud / पूरा सारांश सुनें</span>
+</button>
+</div>
+<!-- Large Primary CTA Button -->
+<button class="w-full lg:w-auto min-h-[64px] px-10 rounded-lg bg-primary-container hover:bg-primary active:bg-secondary text-on-primary font-label-touch text-label-touch shadow-md flex items-center justify-center gap-3 transition-all cursor-pointer group" id="confirmSummaryBtn" onclick="confirmAndRoute()" type="button">
+<span class="tracking-wide text-center">Confirm Summary &amp; Continue / जानकारी सही है, आगे बढ़ें</span>
+<span class="material-symbols-outlined text-[24px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Interactive Modal Container for Quick Touch Editing -->
+<div class="hidden fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm flex items-center justify-center p-4" id="editModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-6 shadow-xl flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">edit_note</span>
+<h3 class="font-headline-md text-headline-md text-primary" id="modalFieldTitle">Edit Entry</h3>
+</div>
+<button class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high" onclick="closeEditModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">Modify the recorded response or speak clearly into the kiosk microphone:</p>
+<textarea class="w-full rounded-lg bg-surface-container-low p-3 font-body-md text-body-md text-primary border-0 focus:ring-2 focus:ring-secondary focus:outline-none resize-none" id="modalFieldInput" rows="3"></textarea>
+</div>
+<div class="flex items-center justify-between pt-2">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md flex items-center gap-2 hover:bg-surface-container-high" onclick="simulateSpeechInput()" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]">mic</span>
+          Speak to Edit / बोलकर बदलें
+        </button>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md" onclick="closeEditModal()" type="button">Cancel</button>
+<button class="px-5 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary" onclick="saveEditModal()" type="button">Save / सहेजें</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    let currentEditTarget = '';
+    let isSpeaking = false;
+
+    function triggerEditModal(fieldName) {
+      currentEditTarget = fieldName;
+      document.getElementById('modalFieldTitle').innerText = 'Edit ' + fieldName;
+      document.getElementById('modalFieldInput').value = 'Patient requested update for: ' + fieldName;
+      document.getElementById('editModal').classList.remove('hidden');
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.add('hidden');
+    }
+
+    function saveEditModal() {
+      alert('Updated ' + currentEditTarget + ' successfully in physician pre-intake chart.');
+      closeEditModal();
+    }
+
+    function simulateSpeechInput() {
+      const input = document.getElementById('modalFieldInput');
+      input.value = 'Listening... (कृपया अब बोलें...)';
+      setTimeout(() => {
+        input.value = 'Patient confirmed and dictated revision to ' + currentEditTarget;
+      }, 1200);
+    }
+
+    function toggleSpeechSummary() {
+      const icon = document.getElementById('audioIcon');
+      const text = document.getElementById('audioText');
+      
+      if (!isSpeaking) {
+        isSpeaking = true;
+        icon.innerText = 'pause_circle';
+        text.innerText = '⏸ Pause Reading / सुनना रोकें';
+        
+        if ('speechSynthesis' in window) {
+          const utterance = new SpeechSynthesisUtterance("Summary for Dr. Rajesh Sharma. Chief complaint: Chest discomfort and tightness lasting 24 hours. Pain severity 8 out of 10. Existing conditions: Hypertension and Diabetes. Penicillin allergy marked critical. Please confirm your details.");
+          utterance.rate = 0.9;
+          utterance.onend = () => {
+            isSpeaking = false;
+            icon.innerText = 'volume_up';
+            text.innerText = '🔊 Listen Aloud / पूरा सारांश सुनें';
+          };
+          window.speechSynthesis.speak(utterance);
+        }
+      } else {
+        isSpeaking = false;
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+        }
+        icon.innerText = 'volume_up';
+        text.innerText = '🔊 Listen Aloud / पूरा सारांश सुनें';
+      }
+    }
+
+    function confirmAndRoute() {
+      const btn = document.getElementById('confirmSummaryBtn');
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[24px]">progress_activity</span><span>Submitting to Dr. Rajesh Sharma...</span>';
+      btn.disabled = true;
+      setTimeout(() => {
+        alert('Information successfully submitted to Dr. Rajesh Sharma (Room 104). Proceeding to Token Confirmation & OPD Queue display.');
+        window.location.hash = '#opd-queue-live';
+      }, 900);
+    }
+  </script>
+</div></main><footer class="fixed bottom-0 inset-x-0 z-40 bg-primary-container text-on-primary"><div class="w-full px-kiosk-edge-margin h-16 flex items-center justify-between"><div class="flex items-center gap-component-gap-sm"><span class="material-symbols-outlined text-error-container text-[24px]">emergency</span><span class="font-label-touch text-label-touch text-on-primary">🚨 Emergency? Press Attendant Help • आपातकाल? सहायक बुलाएँ</span></div><div class="flex items-center gap-2 text-on-primary-container font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">lock</span><span class="">Session confidential &amp; 256-bit ABDM encrypted</span></div></div></footer>
+
+</body></html>

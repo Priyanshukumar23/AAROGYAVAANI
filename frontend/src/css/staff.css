@@ -1,0 +1,29 @@
+/* staff shell: sidebar + topbar + content */
+.staff-layout { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 272px; background: var(--navy); color: #EAF1FF;
+  display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh;
+}
+.sidebar .brand { padding: 20px; border-bottom: 1px solid rgba(255,255,255,.15); }
+.sidebar nav { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 4px; overflow-y: auto; }
+.side-link { display: flex; gap: 10px; align-items: center; padding: 11px 12px; border-radius: 8px; color: #DCE9FF; font-weight: 600; font-size: 15px; }
+.side-link:hover { background: rgba(255,255,255,.1); text-decoration: none; color: #fff; }
+.side-link.active { background: #fff; color: var(--navy); }
+.sidebar .doc-card { margin: 12px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 10px; padding: 12px; font-size: 13px; }
+.staff-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.topbar { background: #fff; border-bottom: 1px solid var(--line); padding: 12px 24px; display: flex; align-items: center; gap: 14px; position: sticky; top: 0; z-index: 10; }
+.topbar .search { flex: 1; max-width: 420px; }
+.staff-body { padding: 24px; max-width: 1280px; width: 100%; margin: 0 auto; }
+.doc-head { display: flex; gap: 16px; align-items: center; margin-bottom: 18px; flex-wrap: wrap; }
+.avatar { width: 48px; height: 48px; border-radius: 10px; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+.split { display: grid; grid-template-columns: 1fr 360px; gap: 18px; align-items: start; }
+.split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+.timeline { border-left: 3px solid var(--line); margin-left: 10px; padding-left: 20px; display: flex; flex-direction: column; gap: 16px; }
+.timeline .t-item { position: relative; }
+.timeline .t-item::before { content: ''; position: absolute; left: -29px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--blue); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--blue); }
+.vital-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.vital { border: 1px solid var(--line); border-radius: 10px; padding: 14px; background: #fff; }
+.vital .n { font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--muted); }
+.vital .v { font-size: 22px; font-weight: 800; }
+.vital.warn { border-color: var(--p1); background: var(--p1-bg); }
+.vital.warn2 { border-color: var(--p2); background: var(--p2-bg); }

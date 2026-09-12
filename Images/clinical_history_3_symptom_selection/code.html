@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "on-secondary-fixed": "#001d31", "secondary": "#006398", "inverse-primary": "#b0c8eb", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "primary": "#000f22", "surface-tint": "#49607e", "on-secondary-container": "#00476e", "surface-container-low": "#eff4ff", "outline-variant": "#c4c6ce", "on-surface": "#0b1c30", "surface-container-lowest": "#ffffff", "surface-variant": "#d3e4fe", "on-secondary": "#ffffff", "surface-container-highest": "#d3e4fe", "error-container": "#ffdad6", "on-background": "#0b1c30", "outline": "#74777e", "tertiary-container": "#002a1b", "tertiary": "#001209", "surface": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "surface-container-high": "#dce9ff", "on-primary-container": "#768dad", "on-surface-variant": "#43474d", "inverse-surface": "#213145", "tertiary-fixed": "#85f8c4", "error": "#ba1a1a", "primary-fixed": "#d2e4ff", "secondary-fixed": "#cce5ff", "on-primary-fixed": "#001c37", "background": "#f8f9ff", "secondary-container": "#5bb8fe", "primary-container": "#0a2540", "secondary-fixed-dim": "#93ccff", "on-tertiary-fixed-variant": "#005137", "surface-container": "#e5eeff", "tertiary-fixed-dim": "#68dba9", "on-primary-fixed-variant": "#314865", "primary-fixed-dim": "#b0c8eb", "surface-bright": "#f8f9ff", "on-secondary-fixed-variant": "#004b73", "on-tertiary-fixed": "#002114", "on-tertiary-container": "#1a9e70", "on-error": "#ffffff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "tablet-edge-margin": "2rem", "touch-min-patient": "4rem", "touch-min-staff": "2.75rem", "component-gap-sm": "0.75rem", "component-gap-lg": "1.5rem", "kiosk-edge-margin": "3rem", "gutter-compact": "1rem", "gutter-kiosk": "2rem" }, "fontFamily": { "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-xl": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "display-kiosk": ["Plus Jakarta Sans"], "label-touch": ["Inter"], "body-lg": ["Inter"], "display-kiosk-mobile": ["Plus Jakarta Sans"], "label-triage": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"] }, "fontSize": { "headline-xl-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-xl": ["20px", { "lineHeight": "30px", "fontWeight": "400" }], "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "display-kiosk": ["48px", { "lineHeight": "56px", "fontWeight": "700" }], "label-touch": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-kiosk-mobile": ["36px", { "lineHeight": "44px", "fontWeight": "700" }], "label-triage": ["13px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface select-none min-h-screen flex flex-col justify-between"><header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 w-full px-kiosk-edge-margin flex items-center justify-between"><div class="flex items-center gap-component-gap-lg"><img alt="Brand logo. - Primary color: #0a2540
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UTPNxhOVZFBTGYZn8TH2QcHbj6Zn056Ol2W8zSYG5wASJh1okRLYi6cfEO1NyYIZEEcClug2vCXtS0cEoNgvwz97LELVXygPclmy_3AU4O4_vmV9Nqp54W9nh7Y0z6N8-hsbZaDV1-gHFIOXGw-6_QJkFS2-iIIpi0BurPI40p-tW0i352OegNzHI4Y-ECpbWX_7vYlofyeNKC0NZRUT4l4foZYda8GJwzBrVJlRuXCS4vd5h_AkKPsg"/><div class="flex flex-col"><span class="font-headline-lg text-headline-lg text-primary tracking-tight">MediKiosk</span><span class="font-label-md text-label-md text-on-surface-variant">AI-Powered Clinical Intake</span></div></div><div class="flex items-center gap-component-gap-sm"><button class="min-h-[56px] px-component-gap-lg rounded-xl bg-surface-container-low text-on-surface font-label-touch text-label-touch flex items-center gap-2 hover:bg-surface-container-high hover:text-on-surface active:bg-secondary-container transition-colors" type="button"><span class="material-symbols-outlined text-[24px] text-secondary">translate</span><span>English / हिन्दी</span></button><button class="min-h-[56px] px-component-gap-lg rounded-xl bg-surface-container-low text-on-surface font-label-touch text-label-touch flex items-center gap-2 hover:bg-surface-container-high hover:text-on-surface active:bg-secondary-container transition-colors" type="button"><span class="material-symbols-outlined text-[24px] text-secondary">volume_up</span><span>Audio Assist</span></button><button class="min-h-[56px] px-component-gap-lg rounded-xl bg-error-container text-on-error-container font-label-touch text-label-touch flex items-center gap-2 hover:bg-error hover:text-on-error active:scale-[0.98] transition-all" type="button"><span class="material-symbols-outlined text-[24px]">help</span><span>Help / सहायता</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-24 pb-24 bg-surface min-h-screen px-kiosk-edge-margin flex flex-col justify-center"><div class="flex flex-col w-full max-w-7xl mx-auto pb-12">
+<!-- Progress Header & Workflow Breadcrumb -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary font-bold shadow-sm">
+        3
+      </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-triage text-label-triage uppercase tracking-widest text-secondary font-bold">Step 3 of 6</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Stage: Patient Triage</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface font-semibold">Clinical History • Symptom Selection</p>
+</div>
+</div>
+<!-- Active Step Stepper Bar -->
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-xl">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium mr-2">Progress:</span>
+<div class="w-8 h-2 rounded-full bg-secondary"></div>
+<div class="w-8 h-2 rounded-full bg-secondary"></div>
+<div class="w-8 h-2 rounded-full bg-secondary"></div>
+<div class="w-8 h-2 rounded-full bg-surface-container-highest"></div>
+<div class="w-8 h-2 rounded-full bg-surface-container-highest"></div>
+<div class="w-8 h-2 rounded-full bg-surface-container-highest"></div>
+</div>
+</div>
+<!-- Primary Guidance Banner & Bilingual Heading -->
+<div class="bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-sm mb-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-2 max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">touch_app</span>
+<span>Touch Input Mode (स्पर्श चयन मोड)</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">
+        What problem are you having?
+      </h1>
+<p class="font-headline-lg text-headline-lg text-secondary font-semibold">
+        आपको क्या समस्या या लक्षण महसूस हो रहे हैं?
+      </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant pt-1">
+        Tap one or more symptoms below, or search if not listed. Multi-selection is enabled for holistic evaluation.
+      </p>
+</div>
+<!-- Live Selection Counter Pill -->
+<div class="flex flex-col items-start md:items-end justify-center bg-surface-container-low p-5 rounded-xl min-w-[220px]">
+<span class="font-label-triage text-label-triage uppercase text-on-surface-variant tracking-wider">Active Complaints</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-kiosk text-display-kiosk text-primary leading-none" id="selected-count-display">2</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">symptoms</span>
+</div>
+<span class="font-label-md text-label-md text-secondary font-semibold mt-1">चयनित लक्षण</span>
+</div>
+</div>
+<!-- Assistive Search Bar & Filter Group -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm mb-8 flex flex-col md:flex-row items-center gap-4">
+<div class="relative flex-1 w-full">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[28px]">search</span>
+</div>
+<input class="w-full h-16 pl-14 pr-12 rounded-xl bg-surface-container-low text-on-surface font-body-xl text-body-xl placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" id="symptom-search" placeholder="Search symptom (e.g. fever, headache, stomach ache) / लक्षण खोजें..." type="text"/>
+<button class="absolute inset-y-0 right-3 flex items-center px-3 text-on-surface-variant hover:text-primary transition-colors hidden" id="clear-search" title="Clear Search" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Quick Voice Query Shortcut -->
+<button class="h-16 px-6 rounded-xl bg-surface-container hover:bg-surface-container-high active:scale-[0.98] text-primary flex items-center gap-3 transition-all flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-secondary text-[26px]">mic</span>
+<div class="flex flex-col text-left">
+<span class="font-label-touch text-label-touch leading-tight">Speak Symptom</span>
+<span class="font-label-md text-label-md text-on-surface-variant leading-tight">बोलकर बताएं</span>
+</div>
+</button>
+</div>
+<!-- Symptom Tiles Grid (10 Options) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8" id="symptom-grid">
+<!-- 1. Pain / Ache (Selected) -->
+<div class="symptom-card selected cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none transition-all" data-symptom-id="pain">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container flex items-center justify-center text-3xl">
+          🤕
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px] font-bold">check</span>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-primary font-bold leading-snug">Pain / Ache</h3>
+<p class="font-body-md text-body-md text-secondary font-medium mt-0.5">दर्द (तीव्र या हल्का)</p>
+</div>
+</div>
+<!-- 2. Chest Discomfort (Selected - High Priority Visual Cue) -->
+<div class="symptom-card selected cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none transition-all" data-symptom-id="chest-pain">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-error-container text-on-error-container flex items-center justify-center text-3xl">
+          💓
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px] font-bold">check</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-md text-headline-md text-primary font-bold leading-snug">Chest Discomfort</h3>
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+</div>
+<p class="font-body-md text-body-md text-secondary font-medium mt-0.5">छाती में बेचैनी/दर्द</p>
+</div>
+</div>
+<!-- 3. Breathing Problem -->
+<div class="symptom-card cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none hover:bg-surface-container-low transition-all" data-symptom-id="breathing">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-3xl">
+          🫁
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[22px]">check</span>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-snug">Breathing Problem</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">सांस लेने में तकलीफ</p>
+</div>
+</div>
+<!-- 4. Fever -->
+<div class="symptom-card cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none hover:bg-surface-container-low transition-all" data-symptom-id="fever">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-3xl">
+          🌡
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[22px]">check</span>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-snug">Fever</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">बुखार / कंपकंपी</p>
+</div>
+</div>
+<!-- 5. Cough & Cold -->
+<div class="symptom-card cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none hover:bg-surface-container-low transition-all" data-symptom-id="cough-cold">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-3xl">
+          🤧
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[22px]">check</span>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-snug">Cough &amp; Cold</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">खांसी / जुकाम</p>
+</div>
+</div>
+<!-- 6. Vomiting / Nausea -->
+<div class="symptom-card cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none hover:bg-surface-container-low transition-all" data-symptom-id="vomiting">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-3xl">
+          🤢
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[22px]">check</span>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-snug">Vomiting / Nausea</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">उल्टी / मतली</p>
+</div>
+</div>
+<!-- 7. Severe Headache -->
+<div class="symptom-card cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none hover:bg-surface-container-low transition-all" data-symptom-id="headache">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-3xl">
+          🤕
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[22px]">check</span>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-snug">Severe Headache</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">सिरदर्द</p>
+</div>
+</div>
+<!-- 8. Weakness & Fatigue -->
+<div class="symptom-card cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none hover:bg-surface-container-low transition-all" data-symptom-id="weakness">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-3xl">
+          🤒
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[22px]">check</span>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-snug">Weakness &amp; Fatigue</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">कमजोरी / थकान</p>
+</div>
+</div>
+<!-- 9. Injury or Fall -->
+<div class="symptom-card cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none hover:bg-surface-container-low transition-all" data-symptom-id="injury">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-3xl">
+          🩹
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[22px]">check</span>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-snug">Injury or Fall</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">चोट या गिर जाना</p>
+</div>
+</div>
+<!-- 10. Not sure / Something else -->
+<div class="symptom-card cursor-pointer bg-surface-container-lowest rounded-xl p-5 min-h-[140px] flex flex-col justify-between shadow-sm relative select-none hover:bg-surface-container-low transition-all" data-symptom-id="other">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-3xl">
+          ❓
+        </div>
+<div class="check-box-indicator w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[22px]">check</span>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold leading-snug">Not sure / Else</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">निश्चित नहीं / अन्य</p>
+</div>
+</div>
+</div>
+<!-- Clinical Severity Alert Banner (Contextual assistance) -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm mb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[28px] text-secondary-fixed">health_and_safety</span>
+</div>
+<div>
+<p class="font-label-touch text-label-touch text-primary font-bold">Chest Discomfort Flagged</p>
+<p class="font-body-md text-body-md text-on-surface-variant">An ECG and vitals check will be automatically prioritized upon next step confirmation.</p>
+</div>
+</div>
+<div class="px-4 py-2 rounded-lg bg-error-container text-on-error-container font-label-triage text-label-triage uppercase tracking-wider font-bold">
+      Priority 2 • Urgent Review
+    </div>
+</div>
+<!-- Primary Bottom Navigation Dock (Fixed Patient Minimum Height) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+<!-- Secondary & Assistive Triggers -->
+<div class="flex items-center gap-3">
+<!-- Back Button -->
+<button class="h-16 px-8 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-touch text-label-touch flex items-center justify-center gap-2 active:scale-[0.99] transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+<span>Back / पीछे जाएं</span>
+</button>
+<!-- Switch Back to Voice Intake -->
+<button class="h-16 px-6 rounded-xl bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-fixed-dim font-label-touch text-label-touch flex items-center justify-center gap-3 active:scale-[0.99] transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">mic</span>
+<div class="flex flex-col text-left">
+<span class="leading-none">Switch to Voice</span>
+<span class="font-label-md text-label-md opacity-80 leading-none mt-1">आवाज से बताएं</span>
+</div>
+</button>
+</div>
+<!-- Primary High-Contrast Navy CTA (64px height) -->
+<button class="h-16 px-10 rounded-xl bg-primary text-on-primary hover:bg-primary-container active:scale-[0.99] font-headline-md text-headline-md flex items-center justify-center gap-4 shadow-md transition-all" id="continue-cta" type="button">
+<span id="cta-label">Continue with 2 Selected • आगे बढ़ें</span>
+<span class="material-symbols-outlined text-[28px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+  (function() {
+    const cards = document.querySelectorAll('.symptom-card');
+    const counterDisplay = document.getElementById('selected-count-display');
+    const ctaLabel = document.getElementById('cta-label');
+    const searchInput = document.getElementById('symptom-search');
+    const clearSearch = document.getElementById('clear-search');
+
+    function updateSelectionState() {
+      const selected = document.querySelectorAll('.symptom-card.selected');
+      const count = selected.length;
+      
+      if (counterDisplay) {
+        counterDisplay.textContent = count;
+      }
+
+      if (ctaLabel) {
+        if (count === 0) {
+          ctaLabel.textContent = 'Select Symptom to Continue • आगे बढ़ें';
+        } else if (count === 1) {
+          ctaLabel.textContent = 'Continue with 1 Selected • आगे बढ़ें';
+        } else {
+          ctaLabel.textContent = `Continue with ${count} Selected • आगे बढ़ें`;
+        }
+      }
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const isSelected = card.classList.contains('selected');
+        const indicator = card.querySelector('.check-box-indicator');
+        const iconWrapper = card.querySelector('.w-14');
+        const textHeading = card.querySelector('h3');
+        const textHindi = card.querySelector('p');
+
+        if (isSelected) {
+          card.classList.remove('selected', 'bg-surface-container-lowest');
+          card.classList.add('bg-surface-container-lowest');
+          
+          if (indicator) {
+            indicator.classList.remove('bg-primary', 'text-on-primary');
+            indicator.classList.add('bg-surface-container', 'text-transparent');
+          }
+          if (textHeading) {
+            textHeading.classList.remove('text-primary', 'font-bold');
+            textHeading.classList.add('text-on-surface', 'font-semibold');
+          }
+          if (textHindi) {
+            textHindi.classList.remove('text-secondary');
+            textHindi.classList.add('text-on-surface-variant');
+          }
+        } else {
+          card.classList.add('selected');
+          
+          if (indicator) {
+            indicator.classList.remove('bg-surface-container', 'text-transparent');
+            indicator.classList.add('bg-primary', 'text-on-primary');
+          }
+          if (textHeading) {
+            textHeading.classList.add('text-primary', 'font-bold');
+            textHeading.classList.remove('text-on-surface', 'font-semibold');
+          }
+          if (textHindi) {
+            textHindi.classList.add('text-secondary');
+            textHindi.classList.remove('text-on-surface-variant');
+          }
+        }
+        updateSelectionState();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        if (clearSearch) {
+          if (query.length > 0) {
+            clearSearch.classList.remove('hidden');
+          } else {
+            clearSearch.classList.add('hidden');
+          }
+        }
+
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    if (clearSearch && searchInput) {
+      clearSearch.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearch.classList.add('hidden');
+        cards.forEach(card => {
+          card.style.display = 'flex';
+        });
+        searchInput.focus();
+      });
+    }
+  })();
+</script></main><footer class="fixed bottom-0 w-full z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-kiosk-edge-margin flex items-center justify-between"><div class="flex items-center gap-component-gap-sm"><span class="material-symbols-outlined text-error text-[22px]">emergency</span><span class="font-body-md text-body-md text-on-surface-variant font-medium">Emergency? Press Attendant Help • Session confidential &amp; encrypted</span></div><nav class="flex items-center gap-component-gap-lg" data-active-classes="text-primary font-bold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="welcome-and-language" href="#">Start Over</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="attendant-assistance" href="#">Call Staff</a></nav></div></footer></body></html>

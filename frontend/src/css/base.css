@@ -1,0 +1,28 @@
+/* base reset + typography */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-head); margin: 0; }
+h1.kiosk-display { font-size: 48px; line-height: 56px; font-weight: 800; }
+h2 { font-size: 32px; line-height: 40px; font-weight: 700; }
+h3 { font-size: 24px; line-height: 32px; font-weight: 600; }
+h4 { font-size: 20px; line-height: 28px; font-weight: 600; }
+p { margin: 0 0 12px; color: var(--ink-2); }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font-family: var(--font-body); }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container.kiosk { max-width: 1080px; padding: 0 48px; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.mono { font-variant-numeric: tabular-nums; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }

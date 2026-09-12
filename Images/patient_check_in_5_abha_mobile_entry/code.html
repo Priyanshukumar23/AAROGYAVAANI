@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediKiosk - Enter ABHA or Mobile Number</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0a2540",
+            "primary-container": "#0a2540",
+            "on-primary": "#ffffff",
+            "secondary": "#006398",
+            "secondary-container": "#e0f2fe",
+            "surface": "#f8faff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f0f4fc",
+            "surface-container": "#e5edfa",
+            "surface-container-high": "#dbe6f6",
+            "on-surface": "#0b1c30",
+            "on-surface-variant": "#4a5568",
+            "outline-variant": "#cbd5e1",
+            "error-container": "#fee2e2",
+            "on-error-container": "#991b1b",
+            "error": "#dc2626"
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col justify-between">
+<!-- 1. CLEAN HEADER (Step 1 Style: Logo, Audio, Language, Help) -->
+<header class="w-full bg-surface-container-lowest border-b border-surface-container px-6 sm:px-12 py-5 sticky top-0 z-30 shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<!-- Logo + Subtitle -->
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-[28px]">local_hospital</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display font-extrabold text-2xl tracking-tight text-primary leading-tight">MediKiosk</span>
+<span class="text-sm font-medium text-on-surface-variant">AI-Powered Clinical Intake • AI क्लिनिकल इनटेक</span>
+</div>
+</div>
+<!-- Header Patient Utilities (Audio, Language, Help) -->
+<div class="flex items-center gap-3 sm:gap-4">
+<!-- Audio Assistance -->
+<button class="h-14 px-5 rounded-2xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2.5 transition-all active:scale-95 cursor-pointer border border-surface-container" id="btn-audio" type="button">
+<span class="material-symbols-outlined text-secondary text-[26px]">volume_up</span>
+<span class="font-semibold text-base hidden md:inline">Audio • ऑडियो</span>
+</button>
+<!-- Language Toggle -->
+<button class="h-14 px-5 rounded-2xl bg-surface-container text-primary flex items-center gap-2.5 hover:bg-surface-container-high transition-all active:scale-95 cursor-pointer font-semibold text-base border border-surface-container-high" id="btn-lang" type="button">
+<span class="material-symbols-outlined text-primary text-[24px]">translate</span>
+<span>English / हिन्दी</span>
+</button>
+<!-- Help Button -->
+<button class="h-14 px-6 rounded-2xl bg-error-container text-on-error-container hover:bg-red-200 flex items-center gap-2.5 transition-all active:scale-95 cursor-pointer font-bold text-base shadow-sm" id="btn-help" type="button">
+<span class="material-symbols-outlined text-error text-[26px]">help</span>
+<span>Help • सहायता</span>
+</button>
+</div>
+</div>
+</header>
+<!-- 2. MAIN TASK CONTAINER -->
+<main class="flex-1 w-full max-w-6xl mx-auto px-6 py-6 md:py-10 flex flex-col items-center justify-center">
+<!-- Title & Subtitle: Direct single task focus -->
+<div class="text-center mb-6 md:mb-8">
+<h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-[40px] text-primary tracking-tight" id="screen-heading">
+        Enter ABHA or Mobile Number
+      </h1>
+<p class="font-body text-xl sm:text-2xl text-on-surface-variant mt-2" id="screen-subheading">
+        ABHA या मोबाइल नंबर दर्ज करें
+      </p>
+</div>
+<!-- Central 2-Column Responsive Layout -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-5xl">
+<!-- LEFT: Simple Big Toggle & Huge Number Display -->
+<div class="lg:col-span-6 flex flex-col justify-between gap-6">
+<!-- Large Toggle Tabs -->
+<div class="bg-surface-container-low p-2 rounded-2xl flex items-center gap-2 border border-surface-container">
+<button class="flex-1 py-4 px-4 rounded-xl bg-white text-primary shadow-sm border border-surface-container flex items-center justify-center gap-3 transition-all cursor-pointer" id="tab-abha" type="button">
+<span class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center shrink-0">
+<span class="w-2 h-2 rounded-full bg-white"></span>
+</span>
+<div class="flex flex-col text-left">
+<span class="font-display font-bold text-lg leading-snug">ABHA Number</span>
+<span class="text-sm text-on-surface-variant font-medium">14 Digits • आभा कार्ड</span>
+</div>
+</button>
+<button class="flex-1 py-4 px-4 rounded-xl text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-3 transition-all cursor-pointer" id="tab-mobile" type="button">
+<span class="w-5 h-5 rounded-full border-2 border-outline-variant shrink-0"></span>
+<div class="flex flex-col text-left">
+<span class="font-display font-bold text-lg leading-snug">Mobile Number</span>
+<span class="text-sm text-on-surface-variant font-medium">10 Digits • मोबाइल नंबर</span>
+</div>
+</button>
+</div>
+<!-- Huge High-Contrast Display Box -->
+<div class="flex-1 min-h-[220px] bg-white rounded-2xl border-2 border-secondary/30 p-6 md:p-8 flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="text-sm sm:text-base font-semibold tracking-wide uppercase" id="input-label">
+              ABHA Number (14 Digits)
+            </span>
+<button aria-label="Clear Digits" class="h-12 w-12 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-all cursor-pointer" id="btn-touch-clear" type="button">
+<span class="material-symbols-outlined text-[26px]">backspace</span>
+</button>
+</div>
+<!-- Typed Digits Display -->
+<div class="py-4 my-auto overflow-hidden">
+<div class="flex items-center flex-wrap">
+<span class="font-display text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-wider text-primary break-all" id="display-value">
+                91-4582-9012-3456
+              </span>
+<span class="w-1 h-9 bg-secondary ml-1 animate-pulse rounded-full" id="cursor-indicator"></span>
+</div>
+</div>
+<!-- Dynamic Friendly Status -->
+<div class="bg-secondary-container/40 border border-secondary/20 rounded-xl px-4 py-3 flex items-center gap-3" id="status-card">
+<span class="material-symbols-outlined text-secondary text-2xl" id="status-icon">check_circle</span>
+<span class="text-base font-medium text-on-surface" id="status-text">
+              14 digits entered • मान्य प्रारूप (Valid)
+            </span>
+</div>
+</div>
+<!-- Gentle Friendly Guidance Prompt -->
+<div class="bg-surface-container-lowest border border-surface-container rounded-xl p-4 flex items-center gap-3.5 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl">pin</span>
+</div>
+<p class="text-sm sm:text-base text-on-surface-variant font-medium">
+            Use the keypad on screen to enter your number. If you need assistance, press Help above.
+          </p>
+</div>
+</div>
+<!-- RIGHT: Large Tactile Touchpad (Minimum 72px x 72px buttons) -->
+<div class="lg:col-span-6 flex items-center justify-center">
+<div class="w-full max-w-md bg-white p-5 sm:p-7 rounded-2xl border border-surface-container shadow-xl">
+<div class="grid grid-cols-3 gap-3.5 sm:gap-4">
+<!-- Row 1 -->
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="1" type="button">
+              1
+            </button>
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="2" type="button">
+              2
+            </button>
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="3" type="button">
+              3
+            </button>
+<!-- Row 2 -->
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="4" type="button">
+              4
+            </button>
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="5" type="button">
+              5
+            </button>
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="6" type="button">
+              6
+            </button>
+<!-- Row 3 -->
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="7" type="button">
+              7
+            </button>
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="8" type="button">
+              8
+            </button>
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="9" type="button">
+              9
+            </button>
+<!-- Row 4: Clear / 0 / Delete -->
+<button class="min-h-[76px] sm:min-h-[82px] rounded-2xl bg-error-container hover:bg-red-200 active:scale-95 text-on-error-container font-display font-bold flex flex-col items-center justify-center transition-all shadow-sm cursor-pointer" id="key-clear" type="button">
+<span class="text-xl sm:text-2xl">Clear</span>
+<span class="text-xs sm:text-sm font-medium">हटाएं</span>
+</button>
+<button class="keypad-btn min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container-low hover:bg-surface-container-high active:bg-secondary active:text-white text-primary font-display text-3xl sm:text-4xl font-bold flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer" data-key="0" type="button">
+              0
+            </button>
+<button class="min-h-[76px] sm:min-h-[82px] rounded-2xl bg-surface-container hover:bg-surface-container-high active:scale-95 text-primary font-display font-bold flex flex-col items-center justify-center transition-all shadow-sm cursor-pointer" id="key-delete" type="button">
+<span class="material-symbols-outlined text-[30px]">backspace</span>
+<span class="text-xs sm:text-sm font-medium">Delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- 3. FOOTER / NAVIGATION: Large Simple 'Back' & 'Continue' Buttons -->
+<footer class="w-full bg-surface-container-lowest border-t border-surface-container px-6 sm:px-12 py-5 shadow-[0_-2px_12px_rgba(0,0,0,0.03)]">
+<div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+<!-- Back Button -->
+<button class="h-16 px-8 rounded-2xl bg-surface-container-low hover:bg-surface-container text-on-surface font-display font-bold text-lg sm:text-xl flex items-center gap-3 border border-surface-container transition-all active:scale-95 cursor-pointer" id="btn-back" type="button">
+<span class="material-symbols-outlined text-[28px]">arrow_back</span>
+<span>Back • पीछे जाएँ</span>
+</button>
+<!-- Primary Continue Button -->
+<button class="h-16 px-10 sm:px-14 rounded-2xl bg-primary hover:bg-secondary active:bg-secondary text-white font-display font-bold text-lg sm:text-xl flex items-center gap-3 shadow-lg hover:shadow-xl transition-all active:scale-95 cursor-pointer" id="btn-continue" type="button">
+<span>Continue • आगे बढ़ें</span>
+<span class="material-symbols-outlined text-[28px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+<!-- Clean Interactive Keypad Script -->
+<script>
+    (() => {
+      let mode = 'abha'; // 'abha' (14 digits) or 'mobile' (10 digits)
+      let digits = '91458290123456';
+
+      const displayEl = document.getElementById('display-value');
+      const inputLabel = document.getElementById('input-label');
+      const statusText = document.getElementById('status-text');
+      const statusIcon = document.getElementById('status-icon');
+      const statusCard = document.getElementById('status-card');
+      const btnContinue = document.getElementById('btn-continue');
+      
+      const tabAbha = document.getElementById('tab-abha');
+      const tabMobile = document.getElementById('tab-mobile');
+      const screenHeading = document.getElementById('screen-heading');
+      const screenSubheading = document.getElementById('screen-subheading');
+
+      function formatNumber(val, currentMode) {
+        if (!val) return '—';
+        if (currentMode === 'abha') {
+          const parts = [];
+          if (val.length > 0) parts.push(val.slice(0, 2));
+          if (val.length > 2) parts.push(val.slice(2, 6));
+          if (val.length > 6) parts.push(val.slice(6, 10));
+          if (val.length > 10) parts.push(val.slice(10, 14));
+          return parts.join('-');
+        } else {
+          if (val.length > 5) {
+            return val.slice(0, 5) + ' ' + val.slice(5, 10);
+          }
+          return val;
+        }
+      }
+
+      function render() {
+        displayEl.textContent = formatNumber(digits, mode);
+        const targetLen = mode === 'abha' ? 14 : 10;
+        const isComplete = digits.length === targetLen;
+
+        if (isComplete) {
+          statusCard.className = 'bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3 flex items-center gap-3';
+          statusIcon.textContent = 'check_circle';
+          statusIcon.className = 'material-symbols-outlined text-emerald-600 text-2xl';
+          statusText.textContent = `${targetLen} digits entered • मान्य प्रारूप (Valid)`;
+          statusText.className = 'text-base font-semibold text-emerald-800';
+          btnContinue.classList.remove('opacity-50', 'pointer-events-none');
+        } else {
+          statusCard.className = 'bg-surface-container-low border border-surface-container rounded-xl px-4 py-3 flex items-center gap-3';
+          statusIcon.textContent = 'edit_note';
+          statusIcon.className = 'material-symbols-outlined text-secondary text-2xl';
+          statusText.textContent = `${digits.length} of ${targetLen} digits • कृपया ${targetLen - digits.length} अंक और दर्ज करें`;
+          statusText.className = 'text-base font-medium text-on-surface-variant';
+          btnContinue.classList.add('opacity-50', 'pointer-events-none');
+        }
+      }
+
+      // Keypad inputs
+      document.querySelectorAll('.keypad-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const val = btn.getAttribute('data-key');
+          const maxLen = mode === 'abha' ? 14 : 10;
+          if (digits.length < maxLen) {
+            digits += val;
+            render();
+          }
+        });
+      });
+
+      const doDelete = () => {
+        digits = digits.slice(0, -1);
+        render();
+      };
+
+      const doClear = () => {
+        digits = '';
+        render();
+      };
+
+      document.getElementById('key-clear').addEventListener('click', doClear);
+      document.getElementById('key-delete').addEventListener('click', doDelete);
+      document.getElementById('btn-touch-clear').addEventListener('click', doDelete);
+
+      // Mode switching
+      tabAbha.addEventListener('click', () => {
+        if (mode === 'abha') return;
+        mode = 'abha';
+        digits = '91458290123456';
+        
+        tabAbha.className = 'flex-1 py-4 px-4 rounded-xl bg-white text-primary shadow-sm border border-surface-container flex items-center justify-center gap-3 transition-all cursor-pointer';
+        tabAbha.querySelector('span').className = 'w-5 h-5 rounded-full bg-secondary flex items-center justify-center shrink-0';
+        tabAbha.querySelector('span').innerHTML = '<span class="w-2 h-2 rounded-full bg-white"></span>';
+        
+        tabMobile.className = 'flex-1 py-4 px-4 rounded-xl text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-3 transition-all cursor-pointer';
+        tabMobile.querySelector('span').className = 'w-5 h-5 rounded-full border-2 border-outline-variant shrink-0';
+        tabMobile.querySelector('span').innerHTML = '';
+
+        inputLabel.textContent = 'ABHA Number (14 Digits)';
+        render();
+      });
+
+      tabMobile.addEventListener('click', () => {
+        if (mode === 'mobile') return;
+        mode = 'mobile';
+        digits = '9876543210';
+
+        tabMobile.className = 'flex-1 py-4 px-4 rounded-xl bg-white text-primary shadow-sm border border-surface-container flex items-center justify-center gap-3 transition-all cursor-pointer';
+        tabMobile.querySelector('span').className = 'w-5 h-5 rounded-full bg-secondary flex items-center justify-center shrink-0';
+        tabMobile.querySelector('span').innerHTML = '<span class="w-2 h-2 rounded-full bg-white"></span>';
+
+        tabAbha.className = 'flex-1 py-4 px-4 rounded-xl text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-3 transition-all cursor-pointer';
+        tabAbha.querySelector('span').className = 'w-5 h-5 rounded-full border-2 border-outline-variant shrink-0';
+        tabAbha.querySelector('span').innerHTML = '';
+
+        inputLabel.textContent = 'Mobile Number (10 Digits)';
+        render();
+      });
+
+      // Audio feedback mock
+      document.getElementById('btn-audio').addEventListener('click', () => {
+        alert('Audio Assist: "कृपया अपना 14 अंकों का ABHA नंबर या 10 अंकों का मोबाइल नंबर दर्ज करें।"');
+      });
+
+      // Help trigger
+      document.getElementById('btn-help').addEventListener('click', () => {
+        alert('Attendant Alerted. An attendant is coming to help you at this kiosk. • सहायक को सूचित कर दिया गया है।');
+      });
+
+      render();
+    })();
+  </script>
+</body></html>

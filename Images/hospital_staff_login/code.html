@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#001d31",
+            "on-background": "#0b1c30",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#1a9e70",
+            "primary-fixed-dim": "#b0c8eb",
+            "on-error": "#ffffff",
+            "secondary-container": "#5bb8fe",
+            "surface-tint": "#49607e",
+            "error-container": "#ffdad6",
+            "tertiary": "#001209",
+            "primary": "#000f22",
+            "surface-container-high": "#dce9ff",
+            "tertiary-fixed-dim": "#68dba9",
+            "surface-bright": "#f8f9ff",
+            "surface-variant": "#d3e4fe",
+            "surface-dim": "#cbdbf5",
+            "outline-variant": "#c4c6ce",
+            "on-surface": "#0b1c30",
+            "on-primary-container": "#768dad",
+            "on-primary-fixed": "#001c37",
+            "secondary-fixed": "#cce5ff",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#314865",
+            "background": "#f8fafc",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#85f8c4",
+            "inverse-surface": "#213145",
+            "surface": "#f8fafc",
+            "surface-container-low": "#eff4ff",
+            "on-tertiary-fixed-variant": "#005137",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#93ccff",
+            "surface-container": "#e5eeff",
+            "primary-container": "#0a2540",
+            "on-surface-variant": "#43474d",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#b0c8eb",
+            "secondary": "#0284c7",
+            "on-secondary-container": "#00476e",
+            "on-secondary-fixed-variant": "#004b73",
+            "primary-fixed": "#d2e4ff",
+            "outline": "#74777e",
+            "inverse-on-surface": "#eaf1ff",
+            "tertiary-container": "#002a1b",
+            "on-tertiary-fixed": "#002114"
+          },
+          fontFamily: {
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "label-touch": ["Inter"],
+            "label-triage": ["Inter"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#f8fafc] font-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-secondary/20">
+<!-- Header: Minimal & Focused -->
+<header class="w-full bg-white border-b border-slate-200/80 sticky top-0 z-40">
+<div class="max-w-7xl mx-auto h-20 px-6 sm:px-10 flex items-center justify-between">
+<!-- Brand Logo -->
+<div class="flex items-center gap-4">
+<img alt="MediKiosk" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VoaoLs2vFTDGh3WT9W-swt32kIm0zNFJeiuzluJflxrvfH8D4R8tzslbDs_zwUQhqckq6GZKA-PMI9ClrgK3iFsnFFhta53OJLbd_VhuOF8Cj1IgG7TjSZDGqqDzUGZ6dUdHrF9TQENaFtUnzvcp3XjQwbo7xkdNesWzbppl762ORoek9i5jo0qfwFFzKE_HOcSFE8rRYWYlsmCArJxyX-Ml_Qek84baznxdutj2iUlV3-OXunM-gRIA"/>
+<div class="hidden sm:flex items-center gap-2 pl-4 border-l border-slate-200">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sky-50 text-secondary text-xs font-semibold tracking-wide border border-sky-100">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Secure Hospital Staff Access
+          </span>
+</div>
+</div>
+<!-- Minimal Back Button to Welcome Screen -->
+<a class="inline-flex items-center gap-2 h-10 px-4 rounded-lg bg-slate-100 hover:bg-slate-200/80 text-slate-700 font-label-md text-sm font-medium transition-colors" data-path="welcome-portal" href="#">
+<span class="material-symbols-outlined text-slate-500 text-[18px]">arrow_back</span>
+<span>Welcome Screen</span>
+</a>
+</div>
+</header>
+<!-- Main Centered Authentication Canvas -->
+<main class="flex-1 flex flex-col justify-center items-center px-4 py-12 sm:px-6 relative">
+<div class="w-full max-w-md mx-auto flex flex-col items-center">
+<!-- Center Login Card -->
+<div class="w-full bg-white rounded-2xl shadow-[0_4px_24px_rgba(10,37,64,0.06)] border border-slate-200/90 p-8 sm:p-10">
+<!-- Card Header -->
+<div class="text-center mb-8">
+<h1 class="font-headline-lg text-2xl font-bold tracking-tight text-[#0A2540] uppercase">
+            HOSPITAL STAFF LOGIN
+          </h1>
+<p class="text-sm text-slate-500 mt-2 leading-relaxed">
+            Sign in to access your authorized MediKiosk workspace.
+          </p>
+</div>
+<!-- Login Form -->
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<!-- Staff ID Field -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-700" for="staff-id">
+              Staff ID
+            </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-slate-400 text-[20px] pointer-events-none">
+                badge
+              </span>
+<input autocomplete="username" class="w-full h-12 pl-11 pr-4 bg-slate-50 hover:bg-slate-50/80 focus:bg-white text-slate-800 placeholder:text-slate-400 text-sm rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 focus:outline-none transition-all" id="staff-id" name="staff-id" placeholder="Enter your Staff ID" required="" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-700" for="staff-password">
+                Password
+              </label>
+<a class="text-xs font-medium text-secondary hover:underline transition-colors" href="#">
+                Forgot Password?
+              </a>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-slate-400 text-[20px] pointer-events-none">
+                lock
+              </span>
+<input autocomplete="current-password" class="w-full h-12 pl-11 pr-11 bg-slate-50 hover:bg-slate-50/80 focus:bg-white text-slate-800 placeholder:text-slate-400 text-sm rounded-lg border border-slate-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 focus:outline-none transition-all" id="staff-password" name="staff-password" placeholder="••••••••••••" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-2.5 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded transition-colors" id="toggle-password-btn" type="button">
+<span class="material-symbols-outlined text-[20px]" id="password-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Primary Submit Button -->
+<div class="pt-2">
+<button class="w-full min-h-[50px] bg-[#0A2540] hover:bg-[#0284C7] active:bg-[#092036] text-white font-semibold text-sm tracking-wide rounded-lg flex items-center justify-center gap-2 transition-all duration-150 shadow-md shadow-[#0A2540]/10 hover:shadow-lg hover:shadow-sky-600/20 active:scale-[0.99]" type="submit">
+<span>SIGN IN</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Security Message -->
+<div class="pt-2 text-center space-y-1">
+<div class="flex items-center justify-center gap-1.5 text-xs font-medium text-slate-700">
+<span>🔒</span>
+<span>Authorized hospital staff only</span>
+</div>
+<p class="text-[11px] text-slate-400">
+              Your access and activity are securely logged.
+            </p>
+</div>
+</form>
+</div>
+<!-- Architectural Role Note (Evaluation Aid) -->
+<div class="mt-8 text-center px-4 max-w-sm">
+<p class="text-xs font-mono text-slate-500 bg-slate-100/90 py-2 px-3.5 rounded-lg border border-slate-200/60 inline-block leading-relaxed tracking-tight">
+          Authentication → Role Detection → Doctor, Triage, or Admin Portal
+        </p>
+<p class="text-[11px] text-slate-400 mt-2">
+          Automated RBAC routing. Designated workspace opens upon credential verification.
+        </p>
+</div>
+</div>
+</main>
+<!-- Clean Minimal Footer -->
+<footer class="w-full py-4 text-center border-t border-slate-100 bg-white/50 text-xs text-slate-400">
+    MediKiosk Clinical Authentication Platform
+  </footer>
+<!-- Password visibility script -->
+<script>
+    const toggleBtn = document.getElementById('toggle-password-btn');
+    const passwordInput = document.getElementById('staff-password');
+    const passwordIcon = document.getElementById('password-icon');
+
+    if (toggleBtn && passwordInput && passwordIcon) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        passwordIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+      });
+    }
+  </script>
+</body></html>

@@ -85,10 +85,17 @@ function ScrollToTop() {
   return null;
 }
 
+function DocumentTitle() {
+  const { pathname } = useLocation();
+  useEffect(() => { document.title = 'MediKiosk'; }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <DocumentTitle />
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/staff/login" element={<StaffLogin />} />

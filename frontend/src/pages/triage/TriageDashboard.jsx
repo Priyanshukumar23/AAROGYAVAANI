@@ -4,14 +4,25 @@ import StaffShell from '../../components/StaffShell';
 import { Kpi, PriorityTag } from '../../components/ui';
 import { MOCK_QUEUE } from '../../data/mock';
 import { api } from '../../data/api';
+import { getQueue, subscribeQueue } from '../../data/queueStore';
 
 export default function TriageDashboard() {
-  const [queue, setQueue] = useState(MOCK_QUEUE);
+  const [queue, setQueue] = useState(() => getQueue());
   useEffect(() => {
     api.get('/tokens').then(d => {
       const list = Array.isArray(d) ? d : d.tokens || d.queue;
-      if (list?.length) setQueue(list);
+      if (list?.length) {
+        // Merge backend tokens with local kiosk registrations (local wins on conflict).
+        setQueue(prev => {
+          const localByToken = new Map(prev.map(t => [t.tokenNo, t]));
+          const merged = list.map(t => ({ ...(localByToken.get(t.tokenNo) || {}), ...t, tokenNo: t.tokenNo || t.token, name: t.name || t.patientName || localByToken.get(t.tokenNo)?.name || 'Patient', complaint: t.complaint || t.chiefComplaint || localByToken.get(t.tokenNo)?.complaint || '' }));
+          localByToken.forEach((v, k) => { if (!merged.find(m => m.tokenNo === k)) merged.push(v); });
+          return merged;
+        });
+      }
     }).catch(() => {});
+    const offQ = subscribeQueue((list) => { if (Array.isArray(list) && list.length) setQueue(list); });
+    return () => offQ();
   }, []);
   return (
     <StaffShell role="nurse" title="Triage Desk · Namaste 🙏" subtitle="OPD Central · shift live · NABH protocol">

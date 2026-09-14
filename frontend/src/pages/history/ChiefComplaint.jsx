@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import KioskShell from '../../components/KioskShell';
 import { useApp } from '../../context/AppContext';
 import { VoiceBar, PriorityTag } from '../../components/ui';
+import { updateQueueToken } from '../../data/queueStore';
 
 const CHIPS = ['Chest pain', 'Fever', 'Cough', 'Breathlessness', 'Headache', 'Stomach pain', 'Follow-up visit'];
 const RED = ['chest pain', 'breathless', 'bleeding', 'suicide', 'severe'];
@@ -18,6 +19,17 @@ export default function ChiefComplaint() {
     if (text.trim().length < 10) { alert('Please describe your problem in at least 10 characters.'); return; }
     const redFlag = !!hit;
     patchIntake({ chiefComplaint: text.trim(), redFlag });
+    const tokenNo = state.token?.tokenNo;
+    if (tokenNo) {
+      updateQueueToken(tokenNo, {
+        complaint: text.trim(),
+        chiefComplaint: text.trim(),
+        priority: redFlag ? 'P1' : state.token?.priority || 'P2',
+        aiStatus: 'ready',
+        aiConfidence: redFlag ? 96 : 89,
+      });
+      try { fetch(`/api/tokens/${encodeURIComponent(tokenNo)}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ complaint: text.trim(), chiefComplaint: text.trim(), priority: redFlag ? 'P1' : 'P2' }) }); } catch {}
+    }
     nav(redFlag ? '/history/red-flag' : '/history/symptoms');
   };
   return (

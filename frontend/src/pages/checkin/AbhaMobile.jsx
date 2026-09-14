@@ -20,7 +20,7 @@ export default function AbhaMobile() {
     nav('/checkin/confirm');
   };
   return (
-    <KioskShell stepLabel="STEP 1 · PATIENT CHECK-IN" title="Enter ABHA / Mobile Number" back="/checkin/identify" progress={35} onNext={submit} nextLabel="Continue">
+    <KioskShell stepLabel="STEP 1 · CHECK-IN" title="Enter ABHA / Mobile Number" back="/checkin/identify" progress={35} onNext={submit} nextLabel="Continue">
       <VoiceBar text="Type your 14 digit ABHA number or 10 digit mobile number." />
       <div className="grid cols-2">
         <div className="card">

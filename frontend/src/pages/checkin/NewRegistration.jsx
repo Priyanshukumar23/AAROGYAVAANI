@@ -25,7 +25,7 @@ export default function NewRegistration() {
     nav('/checkin/confirm');
   };
   return (
-    <KioskShell stepLabel="STEP 1 · PATIENT CHECK-IN" title="New Patient Registration" back="/checkin/identify" progress={40} onNext={save} nextLabel="Save & Continue">
+    <KioskShell stepLabel="STEP 1 · CHECK-IN" title="New Patient Registration" back="/checkin/identify" progress={40} onNext={save} nextLabel="Save & Continue">
       <VoiceBar text="Fill your details to register. All fields are required." />
       <div className="card">
         <div className="grid cols-2">

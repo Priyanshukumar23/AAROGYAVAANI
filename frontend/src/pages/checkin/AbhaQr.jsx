@@ -11,7 +11,7 @@ export default function AbhaQr() {
     nav('/checkin/confirm');
   };
   return (
-    <KioskShell stepLabel="STEP 1 · PATIENT CHECK-IN" title="Scan ABHA QR Code" back="/checkin/identify" progress={30} hideNav>
+    <KioskShell stepLabel="STEP 1 · CHECK-IN" title="Scan ABHA QR Code" back="/checkin/identify" progress={30} hideNav>
       <VoiceBar text="Hold your ABHA QR inside the frame to scan." />
       <div className="card" style={{ textAlign: 'center' }}>
         <div className="qrbox">▦</div>

@@ -17,7 +17,7 @@ export default function Accessibility() {
     speakText('This is a MediKiosk audio test. Please follow the on-screen steps.', state.language);
   };
   return (
-    <KioskShell stepLabel="STEP 1 · PATIENT CHECK-IN" title="Comfort & Accessibility" back="/checkin/language" next="/checkin/identify" progress={18}>
+    <KioskShell stepLabel="STEP 1 · CHECK-IN" title="Comfort & Accessibility" back="/checkin/language" next="/checkin/identify" progress={18}>
       <VoiceBar text="Adjust comfort settings. You can change these anytime." />
       <div className="grid" style={{ marginBottom: 16 }}>
         {OPTS.map((o) => (

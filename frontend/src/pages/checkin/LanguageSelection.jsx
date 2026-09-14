@@ -12,7 +12,7 @@ export default function LanguageSelection() {
   const choose = (l) => { setSel(l.label); patch({ language: l.label }); };
   return (
     <KioskShell
-      stepLabel="STEP 1 · PATIENT CHECK-IN"
+      stepLabel="STEP 1 · CHECK-IN"
       title="Choose Your Language"
       back="/"
       progress={10}

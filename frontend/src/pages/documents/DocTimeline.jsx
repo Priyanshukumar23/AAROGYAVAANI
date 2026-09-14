@@ -9,7 +9,7 @@ const DOCS = [
 
 export default function DocTimeline() {
   return (
-    <KioskShell stepLabel="STEP 4 · DOCUMENTS" title="Your Document Timeline" back="/documents/abnormal" next="/documents/complete" nextLabel="Finish Documents" progress={98}>
+    <KioskShell stepLabel="STEP 3 · DOCUMENTS" title="Your Document Timeline" back="/documents/abnormal" next="/documents/complete" nextLabel="Finish Documents" progress={98}>
       <VoiceBar text="Your documents are arranged newest first." />
       <div className="card">
         {DOCS.map((x, i) => (

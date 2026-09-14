@@ -4,20 +4,28 @@ import StaffShell from '../../components/StaffShell';
 import { PriorityTag } from '../../components/ui';
 import { MOCK_QUEUE } from '../../data/mock';
 import { api } from '../../data/api';
+import { getQueue, subscribeQueue } from '../../data/queueStore';
 
 export default function LiveTriageQueue() {
-  const [rows, setRows] = useState(MOCK_QUEUE);
+  const [rows, setRows] = useState(() => getQueue());
   const [f, setF] = useState('All');
   const [tick, setTick] = useState(10);
 
   const fetchRows = () => {
     api.get('/tokens').then(d => {
       const list = Array.isArray(d) ? d : d.tokens || d.queue;
-      if (list?.length) setRows(list);
+      if (list?.length) {
+        setRows(prev => {
+          const localByToken = new Map(prev.map(t => [t.tokenNo, t]));
+          const merged = list.map(t => ({ ...(localByToken.get(t.tokenNo) || {}), ...t, tokenNo: t.tokenNo || t.token, name: t.name || t.patientName || localByToken.get(t.tokenNo)?.name || 'Patient', complaint: t.complaint || t.chiefComplaint || localByToken.get(t.tokenNo)?.complaint || '' }));
+          localByToken.forEach((v, k) => { if (!merged.find(m => m.tokenNo === k)) merged.push(v); });
+          return merged;
+        });
+      }
     }).catch(() => {});
     setTick(10);
   };
-  useEffect(() => { fetchRows(); }, []);
+  useEffect(() => { fetchRows(); const offQ = subscribeQueue((list) => { if (Array.isArray(list) && list.length) setRows(list); }); return () => offQ(); }, []);
   useEffect(() => {
     const t = setInterval(() => setTick(s => {
       if (s <= 1) { fetchRows(); return 10; }

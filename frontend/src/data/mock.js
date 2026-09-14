@@ -48,6 +48,54 @@ export const MOCK_VITALS = [
   { k: 'Pain (VAS)', v: '8 / 10', s: 'Severe chest pain', warn: 'warn' }
 ];
 
+export const STAFF_PROFILES = {
+  doctor: {
+    name: 'Dr. Rajesh Sharma',
+    staffId: 'DOC-104',
+    role: 'doctor',
+    roleLabel: 'Doctor · General Medicine',
+    department: 'General Medicine',
+    room: 'Room 104',
+    hospital: 'AIIMS New Delhi',
+    qualification: 'MBBS, MD (General Medicine)',
+    experience: '12 yrs experience',
+    shift: 'Tue OPD · 09:00 – 14:00',
+    phone: '+91 98110 24680',
+    email: 'rajesh.sharma@aiims.edu',
+    status: 'Available',
+  },
+  nurse: {
+    name: 'Sr. Nurse Meena Kumari, RN',
+    staffId: 'NUR-88421',
+    role: 'nurse',
+    roleLabel: 'Nurse · Triage',
+    department: 'OPD Central Triage',
+    room: 'Counter 02',
+    hospital: 'AIIMS New Delhi',
+    qualification: 'B.Sc Nursing, RN/RM',
+    experience: '8 yrs experience',
+    shift: 'Morning shift · 08:00 – 14:00',
+    phone: '+91 99280 13579',
+    email: 'meena.kumari@aiims.edu',
+    status: 'On duty',
+  },
+  admin: {
+    name: 'Dr. Vikramaditya Sen',
+    staffId: 'ADM-01',
+    role: 'admin',
+    roleLabel: 'Hospital Administrator',
+    department: 'Administration',
+    room: 'Exec Node #04',
+    hospital: 'AIIMS New Delhi',
+    qualification: 'MBBS, MHA',
+    experience: '15 yrs experience',
+    shift: 'Admin block · 09:00 – 17:00',
+    phone: '+91 98100 11223',
+    email: 'vikram.sen@aiims.edu',
+    status: 'Available',
+  },
+};
+
 export const STAFF_LINKS = {
   doctor: [
     { to: '/doctor/dashboard', label: 'Dashboard', icon: '📊' },

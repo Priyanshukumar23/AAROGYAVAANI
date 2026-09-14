@@ -89,6 +89,113 @@ router.post('/alerts', (req, res) => {
   res.status(201).json(a);
 });
 
+// ---- Doctor dashboard (aggregated) ----
+// GET /api/doctor/dashboard — counters + queue + red flags + OCR stack.
+router.get('/doctor/dashboard', (req, res) => {
+  const queue = store.tokens;
+  const inQueue = queue.filter(t => t.status === 'waiting').length;
+  const inChamber = queue.filter(t => t.status === 'in-chamber');
+  const done = store.consultations.length;
+  res.json({
+    counters: {
+      scheduled: 42,
+      inQueue,
+      inChamber: inChamber.length,
+      inChamberToken: inChamber[0]?.tokenNo || null,
+      done: 27 + done,
+    },
+    queue,
+    called: inChamber[0] ? { tokenNo: inChamber[0].tokenNo, patientName: inChamber[0].patientName, room: inChamber[0].room } : null,
+    redFlags: store.alerts.filter(a => !a.acknowledged),
+    ocrStack: store.docs.map(d => ({
+      id: d._id, fileName: d.fileName || `${d.category || 'doc'}_${d.tokenNo}.pdf`,
+      status: d.status || 'processing', progress: d.progress ?? 50,
+      confidence: d.confidence ?? d.ocrConfidence ?? null,
+    })),
+    waiting: {
+      currentToken: inChamber[0]?.tokenNo || queue[0]?.tokenNo || null,
+      patientsWaiting: inQueue,
+      avgMin: 6,
+      estimatedWaitMin: inQueue * 6,
+    },
+  });
+});
+
+// ---- OPD queue (aliases for doctor workflow) ----
+// GET /api/opd/queue
+router.get('/opd/queue', (req, res) => res.json(store.tokens));
+
+// POST /api/opd/call-next — next P1→P2→P3 waiting → in-chamber (broadcast-ready).
+router.post('/opd/call-next', (req, res) => {
+  const room = (req.body || {}).room || 'Room 104';
+  const rank = { P1: 0, P2: 1, P3: 2 };
+  const waiting = store.tokens
+    .filter(t => t.status === 'waiting')
+    .sort((a, b) => (rank[a.priority] ?? 9) - (rank[b.priority] ?? 9) || (a.estimatedWaitMin ?? 99) - (b.estimatedWaitMin ?? 99));
+  if (!waiting.length) return res.status(409).json({ error: 'Queue empty — no waiting patients' });
+  const next = waiting[0];
+  next.status = 'in-chamber';
+  next.room = room;
+  next.waitMin = 0;
+  next.estimatedWaitMin = 0;
+  // TODO(realtime): io.emit('queue:update', { type: 'called', token: next });
+  res.json({
+    called: { tokenNo: next.tokenNo, name: next.patientName || next.name, room, at: new Date().toISOString() },
+    queue: store.tokens,
+    message: `Calling ${next.tokenNo} — ${next.patientName || next.name}. Please proceed to ${room}.`,
+  });
+});
+
+// PATCH /api/opd/:token/status — waiting | in-chamber | completed | triage
+router.patch('/opd/:token/status', (req, res) => {
+  const t = store.tokens.find(x => x.tokenNo === req.params.token);
+  if (!t) return res.status(404).json({ error: 'Token not found' });
+  const { status } = req.body || {};
+  if (status) t.status = status;
+  // TODO(realtime): io.emit('queue:update', { type: 'status', token: t });
+  res.json(t);
+});
+
+// ---- Patient clinical case ----
+// GET /api/patients/:id/case — AI summary + HPI + PMH + meds + allergies + flags.
+router.get('/patients/:id/case', (req, res) => {
+  const id = req.params.id;
+  const token = store.tokens.find(t => t.tokenNo === id || t.uhid === id);
+  const patient = store.patients.find(p => p.uhid === token?.uhid || p._id === id);
+  const intake = store.intakes.filter(i => i.tokenNo === id).slice(-1)[0];
+  if (!token && !patient) return res.status(404).json({ error: 'Case not found' });
+  res.json({
+    tokenNo: id,
+    patient: patient || null,
+    token: token || null,
+    aiNote: 'AI-generated clinical information. Verify all AI-generated information before making clinical decisions.',
+    chiefComplaint: intake?.chiefComplaint || token?.chiefComplaint || null,
+    hpi: intake?.symptomDetails || null,
+    pastHistory: intake?.pastHistory || null,
+    medications: intake?.medications || [],
+    allergies: intake?.allergies || [],
+    redFlags: store.alerts.filter(a => a.tokenNo === id),
+    aiStatus: token?.aiStatus || 'ready',
+    aiConfidence: token?.aiConfidence ?? 94,
+  });
+});
+
+// GET /api/patients/:id/documents
+router.get('/patients/:id/documents', (req, res) => {
+  res.json(store.docs.filter(d => d.tokenNo === req.params.id));
+});
+
+// GET /api/patients/:id/timeline
+router.get('/patients/:id/timeline', (req, res) => {
+  const id = req.params.id;
+  const docs = store.docs.filter(d => d.tokenNo === id).map(d => ({ kind: 'document', ...d }));
+  const consults = store.consultations.filter(c => c.tokenNo === id).map(c => ({ kind: 'consultation', ...c }));
+  res.json([...docs, ...consults]);
+});
+
+// GET /api/alerts/red-flags
+router.get('/alerts/red-flags', (req, res) => res.json(store.alerts.filter(a => (a.type || 'red-flag') === 'red-flag')));
+
 // ---- Kiosks ----
 router.get('/kiosks', (req, res) => res.json(store.kiosks));
 

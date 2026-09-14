@@ -6,6 +6,10 @@ export default function AiSummary() {
   const verify = () => alert('Summary verified & signed. e-Sign recorded in audit log.');
   return (
     <StaffShell role="doctor" title="AI Clinical Summary" subtitle="Generated from kiosk intake + vitals · verify before consult">
+      <div className="notice small" style={{ marginBottom: 12 }}>
+        AI-generated clinical information · AI Case Summary Ready · 96% confidence.
+        <span className="muted"> Verify all AI-generated information before making clinical decisions. AI does not autonomously diagnose, prescribe, or finalize care.</span>
+      </div>
       <div className="split split-2">
         <div className="card">
           <h3 style={{ marginTop: 0 }}>Chief Complaint</h3>

@@ -1,18 +1,23 @@
 import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import StaffShell from '../../components/StaffShell';
+import { getQueue } from '../../data/queueStore';
 
 export default function PatientAssessment() {
   const { token = 'A-142' } = useParams();
   const nav = useNavigate();
+  const queued = getQueue().find((t) => t.tokenNo === token);
+  const patientName = queued?.name || queued?.patientName || 'Ramesh Kumar Sharma';
+  const ageSex = queued ? `${queued.age || ''}${queued.sex || ''}`.trim() || '48M' : '48M';
+  const complaint = queued?.complaint || queued?.chiefComplaint || 'Chest heaviness + exertional dyspnea ~24h';
   const [form, setForm] = useState({ consciousness: 'Alert', pain: '8', notes: '' });
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }));
   return (
-    <StaffShell role="nurse" title={`Assessment · ${token}`} subtitle="Ramesh Kumar Sharma, 48M · kiosk intake summary">
+    <StaffShell role="nurse" title={`Assessment · ${token}`} subtitle={`${patientName}, ${ageSex} · kiosk intake summary`}>
       <div className="split split-2">
         <div className="card">
           <h3 style={{ marginTop: 0 }}>Intake Summary</h3>
-          <p className="small"><strong>Chest heaviness + exertional dyspnea ~24h</strong>, radiates to L shoulder/jaw, diaphoresis. HTN history. BP 150/94.</p>
+          <p className="small"><strong>{complaint}</strong>{queued?.age ? ` · ${queued.age}${queued.sex || ''}` : ' · HTN history. BP 150/94.'}</p>
           <h4>Symptoms</h4>
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}><span className="tag tag-p1">Chest pain</span><span className="tag tag-p2">Breathlessness</span><span className="tag tag-neutral">Diaphoresis</span></div>
           <div className="alert-banner alert-p2" style={{ marginTop: 10 }}>⚠️ Allergy: <strong>Penicillin (rash)</strong> — flag on wristband + EMR.</div>

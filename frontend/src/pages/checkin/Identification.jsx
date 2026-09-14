@@ -9,16 +9,16 @@ export default function Identification() {
     { to: '/checkin/register', icon: '📝', t: 'New Registration', d: 'First visit? Register in under a minute' }
   ];
   return (
-    <KioskShell stepLabel="STEP 1 · PATIENT CHECK-IN" title="How would you like to identify yourself?" back="/checkin/accessibility" progress={25} hideNav>
+    <KioskShell stepLabel="STEP 1 · CHECK-IN" title="How would you like to identify yourself?" back="/checkin/accessibility" progress={25} hideNav>
       <VoiceBar text="Choose how to identify yourself: scan QR, enter number, or register." />
-      <div className="grid cols-3">
+      <div className="grid cols-3" style={{ alignItems: 'stretch' }}>
         {cards.map((c) => (
-          <Link key={c.to} to={c.to} style={{ textDecoration: 'none', color: 'inherit' }}>
-            <div className="card selectable" style={{ textAlign: 'center', minHeight: 200, display: 'flex', flexDirection: 'column', gap: 10, justifyContent: 'center' }}>
+          <Link key={c.to} to={c.to} style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }}>
+            <div className="card selectable" style={{ textAlign: 'center', minHeight: 280, height: '100%', flex: 1, display: 'flex', flexDirection: 'column', gap: 10, justifyContent: 'flex-start' }}>
               <div style={{ fontSize: 48 }}>{c.icon}</div>
               <h3>{c.t}</h3>
-              <p className="small muted">{c.d}</p>
-              <span className="btn btn-primary btn-block">Select</span>
+              <p className="small muted" style={{ minHeight: 44, margin: 0 }}>{c.d}</p>
+              <span className="btn btn-primary btn-block" style={{ marginTop: 'auto' }}>Select</span>
             </div>
           </Link>
         ))}

@@ -14,7 +14,7 @@ export default function OcrProcessing() {
   }, [nav]);
   const done = Math.floor((p / 100) * STEPS.length);
   return (
-    <KioskShell stepLabel="STEP 4 · DOCUMENTS" title="Reading Your Document…" progress={95} hideNav>
+    <KioskShell stepLabel="STEP 3 · DOCUMENTS" title="Reading Your Document…" progress={95} hideNav>
       <div className="card" style={{ textAlign: 'center' }}>
         <div style={{ fontSize: 56 }}>🔍</div>
         <h3 className="mono">{p}%</h3>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import KioskShell from '../../components/KioskShell';
 import { useApp } from '../../context/AppContext';
 import { VoiceBar, StatusTag } from '../../components/ui';
+import { updateQueueToken } from '../../data/queueStore';
 
 export default function ReviewComplete() {
   const { state } = useApp();
@@ -12,7 +13,18 @@ export default function ReviewComplete() {
   const i = state.intake || {};
   const done = async () => {
     if (!ok) { setErr('Please confirm the information is correct.'); return; }
-    try { await fetch('/api/intakes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ patient: state.patient, token: state.token, intake: i }) }); } catch {}
+    const tokenNo = state.token?.tokenNo;
+    const summary = i.chiefComplaint || `Symptoms: ${(i.symptoms || []).join(', ')}`;
+    if (tokenNo) {
+      updateQueueToken(tokenNo, {
+        complaint: summary,
+        chiefComplaint: i.chiefComplaint || summary,
+        aiStatus: 'ready',
+        aiConfidence: 94,
+      });
+      try { fetch(`/api/tokens/${encodeURIComponent(tokenNo)}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ complaint: summary, chiefComplaint: i.chiefComplaint || summary, aiStatus: 'ready' }) }); } catch {}
+    }
+    try { await fetch('/api/intakes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ tokenNo, patient: state.patient, token: state.token, intake: i }) }); } catch {}
     nav('/documents/intro');
   };
   return (

@@ -1,12 +1,32 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
-import { Progress } from './ui';
+import { Progress, speakText } from './ui';
 
 export default function KioskShell({ children, stepLabel, progress, back, next, nextLabel = 'Continue', onNext, hideNav = false, title }) {
-  const { state } = useApp();
+  const { state, patch } = useApp();
   const nav = useNavigate();
   const goBack = () => { if (back) nav(back); else nav(-1); };
   const goNext = () => { if (onNext) { onNext(); return; } if (next) nav(next); };
+
+  const toggleLanguage = () => {
+    const nextLang = state.language === 'English' ? 'Hindi' : 'English';
+    patch({ language: nextLang });
+    try {
+      speakText(nextLang === 'Hindi' ? 'भाषा बदलकर हिन्दी कर दी गई है।' : 'Language set to English.', nextLang);
+    } catch {}
+  };
+
+  const handleAudio = () => {
+    if (typeof window !== 'undefined' && window.speechSynthesis) {
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+      } else {
+        const textToRead = title || stepLabel || 'MediKiosk AI-Powered Clinical Intake. Please choose an option to continue.';
+        speakText(textToRead, state.language);
+      }
+    }
+  };
+
   return (
     <div className="page">
       <header className="kiosk-top">
@@ -14,9 +34,18 @@ export default function KioskShell({ children, stepLabel, progress, back, next, 
           <div className="kiosk-brand"><span className="logo">+</span><span>MediKiosk<div className="sub">AI-Powered Clinical Intake</div></span></div>
         </Link>
         <div className="kiosk-tools">
-          <span className="tool-btn">{state.language} / Hindi</span>
-          <button className="tool-btn" onClick={() => { try { window.speechSynthesis.cancel(); } catch {} }}>Audio</button>
-          <Link className="tool-btn" to="/staff/login" style={{ textDecoration: 'none' }}>Help</Link>
+          <button type="button" className="tool-btn" onClick={toggleLanguage} title="Switch language / भाषा बदलें">
+            <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>🌐</span>
+            <span>{state.language === 'English' || !state.language ? 'English / हिन्दी' : `${state.language} / English`}</span>
+          </button>
+          <button type="button" className="tool-btn" onClick={handleAudio} title="Audio guidance">
+            <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>🔊</span>
+            <span>Audio</span>
+          </button>
+          <Link className="tool-btn" to="/staff/login" title="Help & Staff Access">
+            <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>❓</span>
+            <span>Help</span>
+          </Link>
         </div>
       </header>
       <main className="kiosk-body">

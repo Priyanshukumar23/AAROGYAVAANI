@@ -4,7 +4,7 @@ import { VoiceBar } from '../../components/ui';
 
 export default function DocScanner() {
   return (
-    <KioskShell stepLabel="STEP 4 · DOCUMENTS" title="Place Document on Scanner" back="/documents/intro" progress={94} hideNav>
+    <KioskShell stepLabel="STEP 3 · DOCUMENTS" title="Place Document on Scanner" back="/documents/intro" progress={94} hideNav>
       <VoiceBar text="Place your prescription face down and tap Capture." />
       <div className="card" style={{ textAlign: 'center' }}>
         <div className="qrbox" style={{ width: '100%', maxWidth: 480, height: 260, fontSize: 20 }}>📄 Prescription preview (mock frame)<br />— align edges —</div>

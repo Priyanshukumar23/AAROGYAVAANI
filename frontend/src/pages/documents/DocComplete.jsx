@@ -4,7 +4,7 @@ import { VoiceBar, StatusTag } from '../../components/ui';
 
 export default function DocComplete() {
   return (
-    <KioskShell stepLabel="STEP 4 · DOCUMENTS" title="Documents Synced ✓" progress={99} hideNav>
+    <KioskShell stepLabel="STEP 3 · DOCUMENTS" title="Documents Synced ✓" progress={99} hideNav>
       <VoiceBar text="Your documents are synced. Your doctor can see them now." />
       <div className="card" style={{ textAlign: 'center' }}>
         <div style={{ fontSize: 56 }}>✅</div>

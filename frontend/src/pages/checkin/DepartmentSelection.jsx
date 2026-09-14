@@ -4,6 +4,7 @@ import KioskShell from '../../components/KioskShell';
 import { useApp } from '../../context/AppContext';
 import { VoiceBar } from '../../components/ui';
 import { DEPARTMENTS } from '../../data/mock';
+import { updateQueueToken } from '../../data/queueStore';
 
 export default function DepartmentSelection() {
   const { state, patch } = useApp();
@@ -14,10 +15,15 @@ export default function DepartmentSelection() {
   const confirm = () => {
     const dept = DEPARTMENTS.find((d) => d.id === sel);
     if (dept) patch({ department: dept });
+    const tokenNo = state.token?.tokenNo;
+    if (tokenNo && dept) {
+      updateQueueToken(tokenNo, { department: dept.name, room: dept.room || state.token?.room });
+      try { fetch(`/api/tokens/${encodeURIComponent(tokenNo)}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ department: dept.name, room: dept.room }) }); } catch {}
+    }
     nav('/checkin/token');
   };
   return (
-    <KioskShell stepLabel="STEP 1 · PATIENT CHECK-IN" title="Select Department" back="/checkin/confirm" progress={55} onNext={confirm} nextLabel="Confirm Department">
+    <KioskShell stepLabel="STEP 1 · CHECK-IN" title="Select Department" back="/checkin/confirm" progress={55} onNext={confirm} nextLabel="Confirm Department">
       <VoiceBar text="Search and select the department for your visit." />
       <div className="field"><input className="input" value={q} onChange={(e) => setQ(e.target.value)} placeholder="🔍 Search department, e.g. fever, bone, eye…" /></div>
       <div className="grid cols-3">

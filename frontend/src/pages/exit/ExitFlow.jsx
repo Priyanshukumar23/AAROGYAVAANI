@@ -5,7 +5,7 @@ import { VoiceBar, StatusTag } from '../../components/ui';
 
 export default function ExitCompleted() {
   return (
-    <KioskShell stepLabel="VISIT COMPLETE" title="Consultation Completed ✓" progress={100} hideNav>
+    <KioskShell stepLabel="STEP 6 · VISIT COMPLETE" title="Consultation Completed ✓" progress={100} hideNav>
       <VoiceBar text="Your consultation is complete. Here is your visit summary." />
       <div className="card" style={{ textAlign: 'center' }}>
         <div style={{ fontSize: 56 }}>✅</div>
@@ -21,7 +21,7 @@ export function VisitSummary() {
   const { state } = useApp();
   const p = state.patient || {};
   return (
-    <KioskShell stepLabel="VISIT SUMMARY" title="Visit Summary" progress={100} hideNav>
+    <KioskShell stepLabel="STEP 6 · VISIT COMPLETE" title="Visit Summary" progress={100} hideNav>
       <div className="card">
         <StatusTag kind="info">ICD-11 · BA00 Essential hypertension</StatusTag>
         <div className="grid cols-2" style={{ marginTop: 10 }}>
@@ -40,7 +40,7 @@ export function VisitSummary() {
 
 export function PrescriptionDocs() {
   return (
-    <KioskShell stepLabel="PRESCRIPTION" title="Prescription & Documents" progress={100} hideNav>
+    <KioskShell stepLabel="STEP 6 · VISIT COMPLETE" title="Prescription & Documents" progress={100} hideNav>
       <div className="alert-banner alert-p2" style={{ marginBottom: 12 }}>⚠️ <span><b>Amoxicillin AVOIDED</b> — patient allergy (Penicillin). Substituted with <b>Azithromycin</b>.</span></div>
       <div className="table-wrap">
         <table className="tbl">
@@ -62,7 +62,7 @@ export function PrescriptionDocs() {
 
 export function FollowUp() {
   return (
-    <KioskShell stepLabel="FOLLOW-UP" title="Follow-Up in 7 Days" progress={100} hideNav>
+    <KioskShell stepLabel="STEP 6 · VISIT COMPLETE" title="Follow-Up in 7 Days" progress={100} hideNav>
       <div className="grid cols-2">
         <div className="notice">✅ <b>Do</b><br /><span className="small">Take BP medicines daily · low salt · walk 20 min · return if chest pain/breathlessness.</span></div>
         <div className="notice">🚫 <b>Don&apos;t</b><br /><span className="small">No smoking/alcohol · don&apos;t stop medicines · avoid NSAIDs without asking.</span></div>
@@ -75,7 +75,7 @@ export function FollowUp() {
 export function FinalExit() {
   const { resetKiosk } = useApp();
   return (
-    <KioskShell title="Thank You — Get Well Soon 🙏" progress={100} hideNav>
+    <KioskShell stepLabel="STEP 6 · VISIT COMPLETE" title="Thank You — Get Well Soon 🙏" progress={100} hideNav>
       <div className="card" style={{ textAlign: 'center' }}>
         <div style={{ fontSize: 56 }}>🙏</div>
         <h3>Your records are saved to ABHA.</h3>

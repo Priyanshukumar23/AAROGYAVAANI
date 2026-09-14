@@ -16,7 +16,7 @@ export default function ExtractedReview() {
   const [vals, setVals] = useState(Object.fromEntries(ROWS.map((r) => [r.k, r.v])));
   const set = (k, v) => setVals((s) => ({ ...s, [k]: v }));
   return (
-    <KioskShell stepLabel="STEP 4 · DOCUMENTS" title="Check Extracted Details" back="/documents/processing" next="/documents/abnormal" nextLabel="Confirm & Continue" progress={96}>
+    <KioskShell stepLabel="STEP 3 · DOCUMENTS" title="Check Extracted Details" back="/documents/processing" next="/documents/abnormal" nextLabel="Confirm & Continue" progress={96}>
       <VoiceBar text="Check the extracted details. Tap Correct if anything is wrong." />
       <div className="card">
         <div style={{ display: 'flex', gap: 8, marginBottom: 10 }}><StatusTag kind="info">OCR confidence 94%</StatusTag><button className="btn btn-ghost btn-sm" onClick={() => setEdit((v) => !v)}>{edit ? 'Done editing' : '✏️ Edit'}</button></div>

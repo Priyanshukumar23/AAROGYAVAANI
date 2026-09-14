@@ -10,7 +10,7 @@ export default function TokenGenerated() {
   const dept = state.department || { name: 'General Medicine', room: 'Room 104' };
   const announce = () => speakText(`Token ${t.tokenNo}. ${p.name}. Please proceed to ${dept.room}.`);
   return (
-    <KioskShell stepLabel="STEP 1 · PATIENT CHECK-IN" title="Your Token is Ready" progress={62} hideNav>
+    <KioskShell stepLabel="STEP 1 · CHECK-IN" title="Your Token is Ready" progress={62} hideNav>
       <VoiceBar text={`Your token number is ${t.tokenNo}. Please note it down.`} />
       <div className="token-hero">
         <div className="small" style={{ fontWeight: 800, letterSpacing: '.08em' }}>OFFICIAL OPD TOKEN</div>

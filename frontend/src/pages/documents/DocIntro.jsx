@@ -4,7 +4,7 @@ import { VoiceBar } from '../../components/ui';
 
 export default function DocIntro() {
   return (
-    <KioskShell stepLabel="STEP 4 · DOCUMENTS" title="Scan Your Medical Documents" back="/history/review" progress={93} hideNav>
+    <KioskShell stepLabel="STEP 3 · DOCUMENTS" title="Scan Your Medical Documents" back="/history/review" progress={93} hideNav>
       <VoiceBar text="Scan prescriptions or lab reports so your doctor can see them instantly." />
       <div className="card">
         <h3>Why scan?</h3>

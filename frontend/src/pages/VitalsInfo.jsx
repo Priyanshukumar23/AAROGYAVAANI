@@ -8,7 +8,7 @@ export default function VitalsInfo() {
   const { state } = useApp();
   const t = state.token || {};
   return (
-    <KioskShell stepLabel="STEP 5 · VITALS" title="Vitals at Counter 02" back="/documents/complete" progress={100} hideNav>
+    <KioskShell stepLabel="STEP 4 · VITALS" title="Vitals at Counter 02" back="/documents/complete" progress={100} hideNav>
       <VoiceBar text="Please get your vitals checked at Counter 2, then watch your queue status." />
       <div className="grid cols-2">
         <div className="card">

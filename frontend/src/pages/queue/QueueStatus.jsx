@@ -11,7 +11,7 @@ export default function QueueStatus() {
   const dept = state.department || { name: 'General Medicine', room: 'Room 104' };
   const [sms, setSms] = useState(true);
   return (
-    <KioskShell stepLabel="STEP 6 · QUEUE" title="Your Queue Status" progress={100} hideNav>
+    <KioskShell stepLabel="STEP 5 · QUEUE" title="Your Queue Status" progress={100} hideNav>
       <VoiceBar text={`Token ${t.tokenNo}. Now serving ${t.nowServing}. About ${t.waitMin} minutes wait.`} />
       <div className="token-hero" style={{ marginBottom: 14 }}>
         <div className="small" style={{ fontWeight: 800, letterSpacing: '.08em' }}>OFFICIAL OPD TOKEN · UHID {p.uhid || '—'}</div>

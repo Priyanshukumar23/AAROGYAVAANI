@@ -9,7 +9,7 @@ const LABS = [
 
 export default function AbnormalFindings() {
   return (
-    <KioskShell stepLabel="STEP 4 · DOCUMENTS" title="Lab Highlights" back="/documents/review" next="/documents/timeline" nextLabel="Continue" progress={97}>
+    <KioskShell stepLabel="STEP 3 · DOCUMENTS" title="Lab Highlights" back="/documents/review" next="/documents/timeline" nextLabel="Continue" progress={97}>
       <VoiceBar text="Two values are outside the normal range. This is not a diagnosis." />
       <div className="alert-banner alert-info" style={{ marginBottom: 12 }}>ℹ️ <span><b>Note:</b> These are highlights only — <b>NOT a diagnosis</b>. Your doctor will interpret them.</span></div>
       <div className="grid cols-3">

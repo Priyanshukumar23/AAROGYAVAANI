@@ -18,9 +18,22 @@ export default function PatientDashboard() {
       emergencyBtn: { English: '🚨 EMERGENCY / RED FLAG', 'हिन्दी': '🚨 आपातकालीन', 'ਪੰਜਾਬੀ': '🚨 ਐਮਰਜੈਂਸੀ' },
       emergencyDesc: { English: 'Instant admission. 3 ICU Beds available.', 'हिन्दी': 'तत्काल प्रवेश। 3 ICU बेड उपलब्ध हैं।', 'ਪੰਜਾਬੀ': 'ਤੁਰੰਤ ਦਾਖਲਾ। 3 ICU ਬੈੱਡ ਉਪਲਬਧ ਹਨ।' },
       departments: { English: 'Departments & Doctors', 'हिन्दी': 'विभाग और डॉक्टर', 'ਪੰਜਾਬੀ': 'ਵਿਭਾਗ ਅਤੇ ਡਾਕਟਰ' },
-      wards: { English: 'Wards & Bed Availability', 'हिन्दी': 'वार्ड और बेड की उपलब्धता', 'ਪੰਜਾਬੀ': 'ਵਾਰਡ ਅਤੇ ਬੈੱਡ ਦੀ ਉਪਲਬਧਤਾ' }
+      wards: { English: 'Wards & Bed Availability', 'हिन्दी': 'वार्ड और बेड की उपलब्धता', 'ਪੰਜਾਬੀ': 'ਵਾਰਡ ਅਤੇ ਬੈੱਡ ਦੀ ਉਪਲਬਧਤਾ' },
+      triggerEmBtn: { English: 'Trigger Emergency', 'हिन्दी': 'आपातकालीन ट्रिगर करें', 'ਪੰਜਾਬੀ': 'ਐਮਰਜੈਂਸੀ ਟਰਿੱਗਰ ਕਰੋ' },
+      deptGenMed: { English: 'General Medicine', 'हिन्दी': 'जनरल मेडिसिन', 'ਪੰਜਾਬੀ': 'ਜਨਰਲ ਮੈਡੀਸਨ' },
+      drRajesh: { English: 'Dr. Rajesh Sharma, Dr. A. Gupta', 'हिन्दी': 'डॉ. राजेश शर्मा, डॉ. ए. गुप्ता', 'ਪੰਜਾਬੀ': 'ਡਾ. ਰਾਜੇਸ਼ ਸ਼ਰਮਾ, ਡਾ. ਏ. ਗੁਪਤਾ' },
+      deptCardio: { English: 'Cardiology', 'हिन्दी': 'कार्डियोलॉजी', 'ਪੰਜਾਬੀ': 'ਕਾਰਡੀਓਲੋਜੀ' },
+      drVSen: { English: 'Dr. V. Sen', 'हिन्दी': 'डॉ. वी. सेन', 'ਪੰਜਾਬੀ': 'ਡਾ. ਵੀ. ਸੇਨ' },
+      deptOrtho: { English: 'Orthopedics', 'हिन्दी': 'ऑर्थोपेडिक्स', 'ਪੰਜਾਬੀ': 'ਆਰਥੋਪੈਡਿਕਸ' },
+      drMAli: { English: 'Dr. M. Ali', 'हिन्दी': 'डॉ. एम. अली', 'ਪੰਜਾਬੀ': 'ਡਾ. ਐਮ. ਅਲੀ' },
+      avail: { English: 'Available', 'हिन्दी': 'उपलब्ध', 'ਪੰਜਾਬੀ': 'ਉਪਲਬਧ' },
+      busy: { English: 'Busy', 'हिन्दी': 'व्यस्त', 'ਪੰਜਾਬੀ': 'ਰੁੱਝਿਆ ਹੋਇਆ' },
+      wardGenMale: { English: 'General Ward (Male)', 'हिन्दी': 'जनरल वार्ड (पुरुष)', 'ਪੰਜਾਬੀ': 'ਜਨਰਲ ਵਾਰਡ (ਪੁਰਸ਼)' },
+      wardGenFemale: { English: 'General Ward (Female)', 'हिन्दी': 'जनरल वार्ड (महिला)', 'ਪੰਜਾਬੀ': 'ਜਨਰਲ ਵਾਰਡ (ਮਹਿਲਾ)' },
+      wardIcu: { English: 'ICU', 'हिन्दी': 'आईसीयू', 'ਪੰਜਾਬੀ': 'ਆਈ.ਸੀ.ਯੂ.' },
+      bedsEmpty: (n) => ({ English: `${n} beds empty`, 'हिन्दी': `${n} बेड खाली हैं`, 'ਪੰਜਾਬੀ': `${n} ਬੈੱਡ ਖਾਲੀ ਹਨ` }[state.language] || `${n} beds empty`)
     };
-    return t[key][state.language] || t[key]['English'];
+    return t[key] ? (typeof t[key] === 'function' ? t[key] : (t[key][state.language] || t[key]['English'])) : '';
   };
 
   const emergencyAdmit = () => {
@@ -47,7 +60,7 @@ export default function PatientDashboard() {
           <h3 style={{ margin: 0, color: 'var(--p1-ink)' }}>{getTranslated('emergencyBtn')}</h3>
           <p style={{ marginTop: 8, marginBottom: 16 }}>{getTranslated('emergencyDesc')}</p>
           <button onClick={emergencyAdmit} className="btn btn-block ui-3d-btn" style={{ background: 'var(--p1)', color: '#fff' }}>
-            Trigger Emergency
+            {getTranslated('triggerEmBtn')}
           </button>
         </div>
       </div>
@@ -58,24 +71,24 @@ export default function PatientDashboard() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <div style={{ padding: 12, border: '1px solid var(--line)', borderRadius: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
-                <b>General Medicine</b><br/>
-                <span className="small muted">Dr. Rajesh Sharma, Dr. A. Gupta</span>
+                <b>{getTranslated('deptGenMed')}</b><br/>
+                <span className="small muted">{getTranslated('drRajesh')}</span>
               </div>
-              <StatusTag kind="success">Available</StatusTag>
+              <StatusTag kind="success">{getTranslated('avail')}</StatusTag>
             </div>
             <div style={{ padding: 12, border: '1px solid var(--line)', borderRadius: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
-                <b>Cardiology</b><br/>
-                <span className="small muted">Dr. V. Sen</span>
+                <b>{getTranslated('deptCardio')}</b><br/>
+                <span className="small muted">{getTranslated('drVSen')}</span>
               </div>
-              <StatusTag kind="warning">Busy</StatusTag>
+              <StatusTag kind="warning">{getTranslated('busy')}</StatusTag>
             </div>
             <div style={{ padding: 12, border: '1px solid var(--line)', borderRadius: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
-                <b>Orthopedics</b><br/>
-                <span className="small muted">Dr. M. Ali</span>
+                <b>{getTranslated('deptOrtho')}</b><br/>
+                <span className="small muted">{getTranslated('drMAli')}</span>
               </div>
-              <StatusTag kind="success">Available</StatusTag>
+              <StatusTag kind="success">{getTranslated('avail')}</StatusTag>
             </div>
           </div>
         </div>
@@ -85,33 +98,33 @@ export default function PatientDashboard() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <div style={{ padding: 12, border: '1px solid var(--line)', borderRadius: 8 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <b>General Ward (Male)</b>
+                <b>{getTranslated('wardGenMale')}</b>
                 <span style={{ color: 'var(--blue-dark)', fontWeight: 700 }}>45 / 50</span>
               </div>
               <div style={{ height: 6, background: 'var(--bg-rec)', borderRadius: 4, overflow: 'hidden' }}>
                 <div style={{ width: '90%', height: '100%', background: 'var(--blue)' }} />
               </div>
-              <div className="small muted" style={{ marginTop: 4 }}>5 beds empty</div>
+              <div className="small muted" style={{ marginTop: 4 }}>{getTranslated('bedsEmpty')(5)}</div>
             </div>
             <div style={{ padding: 12, border: '1px solid var(--line)', borderRadius: 8 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <b>General Ward (Female)</b>
+                <b>{getTranslated('wardGenFemale')}</b>
                 <span style={{ color: 'var(--p2)', fontWeight: 700 }}>48 / 50</span>
               </div>
               <div style={{ height: 6, background: 'var(--bg-rec)', borderRadius: 4, overflow: 'hidden' }}>
                 <div style={{ width: '96%', height: '100%', background: 'var(--p2)' }} />
               </div>
-              <div className="small muted" style={{ marginTop: 4 }}>2 beds empty</div>
+              <div className="small muted" style={{ marginTop: 4 }}>{getTranslated('bedsEmpty')(2)}</div>
             </div>
             <div style={{ padding: 12, border: '1px solid var(--line)', borderRadius: 8 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <b>ICU</b>
+                <b>{getTranslated('wardIcu')}</b>
                 <span style={{ color: 'var(--p1)', fontWeight: 700 }}>18 / 20</span>
               </div>
               <div style={{ height: 6, background: 'var(--bg-rec)', borderRadius: 4, overflow: 'hidden' }}>
                 <div style={{ width: '90%', height: '100%', background: 'var(--p1)' }} />
               </div>
-              <div className="small muted" style={{ marginTop: 4 }}>2 beds empty</div>
+              <div className="small muted" style={{ marginTop: 4 }}>{getTranslated('bedsEmpty')(2)}</div>
             </div>
           </div>
         </div>

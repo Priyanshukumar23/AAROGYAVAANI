@@ -37,7 +37,11 @@ export default function KioskShell({ children, stepLabel, progress, back, next, 
       continueBtn: { English: 'Continue', 'हिन्दी': 'आगे बढ़ें', 'ਪੰਜਾਬੀ': 'ਜਾਰੀ ਰੱਖੋ' },
       audioStr: { English: 'Audio', 'हिन्दी': 'ऑडियो', 'ਪੰਜਾਬੀ': 'ਆਡੀਓ' },
       helpStr: { English: 'Help', 'हिन्दी': 'मदद', 'ਪੰਜਾਬੀ': 'ਮਦਦ' },
-      aiIntake: { English: 'AI-Powered Clinical Intake', 'हिन्दी': 'AI-संचालित क्लिनिकल चेक-इन', 'ਪੰਜਾਬੀ': 'AI-ਸੰਚਾਲਿਤ ਕਲੀਨਿਕਲ ਚੈੱਕ-ਇਨ' }
+      aiIntake: { English: 'AI-Powered Clinical Intake', 'हिन्दी': 'AI-संचालित क्लिनिकल चेक-इन', 'ਪੰਜਾਬੀ': 'AI-ਸੰਚਾਲਿਤ ਕਲੀਨਿਕਲ ਚੈੱਕ-ਇਨ' },
+      themeLight: { English: 'Light', 'हिन्दी': 'लाइट', 'ਪੰਜਾਬੀ': 'ਰੌਸ਼ਨੀ' },
+      themeDark: { English: 'Dark', 'हिन्दी': 'डार्क', 'ਪੰਜਾਬੀ': 'ਹਨੇਰਾ' },
+      profileStr: { English: 'Profile', 'हिन्दी': 'प्रोफ़ाइल', 'ਪੰਜਾਬੀ': 'ਪ੍ਰੋਫਾਈਲ' },
+      staffStr: { English: 'Staff', 'हिन्दी': 'स्टाफ', 'ਪੰਜਾਬੀ': 'ਸਟਾਫ' }
     };
     return t[key][state.language] || t[key]['English'];
   };
@@ -78,7 +82,7 @@ export default function KioskShell({ children, stepLabel, progress, back, next, 
         <div className="kiosk-tools">
           <button type="button" className="tool-btn" onClick={() => patch({ theme: state.theme === 'dark' ? 'light' : 'dark' })} title="Toggle Theme">
             <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>{state.theme === 'dark' ? '☀️' : '🌙'}</span>
-            <span>{state.theme === 'dark' ? 'Light' : 'Dark'}</span>
+            <span>{state.theme === 'dark' ? getTranslated('themeLight') : getTranslated('themeDark')}</span>
           </button>
           <div style={{ position: 'relative' }}>
             <button type="button" className="tool-btn" onClick={() => setLangMenuOpen(!langMenuOpen)} title="Switch language">
@@ -108,12 +112,12 @@ export default function KioskShell({ children, stepLabel, progress, back, next, 
           {(state.patient && loc.pathname !== '/' && !loc.pathname.startsWith('/checkin/identify') && !loc.pathname.startsWith('/checkin/language') && !loc.pathname.startsWith('/checkin/accessibility') && !loc.pathname.startsWith('/staff')) ? (
             <button type="button" className="tool-btn" onClick={() => setIsProfileOpen(true)} title="Patient Profile" style={{ background: 'var(--blue-soft)', color: 'var(--blue-dark)', fontWeight: 700, borderRadius: 8 }}>
               <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>👤</span>
-              <span>Profile</span>
+              <span>{getTranslated('profileStr')}</span>
             </button>
           ) : (
             <Link className="tool-btn" to="/staff/login" title="Staff Access">
               <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>🏥</span>
-              <span>Staff</span>
+              <span>{getTranslated('staffStr')}</span>
             </Link>
           )}
         </div>

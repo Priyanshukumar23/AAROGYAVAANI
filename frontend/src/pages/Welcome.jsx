@@ -59,7 +59,7 @@ export default function Welcome() {
           <Link className="btn btn-primary btn-block ui-3d-btn" to="/checkin/language">{getTranslated('startBtn')}</Link>
           <span className="small muted">{getTranslated('patientsFoot')}</span>
         </div>
-        <div className="card welcome-card ui-3d-card">
+        <div className="card welcome-card staff-selected ui-3d-card">
           <div className="big-icon">🏥</div>
           <h3>{getTranslated('staffTitle')}</h3>
           <p>{getTranslated('staffDesc')}</p>

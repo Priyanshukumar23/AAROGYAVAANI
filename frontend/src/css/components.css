@@ -23,6 +23,7 @@
 .card.selectable { cursor: pointer; }
 .card.selectable:hover { border-color: var(--blue); }
 .card.selected { border: 3px solid var(--blue); background: var(--blue-soft); box-shadow: var(--shadow-1); }
+.card.staff-selected { border: 3px solid var(--saffron); background: var(--saffron-soft); box-shadow: var(--shadow-1); }
 .card.tight { padding: 16px; }
 
 .tag {

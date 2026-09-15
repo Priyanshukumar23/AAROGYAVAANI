@@ -4,6 +4,7 @@ import { useApp } from '../context/AppContext';
 import { STAFF_LINKS, STAFF_PROFILES } from '../data/mock';
 import { MOCK_RED_FLAGS, MOCK_OCR_STACK } from '../data/doctorMock';
 import { getQueue, getCalledToken, subscribeQueue, subscribeCalled } from '../data/queueStore';
+import BrandLogo from './BrandLogo';
 
 const READ_KEY = 'medikiosk_notif_read_v1';
 
@@ -205,10 +206,8 @@ export default function StaffShell({ children, role = 'doctor', title, subtitle,
     <div className="staff-layout">
       <aside className="sidebar">
         <div className="brand">
-          <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-            <span style={{ width: 38, height: 38, borderRadius: 8, background: '#fff', color: 'var(--navy)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800 }}>+</span>
-            <div><div style={{ fontWeight: 800, fontFamily: 'var(--font-head)' }}>MediKiosk</div><div className="sub small" style={{ opacity: .75 }}>{role === 'doctor' ? 'Doctor Portal' : role === 'nurse' ? 'Nurse Portal · Triage' : 'Enterprise Ops'}</div></div>
-          </div>
+            <BrandLogo size={20} />
+            <div className="sub small" style={{ opacity: .75 }}>{role === 'doctor' ? 'Doctor Portal' : role === 'nurse' ? 'Nurse Portal · Triage' : 'Enterprise Ops'}</div>
         </div>
         <nav>
           {links.map(l => (

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useApp } from './context/AppContext';
 
 // Entry / staff auth / shared
 import Welcome from './pages/Welcome';
@@ -16,7 +17,7 @@ import AbhaQr from './pages/checkin/AbhaQr';
 import AbhaMobile from './pages/checkin/AbhaMobile';
 import NewRegistration from './pages/checkin/NewRegistration';
 import InfoConfirmation from './pages/checkin/InfoConfirmation';
-import DepartmentSelection from './pages/checkin/DepartmentSelection';
+import AiAssistant from './pages/checkin/AiAssistant';
 import TokenGenerated from './pages/checkin/TokenGenerated';
 
 // History
@@ -85,9 +86,21 @@ function ScrollToTop() {
   return null;
 }
 
+function ThemeManager() {
+  const { state } = useApp();
+  useEffect(() => {
+    if (state.theme === 'dark') {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }, [state.theme]);
+  return null;
+}
+
 function DocumentTitle() {
   const { pathname } = useLocation();
-  useEffect(() => { document.title = 'MediKiosk'; }, [pathname]);
+  useEffect(() => { document.title = 'AAROGYAVAANI'; }, [pathname]);
   return null;
 }
 
@@ -95,6 +108,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <ThemeManager />
       <DocumentTitle />
       <Routes>
         <Route path="/" element={<Welcome />} />
@@ -107,7 +121,7 @@ export default function App() {
         <Route path="/checkin/abha-mobile" element={<AbhaMobile />} />
         <Route path="/checkin/register" element={<NewRegistration />} />
         <Route path="/checkin/confirm" element={<InfoConfirmation />} />
-        <Route path="/checkin/department" element={<DepartmentSelection />} />
+        <Route path="/checkin/ai-assistant" element={<AiAssistant />} />
         <Route path="/checkin/token" element={<TokenGenerated />} />
 
         <Route path="/history/intro" element={<HistoryIntro />} />

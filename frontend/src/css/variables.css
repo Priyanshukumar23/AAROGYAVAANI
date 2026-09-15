@@ -1,11 +1,14 @@
-/* MediKiosk Clinical Direct design tokens — see Images/clinical_direct/DESIGN.md */
+/* MediKiosk Clinical Direct design tokens */
 :root {
-  --navy: #0A2540;
-  --navy-deep: #000f22;
-  --blue: #0284C7;
-  --blue-dark: #006398;
-  --blue-soft: #F0F9FF;
-  --blue-border: #93ccff;
+  --navy: #172554;
+  --navy-text: #172554;
+  --navy-deep: #0B122A;
+  --blue: #138808;
+  --blue-dark: #0F6B06;
+  --blue-soft: #ECFDF5;
+  --blue-border: #6EE7B7;
+  --saffron: #FF9933;
+  --saffron-soft: #FFF7ED;
   --bg: #F8FAFC;
   --bg-rec: #F1F5F9;
   --card: #FFFFFF;
@@ -20,10 +23,29 @@
   --radius-card: 12px;
   --radius-btn: 8px;
   --radius-tag: 4px;
-  --font-head: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-head: 'Montserrat', 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --touch-patient: 64px;
   --touch-staff: 44px;
   --shadow-1: 0px 4px 12px rgba(10, 37, 64, 0.08);
   --shadow-2: 0px 8px 24px rgba(15, 23, 42, 0.16);
+}
+
+/* Dark Theme */
+body.dark-theme {
+  --bg: #0F172A;
+  --bg-rec: #1E293B;
+  --card: #1E293B;
+  --ink: #F8FAFC;
+  --ink-2: #CBD5E1;
+  --line: #334155;
+  --line-2: #475569;
+  --blue-soft: #022C22;
+  --blue-border: #047857;
+  --navy: #1E3A8A; /* Lighter navy for dark mode visibility if used as bg */
+  --navy-text: #FFFFFF; /* Makes GYAV white in dark mode */
+  --saffron-soft: #431407;
+  --p1-bg: #450A0A;
+  --p2-bg: #422006;
+  --p3-bg: #064E3B;
 }

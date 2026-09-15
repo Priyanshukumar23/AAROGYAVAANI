@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { api } from '../data/api';
+import { BrandText } from '../components/BrandLogo';
 
 const DEMO = [
   ['DOC-104', 'doctor123', 'doctor'],
@@ -40,7 +41,7 @@ export default function StaffLogin() {
         <Link to="/" style={{ color: '#fff' }}>← Welcome Screen</Link>
         <div className="tag tag-info" style={{ alignSelf: 'flex-start' }}>Secure Hospital Staff Access</div>
         <h1>Hospital Staff Login</h1>
-        <p style={{ opacity: .85 }}>Sign in to access your authorized MediKiosk workspace. Authentication → Role detection → Doctor, Triage, or Admin portal.</p>
+        <p style={{ opacity: .85 }}>Sign in to access your authorized <BrandText darkBg={true} /> workspace. Authentication → Role detection → Doctor, Triage, or Admin portal.</p>
         <ul className="small" style={{ lineHeight: 2 }}>
           <li>✓ ABDM-linked OPD queue + triage</li>
           <li>✓ AI intake, OCR &amp; red-flag escalation</li>

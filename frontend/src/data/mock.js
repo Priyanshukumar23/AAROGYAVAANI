@@ -1,12 +1,6 @@
 export const LANGUAGES = [
   { code: 'en', label: 'English', greet: 'Hello · Welcome' },
   { code: 'hi', label: 'हिन्दी', greet: 'नमस्ते · स्वागत है' },
-  { code: 'ta', label: 'தமிழ்', greet: 'வணக்கம்' },
-  { code: 'te', label: 'తెలుగు', greet: 'నమస్కారం' },
-  { code: 'kn', label: 'ಕನ್ನಡ', greet: 'ನಮಸ್ಕಾರ' },
-  { code: 'bn', label: 'বাংলা', greet: 'নমস্কার' },
-  { code: 'gu', label: 'ગુજરાતી', greet: 'નમસ્તે' },
-  { code: 'ml', label: 'മലയാളം', greet: 'നമസ്കാരം' },
   { code: 'pa', label: 'ਪੰਜਾਬੀ', greet: 'ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ' }
 ];
 

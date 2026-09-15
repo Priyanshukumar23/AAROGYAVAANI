@@ -11,7 +11,8 @@ const initial = {
   token: { tokenNo: 'A-142', room: 'Room 104', position: 14, waitMin: 42, nowServing: 'A-127' },
   intake: { chiefComplaint: '', symptoms: [], followUp: {}, details: {}, pastHistory: {}, redFlag: false, transcript: [] },
   docs: [],
-  staff: null
+  staff: null,
+  theme: 'light'
 };
 
 export function AppProvider({ children }) {

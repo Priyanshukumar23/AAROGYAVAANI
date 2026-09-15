@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import StaffShell from '../../components/StaffShell';
 import { PriorityTag, Kpi } from '../../components/ui';
 import { MOCK_RED_FLAGS, MOCK_OCR_STACK, AVG_CONSULT_MIN, ROOM_LABEL, priorityLabel, aiStatusLabel } from '../../data/doctorMock';
@@ -112,6 +112,7 @@ function OcrStackCard({ docs }) {
 }
 
 export default function DoctorDashboard() {
+  const nav = useNavigate();
   const [queue, setQueue] = useState([]);
   const [called, setCalled] = useState(null);
   const [filter, setFilter] = useState('All');
@@ -214,6 +215,11 @@ export default function DoctorDashboard() {
             ))}
             <input className="input staff" placeholder="Search token / name…" value={q} onChange={(e) => setQ(e.target.value)} style={{ marginLeft: 'auto', maxWidth: 180 }} />
           </div>
+          <form onSubmit={(e) => { e.preventDefault(); const val = e.target.elements.uhid.value.trim(); if(val) nav(`/doctor/case/${val}`); }} style={{ display: 'flex', gap: 8, marginBottom: 12, background: 'var(--bg-rec)', padding: '8px 12px', borderRadius: 8 }}>
+            <span style={{ display: 'flex', alignItems: 'center', fontSize: 14, fontWeight: 600 }}>🔍 Fetch Patient:</span>
+            <input name="uhid" className="input staff" placeholder="Enter UHID..." style={{ flex: 1 }} required />
+            <button type="submit" className="btn btn-secondary btn-sm">Search History</button>
+          </form>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {filtered.map((t) => (
               <QueueItem key={t.tokenNo} t={t} />

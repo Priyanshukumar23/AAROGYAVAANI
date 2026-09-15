@@ -31,6 +31,10 @@ export default function PatientDashboard() {
       wardGenMale: { English: 'General Ward (Male)', 'हिन्दी': 'जनरल वार्ड (पुरुष)', 'ਪੰਜਾਬੀ': 'ਜਨਰਲ ਵਾਰਡ (ਪੁਰਸ਼)' },
       wardGenFemale: { English: 'General Ward (Female)', 'हिन्दी': 'जनरल वार्ड (महिला)', 'ਪੰਜਾਬੀ': 'ਜਨਰਲ ਵਾਰਡ (ਮਹਿਲਾ)' },
       wardIcu: { English: 'ICU', 'हिन्दी': 'आईसीयू', 'ਪੰਜਾਬੀ': 'ਆਈ.ਸੀ.ਯੂ.' },
+      pastHistory: { English: 'Past Medical History & Reports', 'हिन्दी': 'पिछला चिकित्सा इतिहास और रिपोर्ट', 'ਪੰਜਾਬੀ': 'ਪਿਛਲਾ ਡਾਕਟਰੀ ਇਤਿਹਾਸ ਅਤੇ ਰਿਪੋਰਟਾਂ' },
+      report1: { English: 'Blood Test Report - 12 Aug 2025', 'हिन्दी': 'रक्त परीक्षण रिपोर्ट - 12 अगस्त 2025', 'ਪੰਜਾਬੀ': 'ਖੂਨ ਦੀ ਜਾਂਚ ਦੀ ਰਿਪੋਰਟ - 12 ਅਗਸਤ 2025' },
+      report2: { English: 'X-Ray (Chest) - 05 Jan 2025', 'हिन्दी': 'एक्स-रे (छाती) - 05 जनवरी 2025', 'ਪੰਜਾਬੀ': 'ਐਕਸ-ਰੇ (ਛਾਤੀ) - 05 ਜਨਵਰੀ 2025' },
+      noHistory: { English: 'No past records found for this UHID.', 'हिन्दी': 'इस UHID के लिए कोई पिछला रिकॉर्ड नहीं मिला।', 'ਪੰਜਾਬੀ': 'ਇਸ UHID ਲਈ ਕੋਈ ਪਿਛਲਾ ਰਿਕਾਰਡ ਨਹੀਂ ਮਿਲਿਆ।' },
       bedsEmpty: (n) => ({ English: `${n} beds empty`, 'हिन्दी': `${n} बेड खाली हैं`, 'ਪੰਜਾਬੀ': `${n} ਬੈੱਡ ਖਾਲੀ ਹਨ` }[state.language] || `${n} beds empty`)
     };
     return t[key] ? (typeof t[key] === 'function' ? t[key] : (t[key][state.language] || t[key]['English'])) : '';
@@ -128,6 +132,36 @@ export default function PatientDashboard() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="card ui-3d-card" style={{ marginTop: 24 }}>
+        <h4 style={{ margin: '0 0 12px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <span>📄 {getTranslated('pastHistory')}</span>
+          <span className="small muted" style={{ fontWeight: 'normal' }}>UHID: <span className="mono">{p.uhid || '—'}</span></span>
+        </h4>
+        
+        {p.uhid ? (
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div style={{ padding: 12, border: '1px solid var(--blue)', background: 'var(--blue-soft)', borderRadius: 8, display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer' }}>
+              <div style={{ fontSize: 24 }}>🩸</div>
+              <div>
+                <b style={{ color: 'var(--blue-dark)' }}>{getTranslated('report1')}</b>
+                <div className="small muted">View PDF Report</div>
+              </div>
+            </div>
+            <div style={{ padding: 12, border: '1px solid var(--line)', borderRadius: 8, display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer' }}>
+              <div style={{ fontSize: 24 }}>🩻</div>
+              <div>
+                <b>{getTranslated('report2')}</b>
+                <div className="small muted">View Scans</div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div style={{ padding: 24, textAlign: 'center', color: 'var(--muted)', background: 'var(--bg-rec)', borderRadius: 8 }}>
+            {getTranslated('noHistory')}
+          </div>
+        )}
       </div>
     </KioskShell>
   );

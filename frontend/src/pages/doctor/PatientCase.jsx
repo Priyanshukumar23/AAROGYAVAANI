@@ -16,7 +16,7 @@ const OPQRST = [
 export default function PatientCase() {
   const { tokenNo = 'A-142' } = useParams();
   const id = tokenNo;
-  const queued = getQueue().find((t) => t.tokenNo === id);
+  const queued = getQueue().find((t) => t.tokenNo === id || t.uhid === id);
   const patientName = queued?.name || queued?.patientName || 'Ramesh Kumar Sharma';
   const ageSex = queued ? `${queued.age || ''}${queued.sex || ''}`.trim() || '48M' : '48M';
   const uhid = queued?.uhid || '84-2210-9913';

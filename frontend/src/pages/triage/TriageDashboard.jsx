@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import StaffShell from '../../components/StaffShell';
 import { Kpi, PriorityTag } from '../../components/ui';
 import { MOCK_QUEUE } from '../../data/mock';
@@ -7,6 +7,7 @@ import { api } from '../../data/api';
 import { getQueue, subscribeQueue } from '../../data/queueStore';
 
 export default function TriageDashboard() {
+  const nav = useNavigate();
   const [queue, setQueue] = useState(() => getQueue());
   useEffect(() => {
     api.get('/tokens').then(d => {
@@ -32,7 +33,14 @@ export default function TriageDashboard() {
       </div>
       <div className="alert-banner alert-p1" style={{ marginTop: 12 }}>🚨 P1 STAT — <strong>A-142 Ramesh K. Sharma</strong> · chest pain + HTN · nurse escort to ECG NOW · <Link to="/triage/assessment/A-142" style={{ color: '#fff', fontWeight: 800 }}>Start Triage →</Link></div>
       <div className="card" style={{ marginTop: 12 }}>
-        <h3 style={{ marginTop: 0 }}>Waiting for Triage</h3>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h3 style={{ marginTop: 0 }}>Waiting for Triage</h3>
+          <form onSubmit={(e) => { e.preventDefault(); const val = e.target.elements.uhid.value.trim(); if(val) nav(`/triage/assessment/${val}`); }} style={{ display: 'flex', gap: 8, marginBottom: 12, background: 'var(--bg-rec)', padding: '8px 12px', borderRadius: 8 }}>
+            <span style={{ display: 'flex', alignItems: 'center', fontSize: 14, fontWeight: 600 }}>🔍 Fetch Patient:</span>
+            <input name="uhid" className="input staff" placeholder="Enter UHID..." style={{ flex: 1 }} required />
+            <button type="submit" className="btn btn-secondary btn-sm">Search</button>
+          </form>
+        </div>
         <div className="table-wrap"><table className="tbl">
           <thead><tr><th>Token</th><th>Patient</th><th>Complaint</th><th>Pri</th><th></th></tr></thead>
           <tbody>{queue.map(t => (

@@ -6,7 +6,7 @@ import { getQueue } from '../../data/queueStore';
 export default function PatientAssessment() {
   const { token = 'A-142' } = useParams();
   const nav = useNavigate();
-  const queued = getQueue().find((t) => t.tokenNo === token);
+  const queued = getQueue().find((t) => t.tokenNo === token || t.uhid === token);
   const patientName = queued?.name || queued?.patientName || 'Ramesh Kumar Sharma';
   const ageSex = queued ? `${queued.age || ''}${queued.sex || ''}`.trim() || '48M' : '48M';
   const complaint = queued?.complaint || queued?.chiefComplaint || 'Chest heaviness + exertional dyspnea ~24h';

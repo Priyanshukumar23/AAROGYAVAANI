@@ -62,7 +62,7 @@ export default function InfoConfirmation() {
         }),
       });
     } catch {}
-    nav('/checkin/ai-assistant');
+    nav('/checkin/patient-dashboard');
   };
   const getTranslated = (key) => {
     const t = {

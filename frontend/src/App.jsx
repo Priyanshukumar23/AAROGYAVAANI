@@ -18,6 +18,7 @@ import AbhaMobile from './pages/checkin/AbhaMobile';
 import NewRegistration from './pages/checkin/NewRegistration';
 import InfoConfirmation from './pages/checkin/InfoConfirmation';
 import AiAssistant from './pages/checkin/AiAssistant';
+import PatientDashboard from './pages/checkin/PatientDashboard';
 import TokenGenerated from './pages/checkin/TokenGenerated';
 
 // History
@@ -169,6 +170,7 @@ export default function App() {
         <Route path="/checkin/abha-mobile" element={<AbhaMobile />} />
         <Route path="/checkin/register" element={<NewRegistration />} />
         <Route path="/checkin/confirm" element={<InfoConfirmation />} />
+        <Route path="/checkin/patient-dashboard" element={<PatientDashboard />} />
         <Route path="/checkin/ai-assistant" element={<AiAssistant />} />
         <Route path="/checkin/token" element={<TokenGenerated />} />
 

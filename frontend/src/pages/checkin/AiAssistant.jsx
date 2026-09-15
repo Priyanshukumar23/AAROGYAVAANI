@@ -241,7 +241,7 @@ Make sure the JSON block is the very last thing.`;
   };
 
   return (
-    <KioskShell stepLabel={getTranslated('stepLabel')} title={getTranslated('title')} back="/checkin/confirm" progress={55} hideNav isListening={isListening}>
+    <KioskShell stepLabel={getTranslated('stepLabel')} title={getTranslated('title')} back="/checkin/patient-dashboard" progress={55} hideNav isListening={isListening}>
       <VoiceBar text={getVoiceBarText()} />
       
       {!assessmentDone ? (

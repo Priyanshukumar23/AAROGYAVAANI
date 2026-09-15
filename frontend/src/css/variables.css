@@ -42,6 +42,8 @@ body.dark-theme {
   --line-2: #475569;
   --blue-soft: #022C22;
   --blue-border: #047857;
+  --blue-dark: #34D399; /* Bright green for text in dark mode */
+  --blue: #10B981; /* Brighter green for progress bars */
   --navy: #1E3A8A; /* Lighter navy for dark mode visibility if used as bg */
   --navy-text: #FFFFFF; /* Makes GYAV white in dark mode */
   --saffron-soft: #431407;

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useApp } from './context/AppContext';
 
@@ -104,12 +104,60 @@ function DocumentTitle() {
   return null;
 }
 
+import AshokaChakra from './components/AshokaChakra';
+import { BrandText } from './components/BrandLogo';
+
+function AppBg() {
+  const { state } = useApp();
+  const op = state.theme === 'dark' ? 0.2 : 0.05;
+  return (
+    <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: op, pointerEvents: 'none', zIndex: 0, overflow: 'hidden' }}>
+      <AshokaChakra size={900} />
+    </div>
+  );
+}
+
+function SplashScreen() {
+  const [show, setShow] = useState(true);
+  
+  useEffect(() => {
+    const hasSplashed = sessionStorage.getItem('medikiosk_splashed');
+    if (hasSplashed) {
+      setShow(false);
+    } else {
+      sessionStorage.setItem('medikiosk_splashed', 'true');
+      const timer = setTimeout(() => setShow(false), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  if (!show) return null;
+
+  return (
+    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'var(--bg)', zIndex: 99999, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', animation: 'splash-fadeout 0.5s ease 1.5s forwards' }}>
+      <div style={{ animation: 'splash-pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
+        <AshokaChakra size={150} isActive={true} />
+      </div>
+      <div style={{ marginTop: 24, fontSize: 32, fontFamily: 'var(--font-head)', letterSpacing: '0.15em', animation: 'splash-fadein 0.8s ease 0.3s both' }}>
+        <BrandText darkBg={false} />
+      </div>
+      <style>{`
+        @keyframes splash-fadeout { to { opacity: 0; visibility: hidden; } }
+        @keyframes splash-pop { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        @keyframes splash-fadein { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
+      `}</style>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <SplashScreen />
       <ScrollToTop />
       <ThemeManager />
       <DocumentTitle />
+      <AppBg />
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/staff/login" element={<StaffLogin />} />

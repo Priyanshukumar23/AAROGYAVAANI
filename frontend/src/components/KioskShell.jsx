@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { Progress, speakText } from './ui';
@@ -9,6 +9,20 @@ export default function KioskShell({ children, stepLabel, progress, back, next, 
   const { state, patch } = useApp();
   const nav = useNavigate();
   const [isHelpOpen, setIsHelpOpen] = useState(false);
+
+  useEffect(() => {
+    if (state.accessibility?.voice) {
+      const timer = setTimeout(() => {
+        const textToRead = title || stepLabel;
+        if (textToRead && typeof window !== 'undefined' && window.speechSynthesis) {
+          window.speechSynthesis.cancel();
+          const langCode = state.language === 'हिन्दी' ? 'hi-IN' : (state.language === 'ਪੰਜਾਬੀ' ? 'pa-IN' : 'en-US');
+          speakText(textToRead, langCode);
+        }
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [title, stepLabel, state.accessibility?.voice, state.language]);
 
   const goBack = () => { if (back) nav(back); else nav(-1); };
   const goNext = () => { if (onNext) { onNext(); return; } if (next) nav(next); };

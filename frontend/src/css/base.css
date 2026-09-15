@@ -26,3 +26,11 @@ button { font-family: var(--font-body); }
 .small { font-size: 14px; }
 .mono { font-variant-numeric: tabular-nums; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.page {
+  animation: page-enter 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0;
+  transform: translateY(15px);
+}
+@keyframes page-enter {
+  to { opacity: 1; transform: translateY(0); }
+}

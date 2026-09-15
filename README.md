@@ -1,53 +1,93 @@
-# MediKiosk — AI-Powered Clinical Intake & Hospital Platform (MERN)
+<div align="center">
+  <img src="banner.jpg" alt="AAROGYAVAANI Banner" width="100%" />
 
-Full MediKiosk website built from the UI screens in `Images/` (70 screens: patient kiosk flow, doctor portal, triage/nurse portal, admin/enterprise ops).
-Stack: **React + Vite frontend** (normal CSS only) + **Express + Mongoose backend**. Works with MongoDB when available, otherwise falls back to an in-memory demo store.
+  <h1>AAROGYAVAANI</h1>
+  <p><strong>AI-Powered Clinical Intake & Hospital Platform</strong></p>
+  
+  <p>
+    Built for <strong>Smart India Hackathon (SIH)</strong><br/>
+    <em>Empowering hospitals with AI-driven triage, multilingual voice assistants, and secure queue management.</em>
+  </p>
+</div>
 
-## Structure
+---
 
+## 🚀 Smart India Hackathon (SIH) Problem Statement
+
+**AAROGYAVAANI** was designed and developed as a comprehensive solution for the Smart India Hackathon. 
+
+**The Challenge:** Outpatient Departments (OPDs) in Indian hospitals face massive overcrowding, leading to long wait times, overworked staff, and delayed critical care. Language barriers and low health literacy further complicate the intake process for rural patients.
+
+**Our Solution (AAROGYAVAANI):** 
+A smart, multilingual, AI-powered health kiosk that automates patient check-in, captures clinical history, and performs intelligent triage before the patient even sees the doctor. 
+- 🌐 **Multilingual Voice Assistant:** Supports English, Hindi, and Punjabi with continuous voice interactions.
+- 🏥 **Seamless Hospital Flow:** Includes dedicated portals for Patients (Kiosk), Nurses (Triage), Doctors (Consultation), and Admins (Analytics).
+- 🚨 **AI Red-Flag Detection:** Instantly alerts staff to critical symptoms (e.g., chest pain).
+
+---
+
+## 📸 Screenshots
+
+### Kiosk Interface (Dark Mode)
+<img src="screenshot_dark.png" alt="AAROGYAVAANI Kiosk Dark Mode" width="800" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React + Vite (Pure CSS, 3D modern UI with Tricolor theme)
+- **Backend:** Node.js + Express
+- **Database:** MongoDB (Mongoose) with an intelligent in-memory fallback mechanism if DB goes offline.
+- **AI Integration:** Google Gemini API (Strictly structured JSON extraction for medical history).
+
+## 📁 Project Structure
+
+```text
+Aarogyavaani/
+  banner.jpg           # Project Banner
+  screenshot_dark.png  # UI Screenshot
+  frontend/            # React + Vite app
+    src/css/           # Custom CSS (variables, 3D UI, Kiosk, Staff)
+    src/pages/         # 70+ UI Screens (Check-in, History, Doctor, Triage, Admin)
+  backend/             # Express API (server.js, routes, memory fallback)
 ```
-SIH Hackathon/
-  Images/        # reference UI screens (code.html + screen.png per page) + clinical_direct/DESIGN.md
-  frontend/      # React + Vite app — CSS lives ONLY in src/css/
-    src/css/     # variables.css, base.css, components.css, kiosk.css, staff.css, responsive.css
-    src/pages/   # Welcome, StaffLogin, checkin/*, history/*, documents/*, queue/*, exit/*, doctor/*, triage/*, admin/*
-  backend/       # Express API (server.js + src/routes/api.js + models + in-memory fallback)
-```
 
-## Run
+## ⚙️ How to Run Locally
 
+### 1. Start the Backend
 ```bash
-# backend — http://localhost:5000
 cd backend
 npm install
 npm run dev
+# Runs on http://localhost:5000
+```
 
-# frontend — http://localhost:5173 (proxies /api → :5000)
+### 2. Start the Frontend
+```bash
 cd frontend
 npm install
 npm run dev
+# Runs on http://localhost:5173
 ```
+*Note: The frontend is configured to proxy API requests to the backend automatically.*
 
-Frontend also works without the backend (mock data + localStorage fallback).
+## 🏥 Demo Logins (Staff Portal)
+Navigate to `/staff/login` or click the **Staff** button on the kiosk.
 
-## Demo logins (Staff Login page)
-
-| Staff ID | Password | Lands on |
+| Staff Role | Staff ID | Password | 
 |---|---|---|
-| DOC-104 | doctor123 | Doctor dashboard |
-| NUR-88421 | nurse123 | Triage dashboard |
-| ADM-01 | admin123 | Admin dashboard |
+| **Doctor** | DOC-104 | doctor123 |
+| **Triage / Nurse** | NUR-88421 | nurse123 |
+| **Admin** | ADM-01 | admin123 |
 
-## Patient kiosk flow
+## 🌟 Key Features
 
-`/` Welcome → `/checkin/language` → `/checkin/accessibility` → `/checkin/identify` → `/checkin/abha-qr` | `/checkin/abha-mobile` | `/checkin/register` → `/checkin/confirm` → `/checkin/department` → `/checkin/token` → `/history/intro` → `/history/chief-complaint` → `/history/symptoms` → `/history/ai-followup` → `/history/details` → (`/history/red-flag` if red-flag keywords) → `/history/past-history` → `/history/review` → `/documents/intro` → `/documents/scanner` → `/documents/processing` → `/documents/review` → `/documents/abnormal` → `/documents/timeline` → `/documents/complete` → `/vitals` → `/queue/status` → `/queue/live` → `/queue/ready` → `/exit/completed` → `/exit/summary` → `/exit/prescription` → `/exit/followup` → `/exit/done`
+- **Tricolor Theme & 3D UI:** A beautiful, responsive interface inspired by the Indian National Flag, complete with an animated Ashoka Chakra.
+- **Light/Dark Mode:** Seamlessly toggle between day and night modes for comfort.
+- **Multilingual Support:** One-click dropdown to switch the entire UI and AI Voice to Hindi or Punjabi.
+- **Hardware Integration Ready:** Designed to work on large touch-screen kiosks (64px touch targets).
 
-## Staff flows
-
-- Doctor: `/doctor/dashboard`, `/doctor/queue`, `/doctor/case/:id`, `/doctor/transcript/:id`, `/doctor/timeline/:id`, `/doctor/summary`, `/doctor/documents`, `/doctor/workspace`, `/doctor/complete`, `/doctor/review/:id`, `/doctor/alerts`
-- Triage/Nurse: `/triage/dashboard`, `/triage/queue`, `/triage/assessment/:id`, `/triage/vitals/:id`, `/triage/priority/:id`, `/triage/summary/:id`, `/triage/handoff/:id`, `/triage/history`, `/triage/alerts`
-- Admin: `/admin/dashboard`, `/admin/opd`, `/admin/kiosks`, `/admin/staff`, `/admin/analytics`, `/admin/audit`, `/admin/settings`, `/admin/alerts`
-
-## Design system
-
-Clinical Direct (`Images/clinical_direct/DESIGN.md`): Deep navy `#0A2540`, Trust blue `#0284C7`, slate surfaces, P1 `#DC2626` / P2 `#D97706` / P3 `#059669` triage badges, Plus Jakarta Sans + Inter, 64px kiosk touch targets, 44px staff targets, 12/8/4px radii. Fully responsive (kiosk → tablet → mobile) + print-friendly slips.
+---
+<div align="center">
+  <i>Proudly built for SIH.</i>
+</div>

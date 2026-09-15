@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { Progress, speakText } from './ui';
 import BrandLogo from './BrandLogo';
 import HelpModal from './HelpModal';
+import PatientProfileModal from './PatientProfileModal';
 
 export default function KioskShell({ children, stepLabel, progress, back, next, nextLabel, onNext, hideNav = false, title, isListening = false }) {
   const { state, patch } = useApp();
   const nav = useNavigate();
+  const loc = useLocation();
   const [isHelpOpen, setIsHelpOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   useEffect(() => {
     if (state.accessibility?.voice) {
@@ -101,13 +104,22 @@ export default function KioskShell({ children, stepLabel, progress, back, next, 
             <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>❓</span>
             <span>{getTranslated('helpStr')}</span>
           </button>
-          <Link className="tool-btn" to="/staff/login" title="Staff Access">
-            <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>🏥</span>
-            <span>Staff</span>
-          </Link>
+          
+          {(state.patient && loc.pathname !== '/' && !loc.pathname.startsWith('/checkin/identify') && !loc.pathname.startsWith('/checkin/language') && !loc.pathname.startsWith('/checkin/accessibility') && !loc.pathname.startsWith('/staff')) ? (
+            <button type="button" className="tool-btn" onClick={() => setIsProfileOpen(true)} title="Patient Profile" style={{ background: 'var(--blue-soft)', color: 'var(--blue-dark)', fontWeight: 700, borderRadius: 8 }}>
+              <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>👤</span>
+              <span>Profile</span>
+            </button>
+          ) : (
+            <Link className="tool-btn" to="/staff/login" title="Staff Access">
+              <span style={{ fontSize: 16, display: 'inline-flex', alignItems: 'center' }}>🏥</span>
+              <span>Staff</span>
+            </Link>
+          )}
         </div>
       </header>
       <HelpModal isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
+      <PatientProfileModal isOpen={isProfileOpen} onClose={() => setIsProfileOpen(false)} />
       <main className="kiosk-body">
         <div className="container kiosk">
           {(stepLabel || title) && (

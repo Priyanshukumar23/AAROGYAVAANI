@@ -109,9 +109,9 @@ import { BrandText } from './components/BrandLogo';
 
 function AppBg() {
   const { state } = useApp();
-  const op = state.theme === 'dark' ? 0.2 : 0.05;
+  const op = state.theme === 'dark' ? 0.15 : 0.08;
   return (
-    <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: op, pointerEvents: 'none', zIndex: 0, overflow: 'hidden' }}>
+    <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: op, pointerEvents: 'none', zIndex: 0, overflow: 'hidden', '--navy': 'var(--saffron)' }}>
       <AshokaChakra size={900} />
     </div>
   );

@@ -21,7 +21,7 @@ IMPORTANT: You MUST communicate with the patient entirely in ${lang}.
 Keep your responses short.
 CRITICAL FLOW:
 1. First, gather Chief complaint, main symptoms, and duration.
-2. Once you have this basic information, you MUST ask the patient if they have any previous medical reports, lab results, or prescriptions to upload. Tell them they can use the "Attach" button or skip if they don't have any.
+2. Once you have this basic information, you MUST ask the patient if they have any previous medical reports, lab results, or prescriptions to upload. When you ask this, you MUST end your message with the exact tag: [ASK_REPORT]
 3. Wait for their response (an uploaded image/PDF or them saying they don't have any). If they upload a report, extract the key details (OCR) and factor it into your assessment.
 4. After resolving the report step, you MUST end your message with the exact tag: [ASSESSMENT_COMPLETE]
 5. Then, in a new line, provide a brief JSON summary block wrapped in \`\`\`json { "chiefComplaint": "...", "department": "General Medicine", "priority": "P3" } \`\`\`
@@ -188,8 +188,15 @@ Make sure the JSON block is the very last thing.`;
       const botText = data.candidates?.[0]?.content?.parts?.[0]?.text || getTranslated('error');
       
       let cleanText = botText;
+      let askReport = false;
+      
+      if (cleanText.includes('[ASK_REPORT]')) {
+        cleanText = cleanText.replace('[ASK_REPORT]', '').trim();
+        askReport = true;
+      }
+      
       if (botText.includes('[ASSESSMENT_COMPLETE]')) {
-        cleanText = botText.split('[ASSESSMENT_COMPLETE]')[0].trim();
+        cleanText = botText.split('[ASSESSMENT_COMPLETE]')[0].replace('[ASK_REPORT]', '').trim();
         const jsonMatch = botText.match(/```json([\s\S]*?)```/);
         if (jsonMatch) {
           try {
@@ -202,7 +209,7 @@ Make sure the JSON block is the very last thing.`;
         setAssessmentDone(true);
       }
 
-      setMessages(prev => [...prev, { role: 'model', text: cleanText }]);
+      setMessages(prev => [...prev, { role: 'model', text: cleanText, askReport }]);
       
       // Auto-speak the AI's response
       let langCode = 'en-US';
@@ -263,6 +270,17 @@ Make sure the JSON block is the very last thing.`;
                 }}>
                   {msg.text}
                   {msg.imageName && <div style={{ marginTop: 8, fontSize: '12px', opacity: 0.9 }}>📎 {msg.imageName}</div>}
+                  {msg.role === 'model' && msg.askReport && i === messages.length - 1 && !loading && (
+                    <div style={{ marginTop: 12, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                      <label className="btn btn-primary btn-sm" style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} title="Upload previous reports or lab results">
+                        {getTranslated('attach')}
+                        <input type="file" accept="image/*,.pdf" style={{ display: 'none' }} onChange={onFileChange} />
+                      </label>
+                      <button className="btn btn-secondary btn-sm" onClick={() => handleSend(null, "I don't have any previous reports to upload.")} disabled={loading}>
+                        {getTranslated('skip')}
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -275,13 +293,6 @@ Make sure the JSON block is the very last thing.`;
           </div>
 
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-            <label className="btn btn-secondary" style={{ padding: '0 16px', height: '48px', display: 'flex', alignItems: 'center', cursor: 'pointer' }} title="Upload previous reports or lab results">
-              {getTranslated('attach')}
-              <input type="file" accept="image/*,.pdf" style={{ display: 'none' }} onChange={onFileChange} />
-            </label>
-            <button className="btn btn-ghost" style={{ padding: '0 16px', height: '48px' }} onClick={() => handleSend(null, "I don't have any previous reports to upload.")} disabled={loading}>
-              {getTranslated('skip')}
-            </button>
             <button className="btn btn-secondary" style={{ padding: '0 16px', height: '48px', background: isListening ? '#FEE2E2' : '#F1F5F9', color: isListening ? '#DC2626' : '#0F172A' }} onClick={toggleListen}>
               {isListening ? getTranslated('listening') : getTranslated('speak')}
             </button>

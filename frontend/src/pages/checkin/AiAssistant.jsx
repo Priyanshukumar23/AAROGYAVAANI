@@ -82,13 +82,22 @@ Make sure the JSON block is the very last thing.`;
   
   const chatEndRef = useRef(null);
 
-  // Auto-speak initial message once on mount
+  // Auto-speak initial message once on mount and when language changes (if no interaction yet)
   useEffect(() => {
-    let langCode = 'en-US';
-    if (lang === 'हिन्दी') langCode = 'hi-IN';
-    else if (lang === 'ਪੰਜਾਬੀ') langCode = 'pa-IN';
-    speakText(getInitialMessage(), langCode);
-  }, []);
+    if (messages.length === 1) {
+      const msg = getInitialMessage();
+      setMessages([{ role: 'model', text: msg }]);
+      
+      let langCode = 'en-US';
+      if (lang === 'हिन्दी') langCode = 'hi-IN';
+      else if (lang === 'ਪੰਜਾਬੀ') langCode = 'pa-IN';
+      
+      // Add a slight delay so it doesn't overlap with the KioskShell language change confirmation
+      setTimeout(() => {
+        speakText(msg, langCode);
+      }, 1000);
+    }
+  }, [lang]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });

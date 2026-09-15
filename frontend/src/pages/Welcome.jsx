@@ -36,6 +36,21 @@ export default function Welcome() {
         <p style={{ fontSize: 20 }}>{getTranslated('subtitle')}</p>
       </div>
       <VoiceBar text={getTranslated('voice')} />
+      <div className="card ui-3d-card" style={{ marginBottom: 16 }}>
+        <h4 style={{ margin: 0 }}>{getTranslated('quickLang')}</h4>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 10 }}>
+          {LANGUAGES.slice(0, 3).map((l) => (
+            <button
+              key={l.code}
+              className={`btn btn-sm ui-3d-btn-sm ${state.language === l.label ? 'btn-primary' : 'btn-ghost'}`}
+              onClick={() => { patch({ language: l.label }); speakText(l.greet); }}
+            >
+              {l.label}
+            </button>
+          ))}
+        </div>
+        <p className="small muted" style={{ marginTop: 10, marginBottom: 0 }}>{getTranslated('voiceGuide')}</p>
+      </div>
       <div className="hero-split">
         <div className="card welcome-card selected ui-3d-card">
           <div className="big-icon">🧑‍⚕️</div>
@@ -51,21 +66,6 @@ export default function Welcome() {
           <Link className="btn btn-secondary btn-block ui-3d-btn-sec" to="/staff/login">{getTranslated('staffBtn')}</Link>
           <span className="small muted">{getTranslated('staffFoot')}</span>
         </div>
-      </div>
-      <div className="card ui-3d-card" style={{ marginTop: 16 }}>
-        <h4>{getTranslated('quickLang')}</h4>
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 10 }}>
-          {LANGUAGES.slice(0, 3).map((l) => (
-            <button
-              key={l.code}
-              className={`btn btn-sm ui-3d-btn-sm ${state.language === l.label ? 'btn-primary' : 'btn-ghost'}`}
-              onClick={() => { patch({ language: l.label }); speakText(l.greet); }}
-            >
-              {l.label}
-            </button>
-          ))}
-        </div>
-        <p className="small muted" style={{ marginTop: 10 }}>{getTranslated('voiceGuide')}</p>
       </div>
       <div className="card ui-3d-card" style={{ marginTop: 16, background: 'var(--blue-soft)', border: '1px solid var(--blue-border)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

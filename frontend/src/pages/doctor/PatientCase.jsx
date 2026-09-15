@@ -41,6 +41,9 @@ export default function PatientCase() {
         <div className="card">
           <h3 style={{ marginTop: 0 }}>Chief Complaint</h3>
           <p><strong>{complaint}</strong></p>
+          {queued?.duration && <p className="small"><strong>Duration:</strong> {queued.duration}</p>}
+          {queued?.possibleDisease && <p className="small"><strong>AI Suspects:</strong> {queued.possibleDisease}</p>}
+          {queued?.ocrReport && <p className="small"><strong>OCR/Reports:</strong> {queued.ocrReport}</p>}
           <div className="notice small">🎙 Audio transcript (Hindi→EN): “कल सीढ़ी चढ़ते समय सीने में भारीपन हुआ, बाएँ कंधे तक दर्द गया…” — <Link to={`/doctor/transcript/${id}`}>full transcript</Link></div>
           <h4>OPQRST — HPI</h4>
           <div className="vital-grid">{OPQRST.map(([k, v]) => <div key={k} className="vital"><div className="small muted">{k}</div><strong>{v}</strong></div>)}</div>

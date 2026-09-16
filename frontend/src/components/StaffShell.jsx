@@ -141,19 +141,19 @@ export default function StaffShell({ children, role = 'doctor', title, subtitle,
     if (!q) return [];
     return (queue || [])
       .filter((t) =>
-        `${t.tokenNo || ''} ${t.name || ''} ${t.complaint || t.chiefComplaint || ''} ${t.priority || ''} ${t.status || ''} ${t.age || ''}`
+        `${t.tokenNo || ''} ${t.uhid || ''} ${t.name || ''} ${t.complaint || t.chiefComplaint || ''} ${t.priority || ''} ${t.status || ''} ${t.age || ''}`
           .toLowerCase()
           .includes(q)
       )
       .slice(0, 7);
   }, [queue, query]);
 
-  const goToResult = (tokenNo) => {
+  const goToResult = (id) => {
     setQuery('');
     setSearchOpen(false);
-    if (!tokenNo) return;
-    if (role === 'nurse') nav(`/triage/assessment/${tokenNo}`);
-    else nav(`/doctor/case/${tokenNo}`);
+    if (!id) return;
+    if (role === 'nurse') nav(`/triage/assessment/${id}`);
+    else nav(`/doctor/case/${id}`);
   };
   const alertsLink = role === 'nurse' ? '/triage/alerts' : role === 'admin' ? '/admin/alerts' : '/doctor/alerts';
 
@@ -223,19 +223,29 @@ export default function StaffShell({ children, role = 'doctor', title, subtitle,
       <div className="staff-main">
         <div className="topbar">
           <div className="search" ref={searchRef} style={{ position: 'relative' }}>
-            <input
-              ref={searchInputRef}
-              className="input staff"
-              placeholder="Search — token, patient, UHID…  (⌘K)"
-              value={query}
-              onChange={(e) => { setQuery(e.target.value); setSearchOpen(true); }}
-              onFocus={() => setSearchOpen(true)}
-              onKeyDown={(e) => { if (e.key === 'Enter' && searchResults.length) goToResult(searchResults[0].tokenNo); }}
-            />
+              <input
+                ref={searchInputRef}
+                className="input staff"
+                placeholder="Search — token, patient, UHID... (⌘K)"
+                value={query}
+                onChange={(e) => { setQuery(e.target.value); setSearchOpen(true); }}
+                onFocus={() => setSearchOpen(true)}
+                onKeyDown={(e) => { 
+                  if (e.key === 'Enter' && query.trim()) {
+                    if (searchResults.length) goToResult(searchResults[0].tokenNo);
+                    else goToResult(query.trim());
+                  }
+                }}
+              />
             {searchOpen && query.trim() && (
               <div className="search-menu">
                 {searchResults.length === 0 && (
-                  <div className="small muted" style={{ padding: '10px 12px' }}>No matches for “{query.trim()}”.</div>
+                  <div style={{ padding: '8px' }}>
+                    <div className="small muted" style={{ padding: '0 4px 8px 4px' }}>No matches in active queue for "{query.trim()}".</div>
+                    <button type="button" className="search-item" onClick={() => goToResult(query.trim())}>
+                      <span style={{ fontWeight: 600 }}>🔍 Search all records for "{query.trim()}"</span>
+                    </button>
+                  </div>
                 )}
                 {searchResults.map((t) => (
                   <button

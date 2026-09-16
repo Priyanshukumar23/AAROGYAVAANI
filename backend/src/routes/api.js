@@ -182,14 +182,23 @@ router.get('/patients/:id/case', (req, res) => {
 
 // GET /api/patients/:id/documents
 router.get('/patients/:id/documents', (req, res) => {
-  res.json(store.docs.filter(d => d.tokenNo === req.params.id));
+  const id = req.params.id;
+  const tokensForPatient = store.tokens.filter(t => t.tokenNo === id || t.uhid === id);
+  const tokenNos = tokensForPatient.map(t => t.tokenNo);
+  tokenNos.push(id);
+  res.json(store.docs.filter(d => tokenNos.includes(d.tokenNo) || d.uhid === id));
 });
 
 // GET /api/patients/:id/timeline
 router.get('/patients/:id/timeline', (req, res) => {
   const id = req.params.id;
-  const docs = store.docs.filter(d => d.tokenNo === id).map(d => ({ kind: 'document', ...d }));
-  const consults = store.consultations.filter(c => c.tokenNo === id).map(c => ({ kind: 'consultation', ...c }));
+  // Find all tokens for this patient (by tokenNo or uhid)
+  const tokensForPatient = store.tokens.filter(t => t.tokenNo === id || t.uhid === id);
+  const tokenNos = tokensForPatient.map(t => t.tokenNo);
+  tokenNos.push(id); // Include the id itself (in case it was a tokenNo)
+
+  const docs = store.docs.filter(d => tokenNos.includes(d.tokenNo) || d.uhid === id).map(d => ({ kind: 'document', ...d }));
+  const consults = store.consultations.filter(c => tokenNos.includes(c.tokenNo) || c.uhid === id).map(c => ({ kind: 'consultation', ...c }));
   res.json([...docs, ...consults]);
 });
 
@@ -323,7 +332,7 @@ router.post('/emergency/dispatch', (req, res) => {
     age: 0,
     sex: 'U',
     gender: 'Unknown',
-    uhid: 'EMG-PENDING',
+    uhid: patientId !== 'unknown' ? patientId : 'EMG-PENDING',
     department: 'Emergency / Triage',
     room: 'Resuscitation Bay',
     doctor: 'On-Call Emergency Physician',

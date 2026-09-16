@@ -297,6 +297,48 @@ router.post('/emergency/dispatch', (req, res) => {
   if (!store.emergencies) store.emergencies = [];
   store.emergencies.push(dispatchRecord);
 
+  // Also push to the hospital's active alerts and queue so it shows up on Doctor / Admin portals
+  const emergencyTokenNo = 'EMG-' + Math.floor(100 + Math.random() * 899);
+  const patientNameStr = (req.body.patientName) || (patientId !== 'unknown' ? patientId : 'Unknown Emergency Patient');
+  
+  const alert = {
+    _id: 'a' + Date.now(),
+    tokenNo: emergencyTokenNo,
+    patientName: patientNameStr,
+    type: 'red-flag',
+    priority: 'P1',
+    severity: 'STAT',
+    kind: 'Emergency',
+    reason: `Ambulance Dispatched: ${symptoms || 'Emergency triggered via Kiosk'}`,
+    message: `Patient en-route via ambulance ${ambulance.plate}. ETA: ${ambulance.etaMinutes} mins.`,
+    acknowledged: false
+  };
+  store.alerts.push(alert);
+
+  const t = {
+    _id: 't' + Date.now(),
+    tokenNo: emergencyTokenNo,
+    name: patientNameStr,
+    patientName: patientNameStr,
+    age: 0,
+    sex: 'U',
+    gender: 'Unknown',
+    uhid: 'EMG-PENDING',
+    department: 'Emergency / Triage',
+    room: 'Resuscitation Bay',
+    doctor: 'On-Call Emergency Physician',
+    priority: 'P1',
+    status: 'waiting',
+    chiefComplaint: symptoms || 'Emergency condition',
+    complaint: symptoms || 'Emergency condition',
+    position: 0,
+    estimatedWaitMin: 0,
+    waitMin: 0,
+    aiStatus: 'ready',
+    aiConfidence: 99
+  };
+  store.tokens.unshift(t); // Add to the very front of the queue
+
   res.json(dispatchRecord);
 });
 

@@ -19,7 +19,13 @@ export default function EmergencyTracking() {
       fetch('/api/emergency/dispatch', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lat, lng, symptoms })
+        body: JSON.stringify({ 
+          lat, 
+          lng, 
+          symptoms,
+          patientName: state.patient?.name,
+          patientId: state.patient?.uhid
+        })
       })
         .then(res => res.json())
         .then(data => setTracking(data));

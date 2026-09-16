@@ -209,7 +209,6 @@ export default function App() {
 
         <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
         <Route path="/doctor/queue" element={<LiveOpdQueue />} />
-        <Route path="/doctor/case/:tokenNo" element={<PatientCase />} />
         <Route path="/doctor/case/:id" element={<PatientCase />} />
         <Route path="/doctor/transcript/:id" element={<IntakeTranscript />} />
         <Route path="/doctor/timeline/:id" element={<MedicalTimeline />} />

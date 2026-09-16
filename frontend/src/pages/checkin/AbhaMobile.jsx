@@ -13,11 +13,35 @@ export default function AbhaMobile() {
   const press = (d) => { setErr(''); setVal((v) => (v.replace(/\D/g, '') + d).slice(0, 14)); };
   const back = () => setVal((v) => v.replace(/\D/g, '').slice(0, -1));
   const clear = () => { setVal(''); setErr(''); };
-  const submit = () => {
+  const submit = async () => {
     if (digits.length !== 14 && digits.length !== 10) { setErr('Enter a valid 14-digit ABHA or 10-digit mobile number.'); return; }
-    if (digits.length === 14) patchPatient({ abha: digits.replace(/(\d{2})(\d{4})(\d{4})(\d{4})/, '$1-$2-$3-$4') });
-    else patchPatient({ mobile: '+91 ' + digits.slice(0, 5) + ' ' + digits.slice(5) });
-    nav('/checkin/confirm');
+    
+    const isAbha = digits.length === 14;
+    const searchValue = isAbha 
+      ? digits.replace(/(\d{2})(\d{4})(\d{4})(\d{4})/, '$1-$2-$3-$4') 
+      : '+91 ' + digits.slice(0, 5) + ' ' + digits.slice(5);
+
+    try {
+      const res = await fetch('/api/patients');
+      const patients = await res.json();
+      
+      const found = patients.find(p => {
+        if (isAbha) {
+          return p.abha === searchValue || p.abhaId === searchValue;
+        } else {
+          return p.mobile === searchValue || (p.mobile && p.mobile.replace(/\s/g, '') === searchValue.replace(/\s/g, ''));
+        }
+      });
+      
+      if (found) {
+        patchPatient(found);
+        nav('/checkin/confirm');
+      } else {
+        setErr('Patient not found. Please check your number or register as a new patient.');
+      }
+    } catch (e) {
+      setErr('Error connecting to server.');
+    }
   };
   return (
     <KioskShell stepLabel="STEP 1 · CHECK-IN" title="Enter ABHA / Mobile Number" back="/checkin/identify" progress={35} onNext={submit} nextLabel="Continue">

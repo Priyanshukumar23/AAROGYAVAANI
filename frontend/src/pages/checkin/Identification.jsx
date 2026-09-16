@@ -25,18 +25,17 @@ export default function Identification() {
   };
 
   const cards = [
-    { to: '/checkin/abha-qr', icon: '📷', t: getTranslated('scanQR'), d: getTranslated('scanDesc') },
-    { to: '/checkin/abha-mobile', icon: '🔢', t: getTranslated('enterNum'), d: getTranslated('enterDesc') },
-    { to: '/checkin/register', icon: '📝', t: getTranslated('newReg'), d: getTranslated('newRegDesc') }
+    { to: '/checkin/register', icon: '🆕', t: getTranslated('newReg'), d: getTranslated('newRegDesc') },
+    { to: '/checkin/abha-mobile', icon: '🔑', t: 'Login (Mobile / ABHA)', d: 'Login with your registered Mobile Number or ABHA ID' }
   ];
 
   return (
     <KioskShell stepLabel={getTranslated('stepLabel')} title={getTranslated('title')} back="/checkin/accessibility" progress={25} hideNav>
       <VoiceBar text={getTranslated('voice')} />
-      <div className="grid cols-3" style={{ alignItems: 'stretch' }}>
+      <div className="grid cols-2" style={{ alignItems: 'stretch' }}>
         {cards.map((c) => (
           <Link key={c.to} to={c.to} style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }}>
-            <div className="card selectable" style={{ textAlign: 'center', minHeight: 280, height: '100%', flex: 1, display: 'flex', flexDirection: 'column', gap: 10, justifyContent: 'flex-start' }}>
+            <div className="card selectable" style={{ textAlign: 'center', minHeight: 280, height: '100%', flex: 1, display: 'flex', flexDirection: 'column', gap: 10, justifyContent: 'center' }}>
               <div style={{ fontSize: 48 }}>{c.icon}</div>
               <h3>{c.t}</h3>
               <p className="small muted" style={{ minHeight: 44, margin: 0 }}>{c.d}</p>

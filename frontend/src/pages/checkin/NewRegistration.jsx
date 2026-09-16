@@ -6,7 +6,7 @@ import { VoiceBar } from '../../components/ui';
 
 export default function NewRegistration() {
   const { state, patchPatient } = useApp();
-  const [f, setF] = useState({ name: state.patient?.name === 'Ramesh Kumar Sharma' ? '' : state.patient?.name || '', age: '', gender: 'Male', mobile: '', state: '', city: '' });
+  const [f, setF] = useState({ name: state.patient?.name || '', age: '', gender: 'Male', mobile: '', state: '', city: '' });
   const [errs, setErrs] = useState({});
   const nav = useNavigate();
   const set = (k, v) => setF((s) => ({ ...s, [k]: v }));

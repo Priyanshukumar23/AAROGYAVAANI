@@ -153,20 +153,20 @@ export default function PatientDashboard() {
       </div>
 
       <div className="grid cols-2" style={{ gap: 20, marginBottom: 24 }}>
-        <div className="card ui-3d-card" style={{ background: 'var(--saffron-soft)', border: '2px solid var(--saffron)' }}>
+        <div className="card ui-3d-card" style={{ background: 'var(--saffron-soft)', border: '2px solid var(--saffron)', display: 'flex', flexDirection: 'column' }}>
           <h3 style={{ margin: 0, color: '#9a3412', display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ fontSize: 24 }}>🤖</span> {getTranslated('aiBtn')}
           </h3>
           <p style={{ marginTop: 8, marginBottom: 16 }}>{getTranslated('aiDesc')}</p>
-          <Link to="/checkin/ai-assistant" className="btn btn-primary btn-block ui-3d-btn" style={{ background: 'var(--saffron)', color: '#fff', border: 'none' }}>
+          <Link to="/checkin/ai-assistant" className="btn btn-primary btn-block ui-3d-btn" style={{ background: 'var(--saffron)', color: '#fff', border: 'none', marginTop: 'auto' }}>
             {getTranslated('aiBtn')}
           </Link>
         </div>
 
-        <div className="card ui-3d-card" style={{ background: 'var(--p1-bg)', border: '2px solid var(--p1)' }}>
+        <div className="card ui-3d-card" style={{ background: 'var(--p1-bg)', border: '2px solid var(--p1)', display: 'flex', flexDirection: 'column' }}>
           <h3 style={{ margin: 0, color: 'var(--p1-ink)' }}>{getTranslated('emergencyBtn')}</h3>
           <p style={{ marginTop: 8, marginBottom: 16 }}>{getTranslated('emergencyDesc')}</p>
-          <button onClick={emergencyAdmit} className="btn btn-block ui-3d-btn" style={{ background: 'var(--p1)', color: '#fff' }}>
+          <button onClick={emergencyAdmit} className="btn btn-block ui-3d-btn" style={{ background: 'var(--p1)', color: '#fff', marginTop: 'auto' }}>
             {getTranslated('triggerEmBtn')}
           </button>
         </div>

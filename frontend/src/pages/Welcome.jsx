@@ -24,7 +24,14 @@ export default function Welcome() {
       quickLang: { English: 'Quick language / भाषा चुनें / ਭਾਸ਼ਾ ਚੁਣੋ', 'हिन्दी': 'Quick language / भाषा चुनें / ਭਾਸ਼ਾ ਚੁਣੋ', 'ਪੰਜਾਬੀ': 'Quick language / भाषा चुनें / ਭਾਸ਼ਾ ਚੁਣੋ' },
       voiceGuide: { English: '🔊 Voice guidance is available at every step. Tap 🔊 Listen to hear instructions aloud.', 'हिन्दी': '🔊 हर कदम पर वॉयस मार्गदर्शन उपलब्ध है। निर्देश सुनने के लिए 🔊 सुनें पर टैप करें।', 'ਪੰਜਾਬੀ': '🔊 ਹਰ ਕਦਮ \'ਤੇ ਆਵਾਜ਼ ਮਾਰਗਦਰਸ਼ਨ ਉਪਲਬਧ ਹੈ। ਹਦਾਇਤਾਂ ਸੁਣਨ ਲਈ 🔊 ਸੁਣੋ \'ਤੇ ਟੈਪ ਕਰੋ।' },
       aboutTitle: { English: 'About', 'हिन्दी': 'के बारे में', 'ਪੰਜਾਬੀ': 'ਬਾਰੇ' },
-      aboutDesc: { English: 'A modern AI-powered health intake system designed to reduce wait times and capture accurate patient histories.', 'हिन्दी': 'इंतजार के समय को कम करने और सटीक रोगी इतिहास कैप्चर करने के लिए डिज़ाइन किया गया एक आधुनिक AI-संचालित स्वास्थ्य सेवन सिस्टम।', 'ਪੰਜਾਬੀ': 'ਇੱਕ ਆਧੁਨਿਕ AI-ਸੰਚਾਲਿਤ ਸਿਹਤ ਦਾਖਲੇ ਸਿਸਟਮ ਜੋ ਉਡੀਕ ਦੇ ਸਮੇਂ ਨੂੰ ਘਟਾਉਣ ਅਤੇ ਮਰੀਜ਼ ਦੇ ਇਤਿਹਾਸ ਨੂੰ ਸਹੀ ਕੈਪਚਰ ਕਰਨ ਲਈ ਤਿਆਰ ਕੀਤਾ ਗਿਆ ਹੈ।' }
+      patFeatTitle: { English: '👨‍👩‍👧‍👦 For Patients', 'हिन्दी': '👨‍👩‍👧‍👦 मरीजों के लिए', 'ਪੰਜਾਬੀ': '👨‍👩‍👧‍👦 ਮਰੀਜ਼ਾਂ ਲਈ' },
+      patFeat1: { English: '🎤 Speak to AI in your native language or scan reports via OCR.', 'हिन्दी': '🎤 अपनी भाषा में AI से बात करें या OCR के माध्यम से रिपोर्ट स्कैन करें।', 'ਪੰਜਾਬੀ': '🎤 ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ AI ਨਾਲ ਗੱਲ ਕਰੋ ਜਾਂ OCR ਰਾਹੀਂ ਰਿਪੋਰਟਾਂ ਸਕੈਨ ਕਰੋ।' },
+      patFeat2: { English: '🚨 Trigger Emergency with live GPS tracking and AI first-aid.', 'हिन्दी': '🚨 लाइव GPS ट्रैकिंग और AI प्राथमिक चिकित्सा के साथ आपातकाल ट्रिगर करें।', 'ਪੰਜਾਬੀ': '🚨 ਲਾਈਵ GPS ਟਰੈਕਿੰਗ ਅਤੇ AI ਫਸਟ ਏਡ ਨਾਲ ਐਮਰਜੈਂਸੀ ਨੂੰ ਟਰਿੱਗਰ ਕਰੋ।' },
+      patFeat3: { English: '🏥 View nearby hospitals and download your digital prescriptions.', 'हिन्दी': '🏥 आस-पास के अस्पताल देखें और अपने डिजिटल नुस्खे डाउनलोड करें।', 'ਪੰਜਾਬੀ': '🏥 ਨੇੜਲੇ ਹਸਪਤਾਲਾਂ ਨੂੰ ਦੇਖੋ ਅਤੇ ਆਪਣੇ ਡਿਜੀਟਲ ਨੁਸਖੇ ਡਾਊਨਲੋਡ ਕਰੋ।' },
+      docFeatTitle: { English: '🩺 For Doctors & Staff', 'हिन्दी': '🩺 डॉक्टरों और कर्मचारियों के लिए', 'ਪੰਜਾਬੀ': '🩺 ਡਾਕਟਰਾਂ ਅਤੇ ਸਟਾਫ ਲਈ' },
+      docFeat1: { English: '⚡ View real-time AI triage reports and patient vitals.', 'हिन्दी': '⚡ रीयल-टाइम AI ट्राइएज रिपोर्ट और रोगी के महत्वपूर्ण अंग देखें।', 'ਪੰਜਾਬੀ': '⚡ ਰੀਅਲ-ਟਾਈਮ AI ਟ੍ਰਾਈਜ ਰਿਪੋਰਟਾਂ ਅਤੇ ਮਰੀਜ਼ ਦੇ ਜ਼ਰੂਰੀ ਅੰਗ ਦੇਖੋ।' },
+      docFeat2: { English: '📋 Verify patient history, OCR scans, and active emergency cases.', 'हिन्दी': '📋 रोगी के इतिहास, OCR स्कैन और सक्रिय आपातकालीन मामलों की जांच करें।', 'ਪੰਜਾਬੀ': '📋 ਮਰੀਜ਼ ਦੇ ਇਤਿਹਾਸ, OCR ਸਕੈਨ, ਅਤੇ ਸਰਗਰਮ ਐਮਰਜੈਂਸੀ ਮਾਮਲਿਆਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ।' },
+      docFeat3: { English: '💊 Add prescriptions directly and send them to the patient portal.', 'हिन्दी': '💊 नुस्खे सीधे जोड़ें और उन्हें रोगी पोर्टल पर भेजें।', 'ਪੰਜਾਬੀ': '💊 ਨੁਸਖੇ ਸਿੱਧੇ ਸ਼ਾਮਲ ਕਰੋ ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਮਰੀਜ਼ ਦੇ ਪੋਰਟਲ \'ਤੇ ਭੇਜੋ।' }
     };
     return t[key][state.language] || t[key]['English'];
   };
@@ -68,14 +75,29 @@ export default function Welcome() {
           <span className="small muted">{getTranslated('staffFoot')}</span>
         </div>
       </div>
+
       <div className="card ui-3d-card" style={{ marginTop: 16, background: 'var(--blue-soft)', border: '1px solid var(--blue-border)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ fontSize: 24 }}>🇮🇳</div>
-          <div>
-            <h4 style={{ margin: 0, color: 'var(--blue-dark)' }}>{getTranslated('aboutTitle')} <BrandText /></h4>
-            <p className="small" style={{ margin: 0, marginTop: 4, color: 'var(--blue-dark)' }}>
-              {getTranslated('aboutDesc')}
-            </p>
+        <h3 style={{ margin: '0 0 16px 0', color: 'var(--blue-dark)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: 24 }}>🇮🇳</span> {getTranslated('aboutTitle')} <BrandText />
+        </h3>
+        
+        <div className="grid cols-2" style={{ gap: '20px', alignItems: 'start' }}>
+          <div style={{ background: 'rgba(255,255,255,0.7)', padding: '16px', borderRadius: '8px', border: '1px solid #cbd5e1' }}>
+            <h4 style={{ margin: '0 0 12px 0', color: '#1e293b' }}>{getTranslated('patFeatTitle')}</h4>
+            <ul style={{ margin: 0, paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '10px', color: '#334155', fontSize: '15px' }}>
+              <li>{getTranslated('patFeat1')}</li>
+              <li>{getTranslated('patFeat2')}</li>
+              <li>{getTranslated('patFeat3')}</li>
+            </ul>
+          </div>
+          
+          <div style={{ background: 'rgba(255,255,255,0.7)', padding: '16px', borderRadius: '8px', border: '1px solid #cbd5e1' }}>
+            <h4 style={{ margin: '0 0 12px 0', color: '#1e293b' }}>{getTranslated('docFeatTitle')}</h4>
+            <ul style={{ margin: 0, paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '10px', color: '#334155', fontSize: '15px' }}>
+              <li>{getTranslated('docFeat1')}</li>
+              <li>{getTranslated('docFeat2')}</li>
+              <li>{getTranslated('docFeat3')}</li>
+            </ul>
           </div>
         </div>
       </div>

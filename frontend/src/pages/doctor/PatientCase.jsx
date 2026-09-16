@@ -41,7 +41,7 @@ export default function PatientCase() {
       )}
 
       <div className="notice small" style={{ marginTop: 12 }}>
-        ✨ AI Case Summary Ready — <Link to="/doctor/summary">open AI Clinical Summary</Link>
+        ✨ AI Case Summary Ready — <Link to={`/doctor/summary/${id}`}>open AI Clinical Summary</Link>
         {' • '}Chief Complaint • HPI • Past History • Medications • Allergies
         <div className="muted" style={{ marginTop: 4 }}>AI-generated clinical information. Verify all AI-generated information before making clinical decisions.</div>
       </div>

@@ -106,19 +106,25 @@ export default function Welcome() {
             </div>
           </div>
           
-          <div style={{ flex: 1, minWidth: '300px', borderRadius: '12px', overflow: 'hidden', border: '2px solid #cbd5e1', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-            <div style={{ position: 'absolute', top: '10px', left: '10px', background: 'rgba(0,0,0,0.6)', color: '#fff', padding: '4px 8px', borderRadius: '4px', fontSize: '12px', zIndex: 2 }}>
-              ▶ How It Works
+          <div style={{ flex: 1, minWidth: '300px', borderRadius: '12px', overflow: 'hidden', border: '2px solid #cbd5e1', background: '#0f172a', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', minHeight: '220px' }}>
+            <div style={{ position: 'absolute', top: '10px', left: '10px', background: 'rgba(255,255,255,0.1)', color: '#38bdf8', padding: '4px 8px', borderRadius: '4px', fontSize: '12px', border: '1px solid #38bdf8', zIndex: 2, display: 'flex', gap: '6px', alignItems: 'center' }}>
+              <div style={{ width: '8px', height: '8px', background: '#38bdf8', borderRadius: '50%', animation: 'pulse 1.5s infinite' }} />
+              AI SYSTEM ACTIVE
             </div>
-            {/* Animated looping video showing healthcare tech interface concepts */}
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }}
-              src="https://player.vimeo.com/external/395679549.sd.mp4?s=d0046e7f18b14e6b19a16f2f2c8d28a30a76a5b6&profile_id=164&oauth2_token_id=57447761"
-            />
+            <style>{`
+              @keyframes scanline { 0% { top: -10%; } 100% { top: 110%; } }
+              @keyframes pulse { 0% { opacity: 0.4; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0.4; transform: scale(0.9); } }
+              @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+            `}</style>
+            <div style={{ width: '120px', height: '120px', border: '2px solid rgba(56,189,248,0.2)', borderRadius: '50%', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ position: 'absolute', width: '100%', height: '100%', borderTop: '2px solid #38bdf8', borderRadius: '50%', animation: 'spin 3s linear infinite' }} />
+              <div style={{ position: 'absolute', width: '70%', height: '70%', borderBottom: '2px solid #ef4444', borderRadius: '50%', animation: 'spin 2s linear infinite reverse' }} />
+              <div style={{ fontSize: '32px' }}>🩺</div>
+            </div>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '2px', background: 'rgba(56,189,248,0.5)', boxShadow: '0 0 10px #38bdf8', animation: 'scanline 3s linear infinite' }} />
+            <div style={{ position: 'absolute', bottom: '10px', right: '10px', color: 'rgba(255,255,255,0.4)', fontSize: '10px', fontFamily: 'monospace' }}>
+              PROCESSING...
+            </div>
           </div>
         </div>
         

@@ -160,9 +160,9 @@ router.patch('/opd/:token/status', (req, res) => {
 // GET /api/patients/:id/case — AI summary + HPI + PMH + meds + allergies + flags.
 router.get('/patients/:id/case', (req, res) => {
   const id = req.params.id;
-  // Find the latest token for this patient (by tokenNo or uhid)
+  // Find the latest token for this patient (by tokenNo or uhid). Since emergency unshifts, it's at index 0.
   const tokensForPatient = store.tokens.filter(t => t.tokenNo === id || t.uhid === id);
-  const token = tokensForPatient[tokensForPatient.length - 1]; 
+  const token = tokensForPatient[0]; 
   const patient = store.patients.find(p => p.uhid === token?.uhid || p._id === id || p.uhid === id);
   const intake = store.intakes.filter(i => i.tokenNo === id || i.patient?.uhid === id).slice(-1)[0];
   if (!token && !patient) return res.status(404).json({ error: 'Case not found' });

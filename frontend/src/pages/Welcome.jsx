@@ -51,6 +51,7 @@ export default function Welcome() {
         </div>
         <p className="small muted" style={{ marginTop: 10, marginBottom: 0 }}>{getTranslated('voiceGuide')}</p>
       </div>
+      
       <div className="hero-split">
         <div className="card welcome-card selected ui-3d-card">
           <div className="big-icon">🧑‍⚕️</div>

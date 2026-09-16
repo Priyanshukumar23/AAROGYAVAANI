@@ -17,7 +17,7 @@ export default function SymptomDetails() {
   const toggle = (a) => setAssoc((s) => (s.includes(a) ? s.filter((x) => x !== a) : [...s, a]));
   const save = () => {
     patchIntake({ details: { onset, vas, aggr, relief, assoc } });
-    nav(state.intake?.redFlag ? '/history/red-flag' : '/history/past-history');
+    nav(state.intake?.redFlag ? '/emergency/assessment' : '/history/past-history');
   };
   return (
     <KioskShell stepLabel="STEP 2 · CLINICAL HISTORY" title="Symptom Details" back="/history/ai-followup" progress={82} onNext={save} nextLabel="Save & Continue">

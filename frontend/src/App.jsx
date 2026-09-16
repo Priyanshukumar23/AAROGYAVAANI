@@ -4,6 +4,8 @@ import { useApp } from './context/AppContext';
 
 // Entry / staff auth / shared
 import Welcome from './pages/Welcome';
+import EmergencyAssessment from './pages/emergency/EmergencyAssessment';
+import EmergencyTracking from './pages/emergency/EmergencyTracking';
 import StaffLogin from './pages/StaffLogin';
 import VitalsInfo from './pages/VitalsInfo';
 import LiveOpdQueue from './pages/LiveOpdQueue';
@@ -161,6 +163,8 @@ export default function App() {
       <AppBg />
       <Routes>
         <Route path="/" element={<Welcome />} />
+        <Route path="/emergency/assessment" element={<EmergencyAssessment />} />
+        <Route path="/emergency/tracking" element={<EmergencyTracking />} />
         <Route path="/staff/login" element={<StaffLogin />} />
 
         <Route path="/checkin/language" element={<LanguageSelection />} />

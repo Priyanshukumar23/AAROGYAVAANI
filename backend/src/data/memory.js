@@ -3,6 +3,7 @@
 let seq = 142;
 const store = {
   patients: [
+    { _id: 'p0', name: 'Priyansh', age: 24, gender: 'Male', mobile: '+91 12345 56789', abhaId: '1234556789', uhid: 'AIIMS-2026-99999', state: 'Punjab', city: 'Jalandhar', language: 'English' },
     { _id: 'p1', name: 'Ramesh Kumar Sharma', age: 48, gender: 'Male', mobile: '+91 98765 43210', abhaId: '91-4582-9012-3456', uhid: 'AIIMS-2025-08492', state: 'Delhi', city: 'South Delhi', language: 'Hindi' },
     { _id: 'p2', name: 'Priya Patel', age: 29, gender: 'Female', mobile: '+91 98250 11223', abhaId: '91-4402-8819-2042', uhid: 'AIIMS-2024-9102', state: 'Gujarat', city: 'Ahmedabad', language: 'Gujarati' },
     { _id: 'p3', name: 'Sunita Devi', age: 54, gender: 'Female', mobile: '+91 98111 22334', abhaId: '91-4402-8819-2043', uhid: 'AIIMS-2024-8119', state: 'Delhi', city: 'Central Delhi', language: 'Hindi' }

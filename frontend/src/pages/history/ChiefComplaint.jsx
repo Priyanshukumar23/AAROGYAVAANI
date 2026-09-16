@@ -30,7 +30,7 @@ export default function ChiefComplaint() {
       });
       try { fetch(`/api/tokens/${encodeURIComponent(tokenNo)}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ complaint: text.trim(), chiefComplaint: text.trim(), priority: redFlag ? 'P1' : 'P2' }) }); } catch {}
     }
-    nav(redFlag ? '/history/red-flag' : '/history/symptoms');
+    nav(redFlag ? '/emergency/assessment' : '/history/symptoms');
   };
   return (
     <KioskShell stepLabel="STEP 2 · CLINICAL HISTORY" title="What is your main problem today?" back="/history/intro" progress={70} onNext={next} nextLabel="Continue">

@@ -239,26 +239,13 @@ export default function PatientDashboard() {
 
       <div className="card ui-3d-card" style={{ marginTop: 24 }}>
         <h4 style={{ margin: '0 0 12px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <span>📄 {getTranslated('pastHistory')}</span>
-          <span className="small muted" style={{ fontWeight: 'normal' }}>UHID: <span className="mono">{p.uhid || '—'}</span></span>
+          <span>📋 {getTranslated('pastHistory')}</span>
+          <span className="small muted" style={{ fontWeight: 'normal' }}>UHID: <span className="mono">{p.uhid || '-'}</span></span>
         </h4>
         
         {p.uhid ? (
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            <div style={{ padding: 12, border: '1px solid var(--blue)', background: 'var(--blue-soft)', borderRadius: 8, display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer' }}>
-              <div style={{ fontSize: 24 }}>🩸</div>
-              <div>
-                <b style={{ color: 'var(--blue-dark)' }}>{getTranslated('report1')}</b>
-                <div className="small muted">View PDF Report</div>
-              </div>
-            </div>
-            <div style={{ padding: 12, border: '1px solid var(--line)', borderRadius: 8, display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer' }}>
-              <div style={{ fontSize: 24 }}>🩻</div>
-              <div>
-                <b>{getTranslated('report2')}</b>
-                <div className="small muted">View Scans</div>
-              </div>
-            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 12 }}>
+            <HistoryLoader uhid={p.uhid} />
           </div>
         ) : (
           <div style={{ padding: 24, textAlign: 'center', color: 'var(--muted)', background: 'var(--bg-rec)', borderRadius: 8 }}>
@@ -267,5 +254,45 @@ export default function PatientDashboard() {
         )}
       </div>
     </KioskShell>
+  );
+}
+
+function HistoryLoader({ uhid }) {
+  const [timeline, setTimeline] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`/api/patients/${uhid}/timeline`)
+      .then(res => res.json())
+      .then(data => {
+        setTimeline(data.filter(d => d.kind === 'consultation').reverse());
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [uhid]);
+
+  if (loading) return <div className="small muted">Loading history...</div>;
+  if (!timeline.length) return <div className="small muted">No recent consultations found.</div>;
+
+  return (
+    <>
+      {timeline.map((c, i) => (
+        <div key={i} style={{ padding: 16, border: '1px solid var(--blue)', background: 'var(--blue-soft)', borderRadius: 8, display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+          <div style={{ fontSize: 32 }}>📄</div>
+          <div style={{ flex: 1 }}>
+            <b style={{ color: 'var(--blue-dark)', fontSize: 16 }}>Consultation Report: {c.dx || 'Checkup'}</b>
+            <div className="small muted" style={{ marginTop: 4 }}>
+              <strong>Prescriptions:</strong> {c.rx?.map(r => `${r.drug} (${r.dose})`).join(', ') || 'None'}
+            </div>
+            <div className="small muted" style={{ marginTop: 4 }}>
+              <strong>Advice:</strong> {c.advice || 'N/A'}
+            </div>
+          </div>
+          <button className="btn btn-primary btn-sm ui-3d-btn" onClick={() => alert('Downloading Verified Report PDF...')}>
+            ⬇️ Download
+          </button>
+        </div>
+      ))}
+    </>
   );
 }

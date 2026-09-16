@@ -216,6 +216,8 @@ export default function App() {
         <Route path="/doctor/summary" element={<AiSummary />} />
         <Route path="/doctor/documents" element={<MedicalDocs />} />
         <Route path="/doctor/workspace" element={<ConsultationWorkspace />} />
+        <Route path="/doctor/workspace/:id" element={<ConsultationWorkspace />} />
+        <Route path="/doctor/complete/:id" element={<ConsultationComplete />} />
         <Route path="/doctor/complete" element={<ConsultationComplete />} />
         <Route path="/doctor/review" element={<DoctorReview />} />
         <Route path="/doctor/review/:id" element={<DoctorReview />} />

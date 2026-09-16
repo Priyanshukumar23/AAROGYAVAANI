@@ -24,6 +24,11 @@ export default function Welcome() {
       quickLang: { English: 'Quick language / भाषा चुनें / ਭਾਸ਼ਾ ਚੁਣੋ', 'हिन्दी': 'Quick language / भाषा चुनें / ਭਾਸ਼ਾ ਚੁਣੋ', 'ਪੰਜਾਬੀ': 'Quick language / भाषा चुनें / ਭਾਸ਼ਾ ਚੁਣੋ' },
       voiceGuide: { English: '🔊 Voice guidance is available at every step. Tap 🔊 Listen to hear instructions aloud.', 'हिन्दी': '🔊 हर कदम पर वॉयस मार्गदर्शन उपलब्ध है। निर्देश सुनने के लिए 🔊 सुनें पर टैप करें।', 'ਪੰਜਾਬੀ': '🔊 ਹਰ ਕਦਮ \'ਤੇ ਆਵਾਜ਼ ਮਾਰਗਦਰਸ਼ਨ ਉਪਲਬਧ ਹੈ। ਹਦਾਇਤਾਂ ਸੁਣਨ ਲਈ 🔊 ਸੁਣੋ \'ਤੇ ਟੈਪ ਕਰੋ।' },
       aboutTitle: { English: 'About', 'हिन्दी': 'के बारे में', 'ਪੰਜਾਬੀ': 'ਬਾਰੇ' },
+      aboutIntro: { English: 'AAROGYAVAANI is a next-generation AI-powered clinical intake system that bridges the gap between rural patients and urban healthcare infrastructure. It provides voice-assisted triage, live OPD queues, and emergency dispatch tracking.', 'हिन्दी': 'आरोग्यवाणी एक अगली पीढ़ी की AI-संचालित नैदानिक ​​सेवन प्रणाली है जो ग्रामीण रोगियों और शहरी स्वास्थ्य सेवा के बुनियादी ढांचे के बीच की खाई को पाटती है। यह वॉयस-असिस्टेड ट्राइएज, लाइव ओपीडी कतार और आपातकालीन प्रेषण ट्रैकिंग प्रदान करता है।', 'ਪੰਜਾਬੀ': 'ਆਰੋਗਿਆਵਾਨੀ ਇੱਕ ਅਗਲੀ ਪੀੜ੍ਹੀ ਦਾ AI-ਸੰਚਾਲਿਤ ਕਲੀਨਿਕਲ ਦਾਖਲਾ ਸਿਸਟਮ ਹੈ ਜੋ ਪੇਂਡੂ ਮਰੀਜ਼ਾਂ ਅਤੇ ਸ਼ਹਿਰੀ ਸਿਹਤ ਸੰਭਾਲ ਬੁਨਿਆਦੀ ਢਾਂਚੇ ਦੇ ਵਿਚਕਾਰ ਪਾੜੇ ਨੂੰ ਪੂਰਾ ਕਰਦਾ ਹੈ। ਇਹ ਆਵਾਜ਼-ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਟ੍ਰਾਈਜ, ਲਾਈਵ OPD ਕਤਾਰਾਂ, ਅਤੇ ਐਮਰਜੈਂਸੀ ਡਿਸਪੈਚ ਟਰੈਕਿੰਗ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ।' },
+      howToUse: { English: 'How to use AAROGYAVAANI:', 'हिन्दी': 'आरोग्यवाणी का उपयोग कैसे करें:', 'ਪੰਜਾਬੀ': 'ਆਰੋਗਿਆਵਾਨੀ ਦੀ ਵਰਤੋਂ ਕਿਵੇਂ ਕਰੀਏ:' },
+      step1: { English: '1. Register & Check-In using your ABHA or Mobile number.', 'हिन्दी': '1. अपने ABHA या मोबाइल नंबर का उपयोग करके पंजीकरण और चेक-इन करें।', 'ਪੰਜਾਬੀ': '1. ਆਪਣੇ ABHA ਜਾਂ ਮੋਬਾਈਲ ਨੰਬਰ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਰਜਿਸਟਰ ਅਤੇ ਚੈੱਕ-ਇਨ ਕਰੋ।' },
+      step2: { English: '2. Talk to AI to explain your symptoms in your native language.', 'हिन्दी': '2. अपनी मूल भाषा में अपने लक्षणों को समझाने के लिए AI से बात करें।', 'ਪੰਜਾਬੀ': '2. ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਆਪਣੇ ਲੱਛਣਾਂ ਦੀ ਵਿਆਖਿਆ ਕਰਨ ਲਈ AI ਨਾਲ ਗੱਲ ਕਰੋ।' },
+      step3: { English: '3. Track live queue or get emergency ambulance dispatch automatically.', 'हिन्दी': '3. लाइव कतार को ट्रैक करें या स्वचालित रूप से आपातकालीन एम्बुलेंस प्रेषण प्राप्त करें।', 'ਪੰਜਾਬੀ': '3. ਲਾਈਵ ਕਤਾਰ ਨੂੰ ਟ੍ਰੈਕ ਕਰੋ ਜਾਂ ਆਪਣੇ ਆਪ ਐਮਰਜੈਂਸੀ ਐਂਬੂਲੈਂਸ ਡਿਸਪੈਚ ਪ੍ਰਾਪਤ ਕਰੋ।' },
       patFeatTitle: { English: '👨‍👩‍👧‍👦 For Patients', 'हिन्दी': '👨‍👩‍👧‍👦 मरीजों के लिए', 'ਪੰਜਾਬੀ': '👨‍👩‍👧‍👦 ਮਰੀਜ਼ਾਂ ਲਈ' },
       patFeat1: { English: '🎤 Speak to AI in your native language or scan reports via OCR.', 'हिन्दी': '🎤 अपनी भाषा में AI से बात करें या OCR के माध्यम से रिपोर्ट स्कैन करें।', 'ਪੰਜਾਬੀ': '🎤 ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ AI ਨਾਲ ਗੱਲ ਕਰੋ ਜਾਂ OCR ਰਾਹੀਂ ਰਿਪੋਰਟਾਂ ਸਕੈਨ ਕਰੋ।' },
       patFeat2: { English: '🚨 Trigger Emergency with live GPS tracking and AI first-aid.', 'हिन्दी': '🚨 लाइव GPS ट्रैकिंग और AI प्राथमिक चिकित्सा के साथ आपातकाल ट्रिगर करें।', 'ਪੰਜਾਬੀ': '🚨 ਲਾਈਵ GPS ਟਰੈਕਿੰਗ ਅਤੇ AI ਫਸਟ ਏਡ ਨਾਲ ਐਮਰਜੈਂਸੀ ਨੂੰ ਟਰਿੱਗਰ ਕਰੋ।' },
@@ -76,24 +81,64 @@ export default function Welcome() {
         </div>
       </div>
 
-      <div className="card ui-3d-card" style={{ marginTop: 16, background: 'var(--blue-soft)', border: '1px solid var(--blue-border)' }}>
-        <h3 style={{ margin: '0 0 16px 0', color: 'var(--blue-dark)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ fontSize: 24 }}>🇮🇳</span> {getTranslated('aboutTitle')} <BrandText />
+      <div className="card ui-3d-card" style={{ marginTop: 24, background: 'var(--blue-soft)', border: '1px solid var(--blue-border)', padding: '24px' }}>
+        <h3 style={{ margin: '0 0 16px 0', color: 'var(--blue-dark)', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '28px' }}>
+          <span style={{ fontSize: 32 }}>🇮🇳</span> {getTranslated('aboutTitle')} <BrandText />
         </h3>
         
+        <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#1e293b', marginBottom: '24px' }}>
+          {getTranslated('aboutIntro')}
+        </p>
+
+        <div style={{ display: 'flex', gap: '24px', marginBottom: '24px', flexWrap: 'wrap' }}>
+          <div style={{ flex: 1, minWidth: '300px' }}>
+            <h4 style={{ margin: '0 0 12px 0', color: '#0f172a', fontSize: '18px' }}>{getTranslated('howToUse')}</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ background: '#f8fafc', padding: '12px 16px', borderRadius: '8px', borderLeft: '4px solid var(--blue)' }}>
+                {getTranslated('step1')}
+              </div>
+              <div style={{ background: '#f8fafc', padding: '12px 16px', borderRadius: '8px', borderLeft: '4px solid var(--saffron)' }}>
+                {getTranslated('step2')}
+              </div>
+              <div style={{ background: '#f8fafc', padding: '12px 16px', borderRadius: '8px', borderLeft: '4px solid var(--p1)' }}>
+                {getTranslated('step3')}
+              </div>
+            </div>
+          </div>
+          
+          <div style={{ flex: 1, minWidth: '300px', borderRadius: '12px', overflow: 'hidden', border: '2px solid #cbd5e1', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+            <div style={{ position: 'absolute', top: '10px', left: '10px', background: 'rgba(0,0,0,0.6)', color: '#fff', padding: '4px 8px', borderRadius: '4px', fontSize: '12px', zIndex: 2 }}>
+              ▶ How It Works
+            </div>
+            {/* Animated looping video showing healthcare tech interface concepts */}
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }}
+              src="https://player.vimeo.com/external/395679549.sd.mp4?s=d0046e7f18b14e6b19a16f2f2c8d28a30a76a5b6&profile_id=164&oauth2_token_id=57447761"
+            />
+          </div>
+        </div>
+        
         <div className="grid cols-2" style={{ gap: '20px', alignItems: 'start' }}>
-          <div style={{ background: 'rgba(255,255,255,0.7)', padding: '16px', borderRadius: '8px', border: '1px solid #cbd5e1' }}>
-            <h4 style={{ margin: '0 0 12px 0', color: '#1e293b' }}>{getTranslated('patFeatTitle')}</h4>
-            <ul style={{ margin: 0, paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '10px', color: '#334155', fontSize: '15px' }}>
+          <div style={{ background: 'rgba(255,255,255,0.8)', padding: '20px', borderRadius: '12px', border: '1px solid #cbd5e1', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+            <h4 style={{ margin: '0 0 16px 0', color: '#1e293b', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ fontSize: '24px' }}>👨‍👩‍👧‍👦</span> {getTranslated('patFeatTitle').replace('👨‍👩‍👧‍👦 ', '')}
+            </h4>
+            <ul style={{ margin: 0, paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '12px', color: '#334155', fontSize: '15px', lineHeight: '1.5' }}>
               <li>{getTranslated('patFeat1')}</li>
               <li>{getTranslated('patFeat2')}</li>
               <li>{getTranslated('patFeat3')}</li>
             </ul>
           </div>
           
-          <div style={{ background: 'rgba(255,255,255,0.7)', padding: '16px', borderRadius: '8px', border: '1px solid #cbd5e1' }}>
-            <h4 style={{ margin: '0 0 12px 0', color: '#1e293b' }}>{getTranslated('docFeatTitle')}</h4>
-            <ul style={{ margin: 0, paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '10px', color: '#334155', fontSize: '15px' }}>
+          <div style={{ background: 'rgba(255,255,255,0.8)', padding: '20px', borderRadius: '12px', border: '1px solid #cbd5e1', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+            <h4 style={{ margin: '0 0 16px 0', color: '#1e293b', fontSize: '18px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ fontSize: '24px' }}>🩺</span> {getTranslated('docFeatTitle').replace('🩺 ', '')}
+            </h4>
+            <ul style={{ margin: 0, paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '12px', color: '#334155', fontSize: '15px', lineHeight: '1.5' }}>
               <li>{getTranslated('docFeat1')}</li>
               <li>{getTranslated('docFeat2')}</li>
               <li>{getTranslated('docFeat3')}</li>

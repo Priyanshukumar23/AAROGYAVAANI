@@ -56,6 +56,10 @@ export default function PatientProfileModal({ isOpen, onClose }) {
         
         <div style={{ display: 'grid', gap: 12 }}>
           <div className="field">
+            <label className="small" style={{ fontWeight: 600 }}>UHID (Hospital ID)</label>
+            <input className="input" value={f.uhid || '-'} disabled style={{ background: 'var(--bg-rec)', color: 'var(--muted)', cursor: 'not-allowed' }} />
+          </div>
+          <div className="field">
             <label className="small" style={{ fontWeight: 600 }}>{getTranslated('fullName')}</label>
             <input className="input" value={f.name || ''} onChange={e => setF({...f, name: e.target.value})} />
           </div>
